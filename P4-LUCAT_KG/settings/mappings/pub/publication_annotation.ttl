@@ -1,0 +1,77 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+
+<Publication>
+	rml:logicalSource [ rml:source "/data/data/pub/Metamap_annotations_LC.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/Publication/{subject}";
+		rr:class p4-lucat:Publication
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:pubmedID;
+		rr:objectMap [ 
+			rml:reference "subject" 
+		]
+	].					
+
+<Annotation>
+	rml:logicalSource [ rml:source "/data/data/pub/Metamap_annotations_LC.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/Annotation/{object}";
+		rr:class p4-lucat:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:annID;
+		rr:objectMap [ 
+			rml:reference "object" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticType;
+		rr:objectMap [ 
+			rml:reference "semantic_types" 
+		]
+	].
+
+<HasAnnotation>
+	rml:logicalSource [ rml:source "/data/data/pub/Metamap_annotations_LC.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/HAS_ANNOTATION/{subject}_{predicate}_{object}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [ 
+			rr:template "http://p4-lucat.eu/vocab/{predicate}"
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:confidence;
+		rr:objectMap [ 
+			rml:reference "confidence" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasAnnotation;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/Annotation/{object}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:annotates;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/Publication/{subject}"
+		]
+	].	

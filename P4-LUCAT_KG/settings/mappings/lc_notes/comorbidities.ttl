@@ -1,0 +1,63 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+
+<Disorder>
+	rml:logicalSource [ rml:source "/data/data/lc_notes/comorbidities.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/Disorder/{ENG_CUI_Name}";
+		rr:class p4-lucat:Disorder;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:disorderLabel_ENG;
+		rr:objectMap [ 
+			rml:reference "ENG_CUI_Name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "{DBpediaURL}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation>
+		]
+	].	
+
+<Annotation>
+	rml:logicalSource [ rml:source "/data/data/lc_notes/comorbidities.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}";
+		rr:class p4-lucat:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:annLabel_SPA;
+		rr:objectMap [ 
+			rml:reference "name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:provenance;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/SourceName/UMLS"
+		]
+	].
