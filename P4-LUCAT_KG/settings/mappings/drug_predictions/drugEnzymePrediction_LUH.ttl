@@ -1,0 +1,48 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+<DrugEnzymePrediction>
+	rml:logicalSource [ rml:source "/data/data/drug_predictions/DrugEnzyme_prediction_LUH.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/DrugEnzymePrediction/{Drug}_interactsWith_{Enzyme}";
+		rr:class p4-lucat:DrugEnzymePrediction
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:interactor1;
+		rr:objectMap [ 
+			rr:template "http://p4-lucat.eu/Drug/{Drug}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:interactor2;
+		rr:objectMap [ 
+			rr:template "http://p4-lucat.eu/Enzyme/{Enzyme}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:confidence;
+		rr:objectMap [ 
+			rml:reference "Prob" 
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:provenance;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/SourceName/KEGG"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:predictionMethod;
+		rr:objectMap [ 
+			rml:reference "Method" 
+		]
+	].	
+		
