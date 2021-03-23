@@ -1,0 +1,50 @@
+[default]
+main_directory: /data
+
+[datasets]
+number_of_datasets: 8
+output_folder: ${default:main_directory}/output/drug_pub/toLoad
+all_in_one_file: no
+remove_duplicate: yes
+name: drug_pub
+enrichment: yes
+
+[dataset1]
+name: DrugTarget_prediction_LUH
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugTargetPrediction_LUH.ttl
+
+[dataset2]
+name: DrugEnzyme_prediction_LUH
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugEnzymePrediction_LUH.ttl
+
+[dataset3]
+name: DDI_prediction_LUH
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugDrugPrediction_LUH.ttl
+
+[dataset4]
+name: DrugPhenotype_prediction_LUH
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugSideEffectPrediction_LUH.ttl
+
+[dataset5]
+name: wp4_drug_drug_interactions_AD
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugDrugInteraction_WP4_AD.ttl
+
+[dataset6]
+name: wp4_drug_drug_interactions_LC
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugDrugInteraction_WP4_LC.ttl
+
+[dataset7]
+name: wp4_drug_drug_interactions_otherDiseases
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugDrugInteraction_WP4_otherDiseases.ttl
+
+[dataset8]
+name: wp4_drug_drug_interactions_pubmed
+format: csv
+mapping: ${default:main_directory}/mappings/drug_predictions/drugDrugInteraction_WP4_pubmed.ttl
