@@ -58,6 +58,11 @@ rr:predicateObjectMap [
      rml:reference "DesignAllocation" ];];
 
 rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:designInterventionModel; 
+    rr:objectMap [
+     rml:reference "DesignInterventionModel" ];];
+
+rr:predicateObjectMap [ 
     rr:predicate p4-lucat:designPrimaryPurpose; 
     rr:objectMap [
      rml:reference "DesignPrimaryPurpose" ];];
