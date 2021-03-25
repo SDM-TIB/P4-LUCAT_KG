@@ -28,32 +28,32 @@ rr:predicateObjectMap [
      rml:reference "BriefSummary" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:detailedDescription; 
     rr:objectMap [
      rml:reference "DetailedDescription" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:statusCT; 
     rr:objectMap [
      rml:reference "OverallStatus" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:minAge; 
     rr:objectMap [
      rml:reference "MinimumAge" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:maxAge; 
     rr:objectMap [
      rml:reference "MaximumAge" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:primaryOutTimeFrame; 
     rr:objectMap [
      rml:reference "PrimaryOutcomeTimeFrame" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:designAllocation; 
     rr:objectMap [
      rml:reference "DesignAllocation" ];];
 
@@ -63,14 +63,10 @@ rr:predicateObjectMap [
      rml:reference "DesignInterventionModel" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
+    rr:predicate p4-lucat:designPrimaryPurpose; 
     rr:objectMap [
      rml:reference "DesignPrimaryPurpose" ];];
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
-    rr:objectMap [
-     rml:reference "ReferencePMID" ];];
                                              
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCUIAnnotation; 
