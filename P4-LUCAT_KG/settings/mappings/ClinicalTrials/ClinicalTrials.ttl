@@ -1,0 +1,189 @@
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+<ClinicalTrial>
+  a rr:TriplesMap;  
+  rml:logicalSource [
+  rml:source "./files/clinicaltrial.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+  rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+  rr:class p4-lucat:ClinicalTrial]; 
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:clinicalTrialId; 
+    rr:objectMap [
+     rml:reference "NCTId" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:clinicalTrialTitle; 
+    rr:objectMap [
+     rml:reference "BriefTitle" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "BriefSummary" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "DetailedDescription" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "OverallStatus" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "MinimumAge" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "MaximumAge" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "PrimaryOutcomeTimeFrame" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "DesignAllocation" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "DesignInterventionModel" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "DesignPrimaryPurpose" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:briefSummary; 
+    rr:objectMap [
+     rml:reference "ReferencePMID" ];];
+                                             
+rr:predicateObjectMap [ 
+  rr:predicate p4-lucat:hasCUIAnnotation; 
+  rr:objectMap [
+      rr:parentTriplesMap <InterventionAnnotation>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];];
+
+rr:predicateObjectMap [ 
+  rr:predicate p4-lucat:hasCUIAnnotation; 
+  rr:objectMap [
+      rr:parentTriplesMap <ConditiontionAnnotation>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];];
+
+rr:predicateObjectMap [ 
+  rr:predicate p4-lucat:hasCUIAnnotation; 
+  rr:objectMap [
+      rr:parentTriplesMap <KeywordAnnotation>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];];
+  ].
+
+<InterventionAnnotation>
+  a rr:TriplesMap;  
+  rml:source "./files/intervention-annnotation.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_CUI}";
+    rr:class p4-lucat:Intervention-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:CUI; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Annotation/{CUI}" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:hasIntervention; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Intervention/{ID}" ];].
+     
+<Intervention>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/intervention.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Intervention/{ID}";
+    rr:class p4-lucat:Intervention];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:interventionLabel; 
+    rr:objectMap [
+     rml:reference "InterventionName"       ];].
+
+<ConditionAnnotation>
+  a rr:TriplesMap;  
+  rml:source "./files/condition-annnotation.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_CUI}";
+    rr:class p4-lucat:Condition-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:CUI; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Annotation/{CUI}" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:hasCondition; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Condition/{ID}" ];].
+
+<Condition>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/condition.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Condition/{ID}";
+    rr:class p4-lucat:Condition];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:conditionLabel; 
+    rr:objectMap [
+     rml:reference "Condition"       ];].
+
+<KeywordAnnotation>
+  a rr:TriplesMap;  
+  rml:source "./files/keyword-annnotation.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_CUI}";
+    rr:class p4-lucat:Keyword-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:CUI; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Annotation/{CUI}" ];];
+
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:hasKeyword; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Keyword/{ID}" ];].   
+
+<Keyword>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/keyword.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Keyword/{ID}";
+    rr:class p4-lucat:Intervent];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:keywordLabel; 
+    rr:objectMap [
+     rml:reference "Keyword"       ];].  
+
