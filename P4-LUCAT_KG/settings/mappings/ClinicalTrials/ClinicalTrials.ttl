@@ -58,6 +58,11 @@ rr:predicateObjectMap [
      rml:reference "DesignAllocation" ];];
 
 rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:designPrimaryPurpose; 
+    rr:objectMap [
+     rml:reference "DesignPrimaryPurpose" ];];
+
+rr:predicateObjectMap [ 
     rr:predicate p4-lucat:designInterventionModel; 
     rr:objectMap [
       rr:parentTriplesMap <AssignmentAnnotation>;
@@ -65,12 +70,6 @@ rr:predicateObjectMap [
         rr:child "ID";
         rr:parent "ID";];];];
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:designPrimaryPurpose; 
-    rr:objectMap [
-     rml:reference "DesignPrimaryPurpose" ];];
-
-                                             
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCUIAnnotation; 
   rr:objectMap [
@@ -218,3 +217,42 @@ rr:predicateObjectMap [
     rr:predicate p4-lucat:hasAssignment; 
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Assignment/{ID}" ];].
+
+<Sex>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/sex.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Sex/{ID}";
+    rr:class p4-lucat:Sex];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:sexLabel; 
+    rr:objectMap [
+     rml:reference "Sex"       ];]. 
+
+<Concept>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/concept.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Concept/{ID}";
+    rr:class p4-lucat:Concept];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:conceptLabel; 
+    rr:objectMap [
+     rml:reference "Concept"       ];].
+
+<Patient>
+  a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./files/patient.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Patient/{ID}";
+    rr:class p4-lucat:Patient];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:patientLabel; 
+    rr:objectMap [
+     rml:reference "Patient"       ];].
