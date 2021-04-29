@@ -8,16 +8,16 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Gender>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/gender.csv";
+<Sex>
+	rml:logicalSource [ rml:source "/data/data/lc_notes/sex.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Gender/{name}";
-		rr:class p4-lucat:Gender;
+		rr:template "http://p4-lucat.eu/Sex/{name}";
+		rr:class p4-lucat:Sex;
 	];
 	rr:predicateObjectMap [
-		rr:predicate p4-lucat:genderLabel_ENG;
+		rr:predicate p4-lucat:sexLabel_ENG;
 		rr:objectMap [ 
 			rml:reference "name" 
 		]
@@ -36,7 +36,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/gender.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_notes/sex.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
