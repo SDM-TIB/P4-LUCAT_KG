@@ -17,9 +17,9 @@
 		rr:class p4-lucat:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate p4-lucat:gender;
+		rr:predicate p4-lucat:sex;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Gender/{gender}";
+			rr:template "http://p4-lucat.eu/Sex/{sex}";
 		]
 	];
 	rr:predicateObjectMap [
