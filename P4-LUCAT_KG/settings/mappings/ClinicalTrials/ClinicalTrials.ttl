@@ -182,7 +182,7 @@ rr:predicateObjectMap [
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword/{ID}";
-    rr:class p4-lucat:Intervent];
+    rr:class p4-lucat:Keyword];
 rr:predicateObjectMap [ 
     rr:predicate p4-lucat:keywordLabel; 
     rr:objectMap [
