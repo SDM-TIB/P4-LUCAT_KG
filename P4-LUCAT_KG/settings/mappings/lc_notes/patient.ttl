@@ -23,6 +23,12 @@
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			p4-lucat:Patient;
+		]
+	];	
+	rr:predicateObjectMap [
 		rr:predicate p4-lucat:beingIn_hospitalHealthArea;
 		rr:objectMap [
 			rml:reference "unique_area_of_public_health";
