@@ -21,12 +21,6 @@
 		rr:objectMap [
 			rr:template "http://p4-lucat.eu/Sex/{sex}";
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			p4-lucat:Patient;
-		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:beingIn_hospitalHealthArea;
