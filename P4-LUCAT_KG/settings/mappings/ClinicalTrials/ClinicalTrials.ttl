@@ -97,7 +97,7 @@ rr:predicateObjectMap [
 <InterventionAnnotation>
   a rr:TriplesMap; 
   rml:logicalSource [
-  rml:source "./files/intervention-annnotation.csv";
+  rml:source "./InterventionAnnotation/Intervention-Annotation.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_CUI}";
@@ -128,7 +128,7 @@ rr:predicateObjectMap [
 <ConditionAnnotation>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./files/condition-annnotation.csv";
+  rml:source "./ConditiontionAnnotation/Condition-Annotation.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_CUI}";
@@ -159,7 +159,7 @@ rr:predicateObjectMap [
 <KeywordAnnotation>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./files/keyword-annnotation.csv";
+  rml:source "./KeywordAnnotation/Keyword-Annnotation.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_CUI}";
