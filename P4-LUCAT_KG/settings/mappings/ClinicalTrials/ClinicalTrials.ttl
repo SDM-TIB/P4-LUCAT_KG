@@ -81,7 +81,7 @@ rr:predicateObjectMap [
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCUIAnnotation; 
   rr:objectMap [
-      rr:parentTriplesMap <ConditiontionAnnotation>;
+      rr:parentTriplesMap <ConditionAnnotation>;
       rr:joinCondition [
         rr:child "ID";
         rr:parent "ID";];];];
@@ -128,7 +128,7 @@ rr:predicateObjectMap [
 <ConditionAnnotation>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./ConditiontionAnnotation/Condition-Annotation.csv";
+  rml:source "./ConditionAnnotation/Condition-Annotation.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_CUI}";
