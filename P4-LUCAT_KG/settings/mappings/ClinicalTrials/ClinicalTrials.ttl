@@ -63,14 +63,6 @@ rr:predicateObjectMap [
      rml:reference "DesignPrimaryPurpose" ];];
 
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:designInterventionModel; 
-    rr:objectMap [
-      rr:parentTriplesMap <AssignmentAnnotation>;
-      rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];];];
-
-rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCUIAnnotation; 
   rr:objectMap [
       rr:parentTriplesMap <InterventionAnnotation>;
@@ -185,35 +177,4 @@ rr:subjectMap [
 rr:predicateObjectMap [ 
     rr:predicate p4-lucat:keywordLabel; 
     rr:objectMap [
-     rml:reference "Keyword"       ];]. 
-
-<Assignment>
-  a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./files/assignment.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Assignment/{ID}";
-    rr:class p4-lucat:Assignment];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:assignmentLabel; 
-    rr:objectMap [
-     rml:reference "DesignInterventionModel"       ];]. 
-
-<AssignmentAnnotation>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./files/assignment-annnotation.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Assignment-Annotation/{ID_CUI}";
-    rr:class p4-lucat:Assignment-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:CUI; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/Annotation/{CUI}" ];];
-
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:hasAssignment; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/Assignment/{ID}" ];].
+     rml:reference "Keyword"       ];].
