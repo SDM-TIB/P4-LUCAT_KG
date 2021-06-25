@@ -12,17 +12,17 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <UMLS>
-	rml:logicalSource [ rml:source "/data/drug/CUIs_oneLabel.csv";
+	rml:logicalSource [ rml:source "UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{Id}";
+		rr:template "http://p4-lucat.eu/Annotation/{CUI}";
 		rr:class p4-lucat:Annotation
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/SemanticType/{SemanticType}";
+			rr:template "http://p4-lucat.eu/SemanticType/{Semantic_type_label}";
 		]
 	];
 	
@@ -50,16 +50,16 @@
 	].
 
 	<DBpedia>
-	rml:logicalSource [ rml:source "/data/drug/CUIs_oneLabel.csv";
+	rml:logicalSource [ rml:source "UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "{DBpediaURL}";
+		rr:template "{DBpedia}";
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rr:template "{DBpediaClass}";
+			rr:template "{DBpedia_type}";
 		]
 	];	
 	rr:predicateObjectMap [
@@ -70,16 +70,16 @@
 	].
 		
 	<Wikidata>
-	rml:logicalSource [ rml:source "/data/drug/CUIs_oneLabel.csv";
+	rml:logicalSource [ rml:source "UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "{WikidataURL}";
+		rr:template "{Wikidata}";
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rr:template "{WikidataClass}";
+			rr:template "{Wikidata_type}";
 		]
 	];	
 	rr:predicateObjectMap [
