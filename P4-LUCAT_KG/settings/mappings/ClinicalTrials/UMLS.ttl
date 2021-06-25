@@ -25,7 +25,12 @@
 			rr:template "http://p4-lucat.eu/SemanticType/{Semantic_type_label}";
 		]
 	];
-	
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:annId;
+		rr:objectMap [ 
+			rml:reference "CUI"; 
+		]
+	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:annLabel;
 		rr:objectMap [ 
