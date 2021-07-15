@@ -553,7 +553,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Diagnosis/{id}";
+		rr:template "http://p4-lucat.eu/Diagnosis/Stage{stageAtDiagnosis}";
 		rr:class p4-lucat:Diagnosis;
 	];
 	rr:predicateObjectMap [
