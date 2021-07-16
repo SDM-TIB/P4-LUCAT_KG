@@ -136,10 +136,10 @@ rr:predicateObjectMap [
     rr:objectMap [
      rml:reference "Name"       ];].
      
-<InterventionAnnotation>
+<InterventionAnnotationSciSpacy>
   a rr:TriplesMap; 
   rml:logicalSource [
-  rml:source "./InterventionAnnotation/Intervention-Annotation.csv";
+  rml:source "./InterventionAnnotation/Intervention_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
@@ -153,10 +153,10 @@ rr:predicateObjectMap [
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Intervention-Annotation/{Score}" ;]].
 
-<ConditionAnnotation>
+<ConditionAnnotationSciSpacy>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./ConditionAnnotation/Condition-Annotation.csv";
+  rml:source "./ConditionAnnotation/Condition_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
@@ -170,10 +170,10 @@ rr:predicateObjectMap [
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Condition-Annotation/{Score}" ;]].
 
-<KeywordAnnotation>
+<KeywordAnnotationSciSpacy>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./KeywordAnnotation/Keyword-Annotation.csv";
+  rml:source "./KeywordAnnotation/Keyword_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
@@ -186,3 +186,42 @@ rr:predicateObjectMap [
     rr:predicate p4-lucat:annKeywordScore;
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Keyword-Annotation/{Score}" ;]].
+
+<InterventionAnnotationBioFALCON>
+  a rr:TriplesMap; 
+  rml:logicalSource [
+  rml:source "./InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
+    rr:class p4-lucat:Intervention-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:annInterventionLabel; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Intervention-Annotation/{Label}";]].
+
+<ConditionAnnotationBioFALCON>
+  a rr:TriplesMap;  
+  rml:logicalSource [
+  rml:source "./ConditionAnnotation/Condition_Annotations_BioFALCON.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
+    rr:class p4-lucat:Condition-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:annConditionLabel; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Condition-Annotation/{Label}";]].
+
+<KeywordAnnotationBioFALCON>
+  a rr:TriplesMap;  
+  rml:logicalSource [
+  rml:source "./KeywordAnnotation/Keyword_Annotations_BioFALCON.csv";
+  rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
+    rr:class p4-lucat:Keyword-Annotation];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:annKeywordLabel; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Keyword-Annotation/{Label}";]].
