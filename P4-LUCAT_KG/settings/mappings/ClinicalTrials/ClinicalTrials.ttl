@@ -70,36 +70,54 @@ rr:predicateObjectMap [
   rr:predicate p4-lucat:hasIntervention; 
   rr:objectMap [
       rr:parentTriplesMap <InterventionAnnotationSciSpacy>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];];
 
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCondition; 
   rr:objectMap [
       rr:parentTriplesMap <ConditionAnnotationSciSpacy>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];];
 
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasKeyword; 
   rr:objectMap [
       rr:parentTriplesMap <KeywordAnnotationSciSpacy>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];];
 
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasIntervention; 
   rr:objectMap [
       rr:parentTriplesMap <InterventionAnnotationBioFALCON>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];];
 
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasCondition; 
   rr:objectMap [
       rr:parentTriplesMap <ConditionAnnotationBioFALCON>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];];
 
 rr:predicateObjectMap [ 
   rr:predicate p4-lucat:hasKeyword; 
   rr:objectMap [
       rr:parentTriplesMap <KeywordAnnotationBioFALCON>;
+      rr:joinCondition [
+        rr:child "ID";
+        rr:parent "ID";];
       ];].
      
 <Intervention>
