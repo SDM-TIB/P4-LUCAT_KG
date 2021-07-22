@@ -7,7 +7,7 @@
 <ClinicalTrial>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "clinicaltrial.csv";
+  rml:source "./data/data/clinical_trials/clinicaltrial.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
   rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
@@ -71,8 +71,8 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <InterventionAnnotationSciSpacy>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Intervention";
+        rr:child "ID_Intervention";];
       ];];
 
 rr:predicateObjectMap [ 
@@ -80,8 +80,8 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <ConditionAnnotationSciSpacy>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Condition";
+        rr:child "ID_Condition";];
       ];];
 
 rr:predicateObjectMap [ 
@@ -89,8 +89,8 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <KeywordAnnotationSciSpacy>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Keyword";
+        rr:child "ID_Keyword";];
       ];];
 
 rr:predicateObjectMap [ 
@@ -98,8 +98,8 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <InterventionAnnotationBioFALCON>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Intervention";
+        rr:child "ID_Intervention";];
       ];];
 
 rr:predicateObjectMap [ 
@@ -107,8 +107,8 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <ConditionAnnotationBioFALCON>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Condition";
+        rr:child "ID_Condition";];
       ];];
 
 rr:predicateObjectMap [ 
@@ -116,14 +116,15 @@ rr:predicateObjectMap [
   rr:objectMap [
       rr:parentTriplesMap <KeywordAnnotationBioFALCON>;
       rr:joinCondition [
-        rr:child "ID";
-        rr:parent "ID";];
+        rr:parent "ID_Keyword";
+        rr:child "ID_Keyword";];
       ];].
+
      
 <Intervention>
   a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "intervention.csv";
+    rml:source "./data/data/clinical_trials/intervention.csv";
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention/{ID_Intervention}";
@@ -136,7 +137,7 @@ rr:predicateObjectMap [
 <Condition>
   a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "condition.csv";
+    rml:source "./data/data/clinical_trials/condition.csv";
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
@@ -149,7 +150,7 @@ rr:predicateObjectMap [
 <Keyword>
   a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "keyword.csv";
+    rml:source "./data/data/clinical_trials/keyword.csv";
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
@@ -162,7 +163,7 @@ rr:predicateObjectMap [
 <NLPTool>
   a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "NLPTool.csv";
+    rml:source "./data/data/clinical_trials/NLPTool.csv";
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/NLPTool/{ID_NLPTool}";
@@ -175,7 +176,7 @@ rr:predicateObjectMap [
 <InterventionAnnotationSciSpacy>
   a rr:TriplesMap; 
   rml:logicalSource [
-  rml:source "./InterventionAnnotation/Intervention_Annotations_SciSpacy.csv";
+  rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
@@ -192,7 +193,7 @@ rr:predicateObjectMap [
 <ConditionAnnotationSciSpacy>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./ConditionAnnotation/Condition_Annotations_SciSpacy.csv";
+  rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
@@ -209,7 +210,7 @@ rr:predicateObjectMap [
 <KeywordAnnotationSciSpacy>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./KeywordAnnotation/Keyword_Annotations_SciSpacy.csv";
+  rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_SciSpacy.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
@@ -226,7 +227,7 @@ rr:predicateObjectMap [
 <InterventionAnnotationBioFALCON>
   a rr:TriplesMap; 
   rml:logicalSource [
-  rml:source "./InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
+  rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
@@ -239,7 +240,7 @@ rr:predicateObjectMap [
 <ConditionAnnotationBioFALCON>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./ConditionAnnotation/Condition_Annotations_BioFALCON.csv";
+  rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_BioFALCON.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
@@ -252,7 +253,7 @@ rr:predicateObjectMap [
 <KeywordAnnotationBioFALCON>
   a rr:TriplesMap;  
   rml:logicalSource [
-  rml:source "./KeywordAnnotation/Keyword_Annotations_BioFALCON.csv";
+  rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_BioFALCON.csv";
   rml:referenceFormulation ql:CSV];
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
