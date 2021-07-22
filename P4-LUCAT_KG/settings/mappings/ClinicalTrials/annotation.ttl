@@ -3,16 +3,29 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <http://tib.de/ontario/mapping#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
+<Annotation_label>
+	rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{Label}";
+		rr:class p4-lucat:Annotation_label
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasCUIAnnotation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <Annotation>
+		]
+	].
+
 <Annotation>
-	rml:logicalSource [ rml:source "UMLS_combined.csv";
+	rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -38,24 +51,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeID;
-		rr:objectMap [ 
-			rml:reference "Semantic_type_ids" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeLabel;
-		rr:objectMap [ 
-			rml:reference "Semantic_type_label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeGroup;
-		rr:objectMap [ 
-			rml:reference "Semantic_group" 
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
 			rr:parentTriplesMap <Wikidata>
@@ -68,8 +63,70 @@
 		]
 	].
 
+<CUI_SemanticType>
+	rml:logicalSource [ rml:source "./data/data/annotation/CUI_type.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{cui_id}";
+		rr:class p4-lucat:CUI_SemanticType
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticTypeID;
+		rr:objectMap [ 
+			rr:template "http://p4-lucat.eu/entity/{type_id}";
+		]
+	].
+
+<SemanticType>
+	rml:logicalSource [ rml:source "./data/data/annotation/Semantic_types.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{Id}";
+		rr:class p4-lucat:SemanticType
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticTypeLabel;
+		rr:objectMap [
+			rml:reference "Label"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticTypeDefition;
+		rr:objectMap [ 
+			rml:reference "definition" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticGroupID;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SemanticGroup> ;
+			rr:joinCondition [
+				rr:parent "Id";
+				rr:child "SemanticTypeId";
+
+			];
+		];
+	].
+
+<SemanticGroup>
+	rml:logicalSource [ rml:source "./data/data/annotation/semgroups.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{Id}";
+		rr:class p4-lucat:SemanticGroup
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:semanticGroupLabel;
+		rr:objectMap [ 
+			rml:reference "Label"
+		]
+	].
+
 <Wikidata>
-	rml:logicalSource [ rml:source "UMLS_combined.csv";
+	rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -89,7 +146,7 @@
 	].
 
 <DBpedia>
-	rml:logicalSource [ rml:source "UMLS_combined.csv";
+	rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -106,4 +163,4 @@
 		rr:objectMap [
 			rr:constant "http://p4-lucat.eu/entity/DBpedia"
 		]
-	].	
+	].
