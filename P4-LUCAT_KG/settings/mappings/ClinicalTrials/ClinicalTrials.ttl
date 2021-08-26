@@ -156,6 +156,15 @@ rr:predicateObjectMap [
   rr:predicate p4-lucat:hasStudiedTKI;
   rr:objectMap [ 
       rml:reference "tki"
+ ];];
+
+rr:predicateObjectMap [
+  rr:predicate p4-lucat:hasStudiedSatges;
+  rr:objectMap [ 
+      rr:parentTriplesMap <Stages>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];].
 
 
@@ -165,14 +174,26 @@ a rr:TriplesMap;
    rml:source "./data/data/clinical_trials/performanceStatus.csv";
    rml:referenceFormulation ql:CSV];
 rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Intervention/{NCTId}";
+    rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
     rr:class p4-lucat:PerformanceObservation];
 rr:predicateObjectMap [
     rr:predicate p4-lucat:hasPerformanceStatus;
     rr:objectMap [ 
       rr:template "http://p4-lucat.eu/PerformanceStatus/{value}"   ];].
 
-     
+<Stages>
+ a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./data/data/clinical_trials/stages.csv";
+    rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+    rr:class p4-lucat:Stages];
+rr:predicateObjectMap [ 
+    rr:predicate p4-lucat:hasStage; 
+    rr:objectMap [
+     rr:template "http://p4-lucat.eu/Stages/Stage{value}"     ];].
+
 <Intervention>
   a rr:TriplesMap;
   rml:logicalSource [
