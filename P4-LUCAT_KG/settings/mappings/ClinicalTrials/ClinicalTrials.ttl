@@ -3,6 +3,7 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <ClinicalTrial>
   a rr:TriplesMap;  
@@ -119,6 +120,7 @@ rr:predicateObjectMap [
         rr:parent "ID_Keyword";
         rr:child "ID_Keyword";];
       ];];
+
 rr:predicateObjectMap [
   rr:predicate p4-lucat:hasPerformanceObservation;
   rr:objectMap [ 
@@ -129,33 +131,48 @@ rr:predicateObjectMap [
  ];];
 
 rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedSurgery;
+  rr:predicate p4-lucat:hasSurgery;
   rr:objectMap [ 
-      rml:reference "surgery"
+      rr:parentTriplesMap <Surgery>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];];
 
 rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedChemotherapy;
+  rr:predicate p4-lucat:hasChemotherapy;
   rr:objectMap [ 
-      rml:reference "chemotherapy"
+      rr:parentTriplesMap <Chemotherapy>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];];
 
 rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedRadiotherapy;
+  rr:predicate p4-lucat:hasRadiotherapy;
   rr:objectMap [ 
-      rml:reference "radiotherapy"
+      rr:parentTriplesMap <Radiotherapy>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];];
 
 rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedImmunotherapy;
+  rr:predicate p4-lucat:hasImmunotherapy;
   rr:objectMap [ 
-      rml:reference "immunotherapy"
+      rr:parentTriplesMap <Immunotherapy>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];];
 
 rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedTKI;
+  rr:predicate p4-lucat:hasTKI;
   rr:objectMap [ 
-      rml:reference "tki"
+      rr:parentTriplesMap <TKI>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
  ];];
 
 rr:predicateObjectMap [
@@ -168,18 +185,60 @@ rr:predicateObjectMap [
  ];].
 
 
+
 <PerformanceObservation>
 a rr:TriplesMap;
  rml:logicalSource [ 
    rml:source "./data/data/clinical_trials/performanceStatus.csv";
    rml:referenceFormulation ql:CSV];
 rr:subjectMap [
-    rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
-    rr:class p4-lucat:PerformanceObservation];
-rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasPerformanceStatus;
-    rr:objectMap [ 
-      rr:template "http://p4-lucat.eu/PerformanceStatus/{value}"   ];].
+    rr:template "http://p4-lucat.eu/PerformanceStatus/{value}";
+    rr:class p4-lucat:PerformanceObservation].
+
+<Surgery>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/surgery.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Surgery/{surgery}";
+    rr:class p4-lucat:Surgery].
+
+<Chemotherapy>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/chemotherapy.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Chemotherapy/{chemotherapy}";
+    rr:class p4-lucat:Chemotherapy].
+
+<Radiotherapy>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/radiotherapy.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Radiotherapy/{radiotherapy}";
+    rr:class p4-lucat:Radiotherapy].
+
+<Immunotherapy>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/immunotherapy.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/Immunotherapy/{immunotherapy}";
+    rr:class p4-lucat:Immunotherapy].
+
+<TKI>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/tki.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/TKI/{tki}";
+    rr:class p4-lucat:TKI].
 
 <Stages>
  a rr:TriplesMap;
@@ -187,12 +246,8 @@ rr:predicateObjectMap [
     rml:source "./data/data/clinical_trials/stages.csv";
     rml:referenceFormulation ql:CSV];
 rr:subjectMap [
-    rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
-    rr:class p4-lucat:Stages];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:hasStage; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/Stages/Stage{value}"     ];].
+    rr:template "http://p4-lucat.eu/Stages/{value}";
+    rr:class p4-lucat:Stages].
 
 <Intervention>
   a rr:TriplesMap;
@@ -203,7 +258,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention/{ID_Intervention}";
     rr:class p4-lucat:Intervention];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:interventionLabel; 
+    rr:predicate rdfs:label; 
     rr:objectMap [
      rml:reference "InterventionName"       ];].
 
@@ -216,7 +271,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
     rr:class p4-lucat:Condition];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:conditionLabel; 
+    rr:predicate rdfs:label; 
     rr:objectMap [
      rml:reference "Condition"       ];].
  
@@ -229,7 +284,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
     rr:class p4-lucat:Keyword];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:keywordLabel; 
+    rr:predicate rdfs:labell; 
     rr:objectMap [
      rml:reference "Keyword"       ];].
 
@@ -242,7 +297,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/NLPTool/{ID_NLPTool}";
     rr:class p4-lucat:NLPTool];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:ToolName; 
+    rr:predicate prov:sourceName; 
     rr:objectMap [
      rml:reference "Name"       ];].
      
@@ -255,7 +310,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
     rr:class p4-lucat:Intervention-Annotation];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annInterventionLabel; 
+    rr:predicate rdfs:label; 
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Intervention-Annotation/{Label}" ];]; 
 rr:predicateObjectMap [
@@ -272,7 +327,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
     rr:class p4-lucat:Condition-Annotation];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annConditionLabel; 
+    rr:predicate rdfs:label; 
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Condition-Annotation/{Label}" ];];
 rr:predicateObjectMap [
@@ -289,7 +344,7 @@ rr:subjectMap [
     rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
     rr:class p4-lucat:Keyword-Annotation];
 rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annKeywordLabel; 
+    rr:predicate rdfs:label; 
     rr:objectMap [
      rr:template "http://p4-lucat.eu/Keyword-Annotation/{Label}" ];];
 rr:predicateObjectMap [
