@@ -13,13 +13,19 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugGroup/{name}";
+		rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
 		rr:class p4-lucat:DrugGroup;
 	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:drugGroupLabel;
 		rr:objectMap [ 
-			rml:reference "name" 
+			rml:reference "ENG_CUI_Name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:drugGroupLabel;
+		rr:objectMap [ 
+			rml:reference "CUI" 
 		]
 	];
 	rr:predicateObjectMap [
