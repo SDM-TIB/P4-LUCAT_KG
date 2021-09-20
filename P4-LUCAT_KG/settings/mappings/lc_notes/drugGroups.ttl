@@ -24,8 +24,8 @@
 	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [ 
-			rml:reference "CUI" 
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/Annotation/{CUI}"
 		]
 	];
 	rr:predicateObjectMap [
