@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Biomarker/{biomarker}";
+		rr:template "http://p4-lucat.eu/entity/{biomarker}";
 		rr:class p4-lucat:Biomarker
 	];
 	rr:predicateObjectMap [
