@@ -31,7 +31,7 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Drug/{DrugName}";
+			rr:template "http://p4-lucat.eu/entity/{DrugName}";
 		]
 	];
 	rr:predicateObjectMap [
