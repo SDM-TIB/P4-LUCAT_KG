@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Phenotype/{Toxicity}";
+		rr:template "http://p4-lucat.eu/entity/{Toxicity}";
 		rr:class p4-lucat:Phenotype 	
 	];
 	rr:predicateObjectMap [
