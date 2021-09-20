@@ -19,7 +19,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:sex;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Sex/{sex}";
+			rr:template "http://p4-lucat.eu/entity/{sex}";
 		]
 	];	
 	rr:predicateObjectMap [
@@ -553,19 +553,19 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Diagnosis/Stage{stageAtDiagnosis}";
+		rr:template "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}";
 		rr:class p4-lucat:Diagnosis;
 	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasDiagnosisCancerStage;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/CancerStage/Stage{stageAtDiagnosis}";
+			rr:template "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasDiagnosisCancerStageCategory;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/CancerStageCategory/{categorized_stage_at_dx}";
+			rr:template "http://p4-lucat.eu/entity/{categorized_stage_at_dx}";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -596,7 +596,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasDiagnosisPerformanceStatus;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/PerformanceStatus/status{ps_at_diagnosis}";
+			rr:template "http://p4-lucat.eu/entity/status{ps_at_diagnosis}";
 		]
 	].
 
