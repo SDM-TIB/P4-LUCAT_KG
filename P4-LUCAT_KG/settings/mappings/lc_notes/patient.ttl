@@ -258,7 +258,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:lastCancerStage;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/CancerStage/Stage{stage}";		
+			rr:template "http://p4-lucat.eu/entity/Stage{stage}";		
 		]
 	];	
 	rr:predicateObjectMap [
