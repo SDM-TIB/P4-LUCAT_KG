@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Target/{Target_name}";
+		rr:template "http://p4-lucat.eu/entity/{Target_name}";
 		rr:class p4-lucat:Target
 	];
 	rr:predicateObjectMap [
@@ -49,7 +49,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:target_isRelatedTo_gene;
 		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Gene/{Gene_name}";
+			rr:template "http://p4-lucat.eu/entity/{Gene_name}";
 		]
 	];
 	rr:predicateObjectMap [
