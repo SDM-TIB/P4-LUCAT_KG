@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/OncologicalSurgery/{ENG_CUI_Name}";
+		rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
 		rr:class p4-lucat:OncologicalSurgery;
 	];
 	rr:predicateObjectMap [
@@ -40,7 +40,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:annID;
 		rr:objectMap [ 
-			rml:reference "CUI_ID" 
+			rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}" 
 		]
 	];
 	rr:predicateObjectMap [
