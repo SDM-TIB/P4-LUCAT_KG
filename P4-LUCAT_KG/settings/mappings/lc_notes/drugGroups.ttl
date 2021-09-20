@@ -23,7 +23,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugGroupLabel;
+		rr:predicate p4-lucat:hasCUIAnnotation;
 		rr:objectMap [ 
 			rml:reference "CUI" 
 		]
