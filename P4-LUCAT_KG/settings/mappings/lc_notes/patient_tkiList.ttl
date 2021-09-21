@@ -19,6 +19,6 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasTki;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{drugName}"
+			rr:template "http://p4-lucat.eu/entity/{drugName}"
 		]
 	].
