@@ -176,6 +176,15 @@ rr:predicateObjectMap [
  ];];
 
 rr:predicateObjectMap [
+  rr:predicate p4-lucat:hasAntiangiogenic;
+  rr:objectMap [ 
+      rr:parentTriplesMap <Antiangiogenic>;
+      rr:joinCondition [
+        rr:parent "NCTId";
+        rr:child "NCTId";];
+ ];];
+
+rr:predicateObjectMap [
   rr:predicate p4-lucat:hasStudiedSatges;
   rr:objectMap [ 
       rr:parentTriplesMap <Stages>;
@@ -239,6 +248,15 @@ a rr:TriplesMap;
 rr:subjectMap [
     rr:template "http://p4-lucat.eu/entity/{tki}";
     rr:class p4-lucat:TKI].
+
+<Antiangiogenic>
+a rr:TriplesMap;
+ rml:logicalSource [ 
+   rml:source "./data/data/clinical_trials/antiangiogenic.csv";
+   rml:referenceFormulation ql:CSV];
+rr:subjectMap [
+    rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
+    rr:class p4-lucat:Antiangiogenic].
 
 <Stages>
  a rr:TriplesMap;
