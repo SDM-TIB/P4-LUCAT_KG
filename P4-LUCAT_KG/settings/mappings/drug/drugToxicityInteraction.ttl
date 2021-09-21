@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <DrugSideEffectInteraction>
-	rml:logicalSource [ rml:source "/data/data/drug/drugs_toxicities_processed.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].	
 
 <Drug>
-	rml:logicalSource [ rml:source "/data/data/drug/drugs_toxicities_processed.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -38,7 +38,7 @@
 	].
 
 <Phenotype>
-	rml:logicalSource [ rml:source "/data/data/drug/drugs_toxicities_processed.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
