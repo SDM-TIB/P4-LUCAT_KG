@@ -24,7 +24,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:interactor2;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Enzyme/{Enzyme}" 
+			rr:template "http://p4-lucat.eu/entity/{Enzyme}" 
 		]
 	];
 	rr:predicateObjectMap [
