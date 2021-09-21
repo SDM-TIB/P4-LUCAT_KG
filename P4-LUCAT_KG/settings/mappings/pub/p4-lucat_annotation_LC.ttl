@@ -10,7 +10,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <#Annotation>
-	rml:logicalSource [ rml:source "/data/data/pub/annotation_LC.csv";
+	rml:logicalSource [ rml:source "./data/data/pub/annotation_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
