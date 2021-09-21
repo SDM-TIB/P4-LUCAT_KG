@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_performanceStatus.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,7 +23,7 @@
 	].
 
 <PerformanceObservation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_performanceStatus.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
