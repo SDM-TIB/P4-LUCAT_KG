@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <DiagnosisDescription>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/description_analysis_cuis.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/description_analysis_cuis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/description_analysis_cuis.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/description_analysis_cuis.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
