@@ -33,7 +33,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasPerformanceStatus;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/PerformanceStatus/status{value}"
+			rr:template "http://p4-lucat.eu/entity/status{value}"
 		]
 	];
 	rr:predicateObjectMap [
