@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <DrugTargetInteraction>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -36,7 +36,7 @@
 	].
 		
 <Target>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -63,7 +63,7 @@
 	].
 
 <Protein>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
