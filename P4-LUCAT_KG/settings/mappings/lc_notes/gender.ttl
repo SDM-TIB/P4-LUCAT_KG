@@ -14,7 +14,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{name}";
-		rr:class p4-lucat:Sex;
+		rr:class p4-lucat:Gender;
 	];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:sexLabel_ENG;
