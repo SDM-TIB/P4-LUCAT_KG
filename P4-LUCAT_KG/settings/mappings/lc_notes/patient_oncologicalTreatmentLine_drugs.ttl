@@ -18,6 +18,6 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:treatment_has_drug;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{drug_name}"
+			rr:template "http://p4-lucat.eu/entity/{drug_name}"
 		]
 	].
