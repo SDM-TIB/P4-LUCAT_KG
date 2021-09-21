@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/TumorType/{ENG_CUI_Name}";
+		rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
 		rr:class p4-lucat:TumorType;
 	];
 	rr:predicateObjectMap [
