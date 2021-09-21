@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/data/data/drug/CRD.csv";
+	rml:logicalSource [ rml:source "./data/data/drug/CRD.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
