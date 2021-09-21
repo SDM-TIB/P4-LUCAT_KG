@@ -18,7 +18,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasOncologicalSurgery;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/OncologicalSurgery/{concept}"
+			rr:template "http://p4-lucat.eu/entity/{concept}"
 		]
 	].	
 
