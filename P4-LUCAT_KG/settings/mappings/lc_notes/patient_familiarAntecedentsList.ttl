@@ -18,6 +18,6 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasFamiliarAntecedent;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/FamiliarAntecedent/{name}"
+			rr:template "http://p4-lucat.eu/entity/{name}"
 		]
 	].
