@@ -32,7 +32,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasToxicity;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Phenotype/{toxicity_concept}"
+			rr:template "http://p4-lucat.eu/entity/{toxicity_concept}"
 		]
 	];
 	rr:predicateObjectMap [
