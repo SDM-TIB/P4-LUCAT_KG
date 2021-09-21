@@ -32,7 +32,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasTumorStage;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/TumorStage/Stage{stage}"
+			rr:template "http://p4-lucat.eu/entity/Stage{stage}"
 		]
 	];
 	rr:predicateObjectMap [
