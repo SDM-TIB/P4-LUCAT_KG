@@ -8,7 +8,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Sex>
+<Gender>
 	rml:logicalSource [ rml:source "./data/data/lc_notes/gender.csv";
 						rml:referenceFormulation ql:CSV;
 						];
