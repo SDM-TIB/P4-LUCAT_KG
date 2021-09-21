@@ -47,7 +47,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasMutation;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Variation/{mutation}"
+			rr:template "http://p4-lucat.eu/entity/{mutation}"
 		]
 	];
 	rr:predicateObjectMap [
