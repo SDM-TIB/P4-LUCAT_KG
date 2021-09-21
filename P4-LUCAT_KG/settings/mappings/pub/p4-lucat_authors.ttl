@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Author/{author}";
+		rr:template "http://p4-lucat.eu/entity/{author}";
 		rr:class p4-lucat:Author
 	];
 	rr:predicateObjectMap [
