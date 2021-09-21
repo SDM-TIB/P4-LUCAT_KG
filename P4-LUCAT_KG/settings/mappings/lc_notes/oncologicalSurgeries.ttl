@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <OncologicalSurgery>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/oncologicalSurgeries.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/oncologicalSurgeries.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -30,7 +30,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/oncologicalSurgeries.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/oncologicalSurgeries.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
