@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <OncologicalTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_oncologicalTreatmentLine_drugs.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
