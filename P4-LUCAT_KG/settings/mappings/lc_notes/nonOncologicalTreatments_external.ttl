@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <Drug>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/nonOncologycalTreatments_external.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/nonOncologycalTreatments_external.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -42,7 +42,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/nonOncologycalTreatments_external.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/nonOncologycalTreatments_external.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
