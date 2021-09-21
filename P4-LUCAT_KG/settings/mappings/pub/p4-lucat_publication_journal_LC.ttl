@@ -19,6 +19,6 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasPublicationType;
 		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/PublicationType/{journal_type}" 
+			rr:template "http://p4-lucat.eu/entity/{journal_type}" 
 		]
 	].
