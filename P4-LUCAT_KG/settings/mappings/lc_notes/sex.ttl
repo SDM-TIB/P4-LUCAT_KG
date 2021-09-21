@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <Sex>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/sex.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/sex.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -36,7 +36,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/sex.csv";
+	rml:logicalSource [ rml:source "./data/data/lc_notes/sex.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
