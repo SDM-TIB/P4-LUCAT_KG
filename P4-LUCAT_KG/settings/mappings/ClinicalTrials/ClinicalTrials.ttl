@@ -15,7 +15,7 @@
         rr:class p4-lucat:ClinicalTrial
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTKI;
+        rr:predicate p4-lucat:hasTki;
         rr:objectMap [
         	rr:parentTriplesMap <TKI_ClinicalTrials>;
         rr:joinCondition [
@@ -214,7 +214,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{tki}";
-        rr:class p4-lucat:TKI
+        rr:class p4-lucat:Tki
     ].
 
 <Keyword_ClinicalTrials>
