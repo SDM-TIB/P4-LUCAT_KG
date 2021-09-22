@@ -88,7 +88,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_antiangiogentic;
+        rr:predicate p4-lucat:hasAntiangiogentic;
         rr:objectMap [
         rml:reference "antiangiogenic"
         ]
@@ -124,7 +124,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_bioAlk;
+        rr:predicate p4-lucat:hasALK;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Mutated_alk}"
         ]
@@ -166,7 +166,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_immunotherapy;
+        rr:predicate p4-lucat:hasImmunotherapy;
         rr:objectMap [
         rml:reference "immunotherapy"
         ]
@@ -256,7 +256,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_systemicPrognosis;
+        rr:predicate p4-lucat:hasSystemicPrognosis;
         rr:objectMap [
         rml:reference "has_systemic_progression"
         ]
@@ -280,13 +280,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_surgery;
+        rr:predicate p4-lucat:hasSurgery;
         rr:objectMap [
         rml:reference "surgery"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_bioRos1;
+        rr:predicate p4-lucat:hasROS;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Mutated_Ros}"
         ]
@@ -328,7 +328,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_biomarker;
+        rr:predicate p4-lucat:hasBiomarker;
         rr:objectMap [
         rml:reference "Mutated_biomarker"
         ]
@@ -340,7 +340,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_chemotherapy;
+        rr:predicate p4-lucat:hasChemotherapy;
         rr:objectMap [
         rml:reference "chemotherapy"
         ]
@@ -376,7 +376,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_brainMetastasis;
+        rr:predicate p4-lucat:hasBrainMetastasis;
         rr:objectMap [
         rml:reference "brain_metastasis"
         ]
@@ -400,7 +400,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_radiationtherapy;
+        rr:predicate p4-lucat:hasRadiotherapy;
         rr:objectMap [
         rml:reference "radiationtherapy"
         ]
@@ -424,19 +424,19 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_tki;
+        rr:predicate p4-lucat:hasTki;
         rr:objectMap [
         rml:reference "tki"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_palliativeCare;
+        rr:predicate p4-lucat:hasPalliativeCare;
         rr:objectMap [
         rml:reference "palliative_care"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_bioEgfr;
+        rr:predicate p4-lucat:hasEgfr;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Mutated_egfr}"
         ]
@@ -514,7 +514,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_overTreatment;
+        rr:predicate p4-lucat:hasOverTreatment;
         rr:objectMap [
         rml:reference "overtreated"
         ]
@@ -538,7 +538,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_stageIVprogression;
+        rr:predicate p4-lucat:hasStageIVprogression;
         rr:objectMap [
         rml:reference "has_stage_IV_date"
         ]
@@ -586,7 +586,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:existenceOf_familyHistory;
+        rr:predicate p4-lucat:hasFamilyHistory;
         rr:objectMap [
         rml:reference "af"
         ]
