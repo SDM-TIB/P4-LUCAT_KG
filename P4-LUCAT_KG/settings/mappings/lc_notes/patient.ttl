@@ -124,7 +124,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasALK;
+        rr:predicate p4-lucat:hasAlk;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Mutated_alk}"
         ]
@@ -286,7 +286,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasROS;
+        rr:predicate p4-lucat:hasRos1;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Mutated_Ros}"
         ]
