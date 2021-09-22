@@ -155,7 +155,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasEGFR;
+        rr:predicate p4-lucat:hasEgfr;
         rr:objectMap [ 
             rr:parentTriplesMap <EGFR_ClinicalTrials>;
         rr:joinCondition [
@@ -165,7 +165,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasALK;
+        rr:predicate p4-lucat:hasAlk;
         rr:objectMap [ 
             rr:parentTriplesMap <ALK_ClinicalTrials>;
         rr:joinCondition [
@@ -175,7 +175,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasROS;
+        rr:predicate p4-lucat:hasRos1;
         rr:objectMap [ 
             rr:parentTriplesMap <ROS_ClinicalTrials>;
         rr:joinCondition [
@@ -286,7 +286,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{egfr}";
-        rr:class p4-lucat:EGFR
+        rr:class p4-lucat:Egfr
     ].
 
 <ALK_ClinicalTrials>
@@ -296,7 +296,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{alk}";
-        rr:class p4-lucat:ALK
+        rr:class p4-lucat:Alk
     ].
 
 <ROS_ClinicalTrials>
@@ -306,7 +306,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ros}";
-        rr:class p4-lucat:ROS
+        rr:class p4-lucat:Ros1
     ].
 
 <PerformanceObservation_ClinicalTrials>
