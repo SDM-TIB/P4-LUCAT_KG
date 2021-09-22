@@ -8,44 +8,47 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<TumorStage>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/stages.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/Stage{name}";
-		rr:class p4-lucat:TumorStage;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:tumorStageLabel;
-		rr:objectMap [ 
-			rml:reference "name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
+<Annotation_stages>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/stages.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/stages.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].	
+<TumorStage_stages>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/stages.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/Stage{name}";
+        rr:class p4-lucat:TumorStage
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_stages>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:tumorStageLabel;
+        rr:objectMap [
+        rml:reference "name"
+        ]
+    ].
+

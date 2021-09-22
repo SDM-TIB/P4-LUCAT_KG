@@ -8,34 +8,36 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Relation>
-	rml:logicalSource [ rml:source "./data/data/pub/Semrep_Annotations.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/{predicate}/{subject_cui}_{predicate}_{object_cui}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/vocab/{predicate}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:relation_isRelatedTo_annotation;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Annotation/{subject_cui}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:relation_isRelatedTo_annotation;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Annotation/{object_cui}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:relation_isRelatedTo_publication;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Publication/{pmid}"
-		]
-	].		
+<Relation_semrep>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/Semrep_Annotations.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/{predicate}/{subject_cui}_{predicate}_{object_cui}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:relation_isRelatedTo_publication;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Publication/{pmid}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:relation_isRelatedTo_annotation;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Annotation/{subject_cui}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:relation_isRelatedTo_annotation;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Annotation/{object_cui}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/{predicate}"
+        ]
+    ].
+

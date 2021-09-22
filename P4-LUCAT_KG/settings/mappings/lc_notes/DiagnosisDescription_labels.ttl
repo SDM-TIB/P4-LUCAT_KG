@@ -8,23 +8,25 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DiagnosisDescription>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/description_analysis.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DiagnosisDescription/{Id}";
-		rr:class p4-lucat:DiagnosisDescription;
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdfs:label;
-		rr:objectMap [ 
-			rml:reference "DESC_DIAGNOST_English" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:label_SPA;
-		rr:objectMap [ 
-			rml:reference "DESC_DIAGNOST_Spanish" 
-		]
-	].
+<DiagnosisDescription_DiagnosisDescription_labels>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/description_analysis.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DiagnosisDescription/{Id}";
+        rr:class p4-lucat:DiagnosisDescription
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rml:reference "DESC_DIAGNOST_English"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:label_SPA;
+        rr:objectMap [
+        rml:reference "DESC_DIAGNOST_Spanish"
+        ]
+    ].
+

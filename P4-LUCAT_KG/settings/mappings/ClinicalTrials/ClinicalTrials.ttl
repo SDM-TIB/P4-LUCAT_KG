@@ -5,406 +5,477 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<ClinicalTrial>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/clinicaltrial.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-  rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
-  rr:class p4-lucat:ClinicalTrial];
+<ClinicalTrial_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+        rr:class p4-lucat:ClinicalTrial
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTKI;
+        rr:objectMap [
+        	rr:parentTriplesMap <TKI_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasRadiotherapy;
+        rr:objectMap [
+        	rr:parentTriplesMap <Radiotherapy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasKeyword;
+        rr:objectMap [
+        	rr:parentTriplesMap <KeywordAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Keyword";
+            rr:parent "ID_Keyword";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:maxAge;
+        rr:objectMap [
+        rml:reference "MaximumAge"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:statusCT;
+        rr:objectMap [
+        rml:reference "OverallStatus"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasStudiedSatges;
+        rr:objectMap [
+        	rr:parentTriplesMap <Stages_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:clinicalTrialId;
+        rr:objectMap [
+        rml:reference "NCTId"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCondition;
+        rr:objectMap [
+        	rr:parentTriplesMap <ConditionAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Condition";
+            rr:parent "ID_Condition";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIntervention;
+        rr:objectMap [
+        	rr:parentTriplesMap <InterventionAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Intervention";
+            rr:parent "ID_Intervention";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIntervention;
+        rr:objectMap [
+        	rr:parentTriplesMap <InterventionAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Intervention";
+            rr:parent "ID_Intervention";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:detailedDescription;
+        rr:objectMap [
+        rml:reference "DetailedDescription"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:minAge;
+        rr:objectMap [
+        rml:reference "MinimumAge"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasChemotherapy;
+        rr:objectMap [
+        	rr:parentTriplesMap <Chemotherapy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:designAllocation;
+        rr:objectMap [
+        rml:reference "DesignAllocation"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:clinicalTrialTitle;
+        rr:objectMap [
+        rml:reference "BriefTitle"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasKeyword;
+        rr:objectMap [
+        	rr:parentTriplesMap <KeywordAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Keyword";
+            rr:parent "ID_Keyword";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:primaryOutTimeFrame;
+        rr:objectMap [
+        rml:reference "PrimaryOutcomeTimeFrame"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasAntiangiogenic;
+        rr:objectMap [
+        	rr:parentTriplesMap <Antiangiogenic_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasImmunotherapy;
+        rr:objectMap [
+        	rr:parentTriplesMap <Immunotherapy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:gender;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Gender}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasPerformanceObservation;
+        rr:objectMap [
+        	rr:parentTriplesMap <PerformanceObservation_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:briefSummary;
+        rr:objectMap [
+        rml:reference "BriefSummary"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCondition;
+        rr:objectMap [
+        	rr:parentTriplesMap <ConditionAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Condition";
+            rr:parent "ID_Condition";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasSurgery;
+        rr:objectMap [
+        	rr:parentTriplesMap <Surgery_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:designPrimaryPurpose;
+        rr:objectMap [
+        rml:reference "DesignPrimaryPurpose"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:clinicalTrialId; 
-    rr:objectMap [
-     rml:reference "NCTId" ];];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:clinicalTrialTitle; 
-    rr:objectMap [
-     rml:reference "BriefTitle" ];];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:briefSummary; 
-    rr:objectMap [
-     rml:reference "BriefSummary" ];];
+<InterventionAnnotationBioFALCON_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Intervention-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annInterventionLabel;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:detailedDescription; 
-    rr:objectMap [
-     rml:reference "DetailedDescription" ];];
+<TKI_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/tki.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{tki}";
+        rr:class p4-lucat:TKI
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:statusCT; 
-    rr:objectMap [
-     rml:reference "OverallStatus" ];];
+<Keyword_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/keyword.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
+        rr:class p4-lucat:Keyword
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rml:reference "Keyword"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:gender; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Gender}"];];
+<KeywordAnnotationBioFALCON_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_BioFALCON.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Keyword-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annKeywordLabel;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:minAge; 
-    rr:objectMap [
-     rml:reference "MinimumAge" ];];
+<Surgery_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/surgery.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{surgery}";
+        rr:class p4-lucat:Surgery
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:maxAge; 
-    rr:objectMap [
-     rml:reference "MaximumAge" ];];
+<PerformanceObservation_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/performanceStatus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/status{value}";
+        rr:class p4-lucat:PerformanceObservation
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:primaryOutTimeFrame; 
-    rr:objectMap [
-     rml:reference "PrimaryOutcomeTimeFrame" ];];
+<Radiotherapy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/radiotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{radiotherapy}";
+        rr:class p4-lucat:Radiotherapy
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:designAllocation; 
-    rr:objectMap [
-     rml:reference "DesignAllocation" ];];
+<Intervention_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/intervention.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Intervention/{ID_Intervention}";
+        rr:class p4-lucat:Intervention
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rml:reference "InterventionName"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:designPrimaryPurpose; 
-    rr:objectMap [
-     rml:reference "DesignPrimaryPurpose" ];];
+<InterventionAnnotationSciSpacy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_SciSpacy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Intervention-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annInterventionScore;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Score}"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasIntervention; 
-  rr:objectMap [
-      rr:parentTriplesMap <InterventionAnnotationSciSpacy>;
-      rr:joinCondition [
-        rr:parent "ID_Intervention";
-        rr:child "ID_Intervention";];
-      ];];
+<NLPTool_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/NLPTool.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/NLPTool/{ID_NLPTool}";
+        rr:class p4-lucat:NLPTool
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:sourceName;
+        rr:objectMap [
+        rml:reference "Name"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasCondition; 
-  rr:objectMap [
-      rr:parentTriplesMap <ConditionAnnotationSciSpacy>;
-      rr:joinCondition [
-        rr:parent "ID_Condition";
-        rr:child "ID_Condition";];
-      ];];
+<ConditionAnnotationBioFALCON_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_BioFALCON.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Condition-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annConditionLabel;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasKeyword; 
-  rr:objectMap [
-      rr:parentTriplesMap <KeywordAnnotationSciSpacy>;
-      rr:joinCondition [
-        rr:parent "ID_Keyword";
-        rr:child "ID_Keyword";];
-      ];];
+<Condition_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/condition.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
+        rr:class p4-lucat:Condition
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rml:reference "Condition"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasIntervention; 
-  rr:objectMap [
-      rr:parentTriplesMap <InterventionAnnotationBioFALCON>;
-      rr:joinCondition [
-        rr:parent "ID_Intervention";
-        rr:child "ID_Intervention";];
-      ];];
+<KeywordAnnotationSciSpacy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_SciSpacy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Keyword-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annKeywordScore;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Score}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasCondition; 
-  rr:objectMap [
-      rr:parentTriplesMap <ConditionAnnotationBioFALCON>;
-      rr:joinCondition [
-        rr:parent "ID_Condition";
-        rr:child "ID_Condition";];
-      ];];
+<Chemotherapy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/chemotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{chemotherapy}";
+        rr:class p4-lucat:Chemotherapy
+    ].
 
-rr:predicateObjectMap [ 
-  rr:predicate p4-lucat:hasKeyword; 
-  rr:objectMap [
-      rr:parentTriplesMap <KeywordAnnotationBioFALCON>;
-      rr:joinCondition [
-        rr:parent "ID_Keyword";
-        rr:child "ID_Keyword";];
-      ];];
+<Antiangiogenic_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/antiangiogenic.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
+        rr:class p4-lucat:Antiangiogenic
+    ].
 
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasPerformanceObservation;
-  rr:objectMap [ 
-      rr:parentTriplesMap <PerformanceObservation>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
+<ConditionAnnotationSciSpacy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_SciSpacy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
+        rr:class p4-lucat:Condition-Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annConditionScore;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Score}"
+        ]
+    ].
 
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasSurgery;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Surgery>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
+<Stages_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/stages.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/Stage{value}";
+        rr:class p4-lucat:Stages
+    ].
 
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasChemotherapy;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Chemotherapy>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
+<Immunotherapy_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/immunotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{immunotherapy}";
+        rr:class p4-lucat:Immunotherapy
+    ].
 
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasRadiotherapy;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Radiotherapy>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
-
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasImmunotherapy;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Immunotherapy>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
-
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasTKI;
-  rr:objectMap [ 
-      rr:parentTriplesMap <TKI>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
-
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasAntiangiogenic;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Antiangiogenic>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];];
-
-rr:predicateObjectMap [
-  rr:predicate p4-lucat:hasStudiedSatges;
-  rr:objectMap [ 
-      rr:parentTriplesMap <Stages>;
-      rr:joinCondition [
-        rr:parent "NCTId";
-        rr:child "NCTId";];
- ];].
-
-
-
-<PerformanceObservation>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/performanceStatus.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/status{value}";
-    rr:class p4-lucat:PerformanceObservation].
-
-<Surgery>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/surgery.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{surgery}";
-    rr:class p4-lucat:Surgery].
-
-<Chemotherapy>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/chemotherapy.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{chemotherapy}";
-    rr:class p4-lucat:Chemotherapy].
-
-<Radiotherapy>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/radiotherapy.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{radiotherapy}";
-    rr:class p4-lucat:Radiotherapy].
-
-<Immunotherapy>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/immunotherapy.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{immunotherapy}";
-    rr:class p4-lucat:Immunotherapy].
-
-<TKI>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/tki.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{tki}";
-    rr:class p4-lucat:TKI].
-
-<Antiangiogenic>
-a rr:TriplesMap;
- rml:logicalSource [ 
-   rml:source "./data/data/clinical_trials/antiangiogenic.csv";
-   rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
-    rr:class p4-lucat:Antiangiogenic].
-
-<Stages>
- a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./data/data/clinical_trials/stages.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/entity/Stage{value}";
-    rr:class p4-lucat:Stages].
-
-<Intervention>
-  a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./data/data/clinical_trials/intervention.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Intervention/{ID_Intervention}";
-    rr:class p4-lucat:Intervention];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rml:reference "InterventionName"       ];].
-
-<Condition>
-  a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./data/data/clinical_trials/condition.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
-    rr:class p4-lucat:Condition];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rml:reference "Condition"       ];].
- 
-<Keyword>
-  a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./data/data/clinical_trials/keyword.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
-    rr:class p4-lucat:Keyword];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rml:reference "Keyword"       ];].
-
-<NLPTool>
-  a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "./data/data/clinical_trials/NLPTool.csv";
-    rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/NLPTool/{ID_NLPTool}";
-    rr:class p4-lucat:NLPTool];
-rr:predicateObjectMap [ 
-    rr:predicate prov:sourceName; 
-    rr:objectMap [
-     rml:reference "Name"       ];].
-     
-<InterventionAnnotationSciSpacy>
-  a rr:TriplesMap; 
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_SciSpacy.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Intervention-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}" ];]; 
-rr:predicateObjectMap [
-    rr:predicate p4-lucat:annInterventionScore;
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Score}" ;]].
-
-<ConditionAnnotationSciSpacy>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_SciSpacy.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Condition-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}" ];];
-rr:predicateObjectMap [
-    rr:predicate p4-lucat:annConditionScore;
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Score}" ;]].
-
-<KeywordAnnotationSciSpacy>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_SciSpacy.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Keyword-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate rdfs:label; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}" ];];
-rr:predicateObjectMap [
-    rr:predicate p4-lucat:annKeywordScore;
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Score}" ;]].
-
-<InterventionAnnotationBioFALCON>
-  a rr:TriplesMap; 
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Intervention-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annInterventionLabel; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}";]].
-
-<ConditionAnnotationBioFALCON>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/ConditionAnnotation/Condition_Annotations_BioFALCON.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Condition-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annConditionLabel; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}";]].
-
-<KeywordAnnotationBioFALCON>
-  a rr:TriplesMap;  
-  rml:logicalSource [
-  rml:source "./data/data/clinical_trials/KeywordAnnotation/Keyword_Annotations_BioFALCON.csv";
-  rml:referenceFormulation ql:CSV];
-rr:subjectMap [
-    rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
-    rr:class p4-lucat:Keyword-Annotation];
-rr:predicateObjectMap [ 
-    rr:predicate p4-lucat:annKeywordLabel; 
-    rr:objectMap [
-     rr:template "http://p4-lucat.eu/entity/{Label}";]].

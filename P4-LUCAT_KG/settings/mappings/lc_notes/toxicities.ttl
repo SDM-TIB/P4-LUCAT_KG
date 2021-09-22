@@ -8,57 +8,59 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Toxicity>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/toxicities.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
-		rr:class p4-lucat:Phenotype;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:toxicityLabel_ENG;
-		rr:objectMap [ 
-			rml:reference "ENG_CUI_Name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{DBpediaURL}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
+<Toxicity_toxicities>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/toxicities.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
+        rr:class p4-lucat:Phenotype
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:toxicityLabel_ENG;
+        rr:objectMap [
+        rml:reference "ENG_CUI_Name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "{DBpediaURL}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_toxicities>;
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/toxicities.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel_SPA;
-		rr:objectMap [ 
-			rml:reference "name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].						
+<Annotation_toxicities>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/toxicities.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel_SPA;
+        rr:objectMap [
+        rml:reference "name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ].
 

@@ -8,104 +8,109 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Phenotype>
-	rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{Toxicity}";
-		rr:class p4-lucat:Phenotype 	
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:phenotypeLabel;
-		rr:objectMap [
-			rml:reference "Toxicity"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:toxicityType;
-		rr:objectMap [
-			rml:reference "TYPE"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation1>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation2>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation3>
-		]
-	].	
+<Phenotype_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Toxicity}";
+        rr:class p4-lucat:Phenotype
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasHPOAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation3_toxicity>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:toxicityType;
+        rr:objectMap [
+        rml:reference "TYPE"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:phenotypeLabel;
+        rr:objectMap [
+        rml:reference "Toxicity"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation1_toxicity>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasHPOAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation2_toxicity>;
+        ]
+    ].
 
-<Annotation1>
-	rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{cui1}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "cui1" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].	
+<Annotation3_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{cui3}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "cui3"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ].
 
-<Annotation2>
-	rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{cui2}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "cui2" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].
+<Annotation1_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{cui1}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "cui1"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ].
 
-<Annotation3>
-	rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{cui3}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "cui3" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].	
+<Annotation2_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{cui2}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "cui2"
+        ]
+    ].
+

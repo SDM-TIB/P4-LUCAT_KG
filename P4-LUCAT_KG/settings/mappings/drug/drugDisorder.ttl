@@ -8,31 +8,31 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugDisorderInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/drugs_indications.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_name}";
-		rr:class p4-lucat:DrugDisorderInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{DrugId}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/{indication_name}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/DrugBank"
-		]
-	].
-		
+<DrugDisorderInteraction_drugDisorder>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugs_indications.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_name}";
+        rr:class p4-lucat:DrugDisorderInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{DrugId}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{indication_name}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/DrugBank"
+        ]
+    ].
 

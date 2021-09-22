@@ -9,90 +9,85 @@
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<#Publication>
-	rml:logicalSource [ rml:source "./data/data/pub/publication_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Publication/{pmid}";
-		rr:class p4-lucat:Publication
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:title;
-		rr:objectMap [ 
-			rml:reference "title" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:pubmedID;
-		rr:objectMap [ 
-			rml:reference "pmid" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:year;
-		rr:objectMap [ 
-			rml:reference "year";
-			rr:datatype xsd:integer; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:journal;
-		rr:objectMap [ 
-			rml:reference "journal" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:author;
-		rr:objectMap [ 
-			rml:reference "authors" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:rankingScore_SJR;
-		rr:objectMap [ 
-			rml:reference "journal_SJR";
-			rr:datatype xsd:float; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:rankingScore_hIndex;
-		rr:objectMap [ 
-			rml:reference "journal_hIndex";
-			rr:datatype xsd:integer; 
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:publicationType;
-		rr:objectMap [ 
-			rml:reference "PublicationTypes" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:authorAffiliation;
-		rr:objectMap [ 
-			rml:reference "Affiliations" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:citedBy;
-		rr:objectMap [ 
-			rml:reference "citedByCount";
-			rr:datatype xsd:float; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:citedByLink;
-		rr:objectMap [ 
-			rml:reference "citedByLink" ;
-			rr:termType rr:IRI; 
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:publication_isRelatedTo_Disease;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Disorder/LungCancer"; 
-		]
-	].	
-
+<Publication_p4-lucat_publication_LC>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/publication_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Publication/{pmid}";
+        rr:class p4-lucat:Publication
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:authorAffiliation;
+        rr:objectMap [
+        rml:reference "Affiliations"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:author;
+        rr:objectMap [
+        rml:reference "authors"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:rankingScore_SJR;
+        rr:objectMap [
+        rml:reference "journal_SJR"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:rankingScore_hIndex;
+        rr:objectMap [
+        rml:reference "journal_hIndex"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:pubmedID;
+        rr:objectMap [
+        rml:reference "pmid"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:journal;
+        rr:objectMap [
+        rml:reference "journal"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:title;
+        rr:objectMap [
+        rml:reference "title"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:publicationType;
+        rr:objectMap [
+        rml:reference "PublicationTypes"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:publication_isRelatedTo_Disease;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:citedBy;
+        rr:objectMap [
+        rml:reference "citedByCount"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:citedByLink;
+        rr:objectMap [
+        rml:reference "citedByLink"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:year;
+        rr:objectMap [
+        rml:reference "year"
+        ]
+    ].
 

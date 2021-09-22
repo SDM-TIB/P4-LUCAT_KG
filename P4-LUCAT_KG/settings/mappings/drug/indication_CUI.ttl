@@ -7,51 +7,54 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
-<Disorder>
-	rml:logicalSource [ rml:source "./data/data/drug/indication_CUI.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{name}";
-		rr:class p4-lucat:Disorder
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:disorderLabel;
-		rr:objectMap [ 
-			rml:reference "name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{Dbpedia_URL}";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/indication_CUI.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{ID}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].
+<Annotation_indication_CUI>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/indication_CUI.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{ID}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "ID"
+        ]
+    ].
+
+<Disorder_indication_CUI>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/indication_CUI.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{name}";
+        rr:class p4-lucat:Disorder
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_indication_CUI>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:disorderLabel;
+        rr:objectMap [
+        rml:reference "name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "{Dbpedia_URL}"
+        ]
+    ].
 

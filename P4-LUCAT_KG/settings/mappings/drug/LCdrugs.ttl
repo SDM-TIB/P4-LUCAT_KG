@@ -8,18 +8,19 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LungCancerDrug>
-	rml:logicalSource [ rml:source "./data/data/drug/LCdrugList.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Drug/{DrugBankID}";
-		rr:class p4-lucat:LungCancerDrug
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugLabel;
-		rr:objectMap [
-			rml:reference "DrugName";
-		]
-	].
-	
+<LungCancerDrug_LCdrugs>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/LCdrugList.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Drug/{DrugBankID}";
+        rr:class p4-lucat:LungCancerDrug
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drugLabel;
+        rr:objectMap [
+        rml:reference "DrugName"
+        ]
+    ].
+

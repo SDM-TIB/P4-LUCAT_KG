@@ -9,75 +9,79 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<OncologicalDrug>
-	rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{Name}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/vocab/OncologicalDrug"
-		]
-	].
+<OncologicalDrug_oncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/OncologicalDrug"
+        ]
+    ].
 
-<Drug>
-	rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{Name}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/vocab/{DrugType}Drug"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdfs:subClassOf;
-		rr:objectMap [
-			rr:parentTriplesMap <OncologicalDrug>
-		];
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugLabel;
-		rr:objectMap [
-			rml:reference "Name";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
-		]
-	].
+<Drug_oncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf;
+        rr:objectMap [
+        rr:parentTriplesMap <OncologicalDrug_oncologicalDrug>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/{DrugType}Drug"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_oncologicalDrug>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drugLabel;
+        rr:objectMap [
+        rml:reference "Name"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel;
-		rr:objectMap [ 
-			rml:reference "Name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/UMLS"
-		]
-	].
+<Annotation_oncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://p4-lucat.eu/entity/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel;
+        rr:objectMap [
+        rml:reference "Name"
+        ]
+    ].
+

@@ -8,66 +8,65 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_hospitalProcesses.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
-		rr:class p4-lucat:LCPatient
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasHospitalProcess;
-		rr:objectMap [ 
-			rr:parentTriplesMap <HospitalProcess>
-		]
-	].
-<HospitalProcess>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_hospitalProcesses.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/HospitalProcess/{hospital_process_id}";
-		rr:class p4-lucat:HospitalProcess;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasIngressDate;
-		rr:objectMap [
-			rml:reference "ingress";
-			rr:datatype xsd:date;
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasGeneratedDocuments;
-		rr:objectMap [ 
-			rml:reference "ndocs";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDischargeDate;
-		rr:objectMap [
-			rml:reference "discharge";
-			rr:datatype xsd:date;
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasProcessId;
-		rr:objectMap [ 
-			rml:reference "pid";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDurationInHospital;
-		rr:objectMap [ 
-			rml:reference "numDays";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasProcessCategory;
-		rr:objectMap [ 
-			rml:reference "category";
-		]
-	].
+<HospitalProcess_patient_hospitalProcesses>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_hospitalProcesses.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/HospitalProcess/{hospital_process_id}";
+        rr:class p4-lucat:HospitalProcess
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProcessId;
+        rr:objectMap [
+        rml:reference "pid"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProcessCategory;
+        rr:objectMap [
+        rml:reference "category"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasGeneratedDocuments;
+        rr:objectMap [
+        rml:reference "ndocs"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDurationInHospital;
+        rr:objectMap [
+        rml:reference "numDays"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDischargeDate;
+        rr:objectMap [
+        rml:reference "discharge"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIngressDate;
+        rr:objectMap [
+        rml:reference "ingress"
+        ]
+    ].
 
+<LCPatient_patient_hospitalProcesses>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_hospitalProcesses.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+        rr:class p4-lucat:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasHospitalProcess;
+        rr:objectMap [
+        rr:parentTriplesMap <HospitalProcess_patient_hospitalProcesses>;
+        ]
+    ].
 
-	

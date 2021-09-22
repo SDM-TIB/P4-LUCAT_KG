@@ -8,44 +8,47 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<AdverseEffect>
-	rml:logicalSource [ rml:source "./data/data/drug/adverse_impact.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}";
-		rr:class p4-lucat:AdverseEvent
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:impact;
-		rr:objectMap [
-			rml:reference "Impact";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].					
+<AdverseEffect_adverseEvernt_impact>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/adverse_impact.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}";
+        rr:class p4-lucat:AdverseEvent
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:impact;
+        rr:objectMap [
+        rml:reference "Impact"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_adverseEvernt_impact>;
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/adverse_impact.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI_AdverseEvent}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_AdverseEvent" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].
+<Annotation_adverseEvernt_impact>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/adverse_impact.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI_AdverseEvent}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI_AdverseEvent"
+        ]
+    ].
+

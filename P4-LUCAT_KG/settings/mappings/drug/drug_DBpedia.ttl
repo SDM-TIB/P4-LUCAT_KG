@@ -8,49 +8,49 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Drug>
-	rml:logicalSource [ rml:source "./data/data/drug/drugs_dbpedia.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Drug/{DrugBankID}";
-		rr:class p4-lucat:Drug
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugLabel;
-		rr:objectMap [
-			rml:reference "DrugName";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugBankID;
-		rr:objectMap [
-			rml:reference "DrugBankID";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{DrugName}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{DBpediaURL}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:externalLink;
-		rr:objectMap [
-			rr:template "https://www.drugbank.ca/drugs/{DrugBankID}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "http://bio2rdf.org/drugbank:{DrugBankID}";
-		]
-	].
-
+<Drug_drug_DBpedia>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugs_dbpedia.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Drug/{DrugBankID}";
+        rr:class p4-lucat:Drug
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "http://bio2rdf.org/drugbank:{DrugBankID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drugLabel;
+        rr:objectMap [
+        rml:reference "DrugName"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{DrugName}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:externalLink;
+        rr:objectMap [
+        rr:template  "https://www.drugbank.ca/drugs/{DrugBankID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drugBankID;
+        rr:objectMap [
+        rml:reference "DrugBankID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "{DBpediaURL}"
+        ]
+    ].
 

@@ -8,29 +8,31 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugDrugInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/NCRD.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
-		rr:class p4-lucat:DrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:affects;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug1}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:isAffected;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug2}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/DrugBank/not_metabolized_by_the_same_CYP_enzyme"
-		]
-	].
+<DrugDrugInteraction_NCRD>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/NCRD.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
+        rr:class p4-lucat:DrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:affects;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug1}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:isAffected;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug2}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/DrugBank/not_metabolized_by_the_same_CYP_enzyme"
+        ]
+    ].
+

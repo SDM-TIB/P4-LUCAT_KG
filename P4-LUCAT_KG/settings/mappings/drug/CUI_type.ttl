@@ -8,29 +8,31 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/CUI_type.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{cui_id}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeID;
-		rr:objectMap [ 
-			rml:reference "type_id" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeLabel;
-		rr:objectMap [ 
-			rml:reference "semantic_type" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticTypeGroup;
-		rr:objectMap [ 
-			rml:reference "semantic_group" 
-		]
-	].
+<Annotation_CUI_type>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/CUI_type.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{cui_id}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:semanticTypeGroup;
+        rr:objectMap [
+        rml:reference "semantic_group"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:semanticTypeID;
+        rr:objectMap [
+        rml:reference "type_id"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:semanticTypeLabel;
+        rr:objectMap [
+        rml:reference "semantic_type"
+        ]
+    ].
+

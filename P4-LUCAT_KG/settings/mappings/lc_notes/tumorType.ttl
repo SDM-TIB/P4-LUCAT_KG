@@ -8,62 +8,65 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<TumorType>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/tumorTypes.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
-		rr:class p4-lucat:TumorType;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:tumorTypeLabel_ENG;
-		rr:objectMap [ 
-			rml:reference "ENG_CUI_Name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:secondTumorTypeLabel;
-		rr:objectMap [ 
-			rml:reference "type" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{DBpediaURL}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
+<Annotation_tumorType>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/tumorTypes.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel_SPA;
+        rr:objectMap [
+        rml:reference "Name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI_ID"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/tumorTypes.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI_ID}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel_SPA;
-		rr:objectMap [ 
-			rml:reference "Name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].	
+<TumorType_tumorType>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/tumorTypes.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
+        rr:class p4-lucat:TumorType
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:secondTumorTypeLabel;
+        rr:objectMap [
+        rml:reference "type"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "{DBpediaURL}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:tumorTypeLabel_ENG;
+        rr:objectMap [
+        rml:reference "ENG_CUI_Name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_tumorType>;
+        ]
+    ].
+

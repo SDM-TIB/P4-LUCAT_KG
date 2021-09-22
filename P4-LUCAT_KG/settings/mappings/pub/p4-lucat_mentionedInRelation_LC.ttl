@@ -9,35 +9,37 @@
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<#MentionedIn>
-	rml:logicalSource [ rml:source "./data/data/pub/mentioned_in_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/MENTIONED_IN/{subject}_MENTIONED_IN_{object}";
-		rr:class p4-lucat:MENTIONED_IN
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:confidence;
-		rr:objectMap [ 
-			rml:reference "confidence" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasAnnotation;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Annotation/{subject}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annotates;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/Publication/{object}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:mentionedInRelation_isRelatedTo_Disease;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Disorder/LungCancer"; 
-		]
-	].	
+<MentionedIn_p4-lucat_mentionedInRelation_LC>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/mentioned_in_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/MENTIONED_IN/{subject}_MENTIONED_IN_{object}";
+        rr:class p4-lucat:MENTIONED_IN
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:confidence;
+        rr:objectMap [
+        rml:reference "confidence"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:mentionedInRelation_isRelatedTo_Disease;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasAnnotation;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Annotation/{subject}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annotates;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Publication/{object}"
+        ]
+    ].
+

@@ -8,40 +8,40 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasPerformanceObservation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <PerformanceObservation>
-		]
-	].
+<PerformanceObservation_patient_performanceStatus>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/PerformanceObservation/{patient_id}_{id}";
+        rr:class p4-lucat:PerformanceObservation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasPerformanceStatus;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/status{value}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDate;
+        rr:objectMap [
+        rml:reference "date"
+        ]
+    ].
 
-<PerformanceObservation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/PerformanceObservation/{patient_id}_{id}";
-		rr:class p4-lucat:PerformanceObservation;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasPerformanceStatus;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/status{value}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDate;
-		rr:objectMap [ 
-			rml:reference "date";
-			rr:datatype xsd:date;
-		]
-	].	
-
+<LCPatient_patient_performanceStatus>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_performanceStatus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasPerformanceObservation;
+        rr:objectMap [
+        rr:parentTriplesMap <PerformanceObservation_patient_performanceStatus>;
+        ]
+    ].
 

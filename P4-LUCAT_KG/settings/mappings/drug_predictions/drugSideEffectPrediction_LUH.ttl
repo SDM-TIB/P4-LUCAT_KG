@@ -8,42 +8,43 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugSideEffectPrediction>
-	rml:logicalSource [ rml:source "./data/data/drug_predictions/DrugPhenotype_prediction_LUH.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugSideEffectPrediction/{Drug}_interactsWith_{Phenotype}";
-		rr:class p4-lucat:DrugSideEffectPrediction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Phenotype/{Phenotype}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:confidence;
-		rr:objectMap [ 
-			rml:reference "Prob" 
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/{SimilaritySource}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:predictionMethod;
-		rr:objectMap [ 
-			rml:reference "Method" 
-		]
-	].	
-		
+<DrugSideEffectPrediction_drugSideEffectPrediction_LUH>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug_predictions/DrugPhenotype_prediction_LUH.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugSideEffectPrediction/{Drug}_interactsWith_{Phenotype}";
+        rr:class p4-lucat:DrugSideEffectPrediction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/{SimilaritySource}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:confidence;
+        rr:objectMap [
+        rml:reference "Prob"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:predictionMethod;
+        rr:objectMap [
+        rml:reference "Method"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Phenotype/{Phenotype}"
+        ]
+    ].
+

@@ -8,83 +8,87 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugTargetInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
-		rr:class p4-lucat:DrugTargetInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Target> 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/DrugBank"
-		]
-	].
-		
-<Target>
-	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Target/{Protein ID}";
-		rr:class p4-lucat:Target
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:targetID;
-		rr:objectMap [
-			rml:reference "Protein ID"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:targetLabel;
-		rr:objectMap [
-			rml:reference "Protein Name"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Protein>
-		]
-	].
+<DrugTargetInteraction_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
+        rr:class p4-lucat:DrugTargetInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:parentTriplesMap <Target_drugTargetInteraction>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/DrugBank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug}"
+        ]
+    ].
 
-<Protein>
-	rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Protein/{Protein ID}";
-		rr:class p4-lucat:Protein
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:proteinID;
-		rr:objectMap [
-			rml:reference "Protein ID"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:proteinLabel;
-		rr:objectMap [
-			rml:reference "Protein Name"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Protein/{Protein ID}"; 
-		]
-	].	
+<Target_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Target/{Protein ID}";
+        rr:class p4-lucat:Target
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:targetLabel;
+        rr:objectMap [
+        rml:reference "Protein Name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:targetID;
+        rr:objectMap [
+        rml:reference "Protein ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:parentTriplesMap <Protein_drugTargetInteraction>;
+        ]
+    ].
+
+<Protein_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Protein/{Protein ID}";
+        rr:class p4-lucat:Protein
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:proteinID;
+        rr:objectMap [
+        rml:reference "Protein ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Protein/{Protein ID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:proteinLabel;
+        rr:objectMap [
+        rml:reference "Protein Name"
+        ]
+    ].
+

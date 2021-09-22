@@ -8,37 +8,40 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_toxicities.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasToxicityObservation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <ToxicityObservation>
-		]
-	].	
-<ToxicityObservation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_toxicities.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/ToxicityObservation/{patient_id}_{toxicity_id}";
-		rr:class p4-lucat:ToxicityObservation;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasToxicity;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/{toxicity_concept}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDate;
-		rr:objectMap [ 
-			rml:reference "date";
-			rr:datatype xsd:date;
-		]
-	].
+<ToxicityObservation_patient_toxicities>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_toxicities.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/ToxicityObservation/{patient_id}_{toxicity_id}";
+        rr:class p4-lucat:ToxicityObservation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDate;
+        rr:objectMap [
+        rml:reference "date"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasToxicity;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{toxicity_concept}"
+        ]
+    ].
+
+<LCPatient_patient_toxicities>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_toxicities.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasToxicityObservation;
+        rr:objectMap [
+        rr:parentTriplesMap <ToxicityObservation_patient_toxicities>;
+        ]
+    ].
+

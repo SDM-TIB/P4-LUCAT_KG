@@ -9,41 +9,43 @@
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<#Annotation>
-	rml:logicalSource [ rml:source "./data/data/pub/annotation_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{id}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "id" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel;
-		rr:objectMap [ 
-			rml:reference "label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:semanticType;
-		rr:objectMap [ 
-			rml:reference "semantic_types" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annotation_isRelatedTo_Disease;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Disorder/LungCancer"; 
-		]
-	].	
+<Annotation_p4-lucat_annotation_LC>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/annotation_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{id}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:semanticType;
+        rr:objectMap [
+        rml:reference "semantic_types"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "id"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annotation_isRelatedTo_Disease;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel;
+        rr:objectMap [
+        rml:reference "label"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ].
+

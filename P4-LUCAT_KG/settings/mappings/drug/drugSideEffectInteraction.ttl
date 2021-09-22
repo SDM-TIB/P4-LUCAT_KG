@@ -8,52 +8,55 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugSideEffectInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugSideEffectInteraction/{DrugID}_{name}";
-		rr:class p4-lucat:DrugSideEffectInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:dse_AvgFrequency;
-		rr:objectMap [
-			rml:reference "AvgFrequency";
-			rr:datatype xsd:float;
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/SIDER"
-		]
-	].	
+<DrugSideEffectInteraction_drugSideEffectInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugSideEffectInteraction/{DrugID}_{name}";
+        rr:class p4-lucat:DrugSideEffectInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:dse_AvgFrequency;
+        rr:objectMap [
+        rml:reference "AvgFrequency"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/SIDER"
+        ]
+    ].
 
-<Drug>
-	rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Drug/{DrugID}"
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drug_isRelatedTo_dse;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
-		]
-	].
+<Drug_drugSideEffectInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Drug/{DrugID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drug_isRelatedTo_dse;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugSideEffectInteraction_drugSideEffectInteraction>;
+        ]
+    ].
 
-<Phenotype>
-	rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Phenotype/{name}"
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
-		]
-	].	
+<Phenotype_drugSideEffectInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drugs_side_effects.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Phenotype/{name}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugSideEffectInteraction_drugSideEffectInteraction>;
+        ]
+    ].
+

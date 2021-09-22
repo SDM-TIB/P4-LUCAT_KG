@@ -8,48 +8,49 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugDrugPrediction>
-	rml:logicalSource [ rml:source "./data/data/drug_predictions/DDI_prediction_LUH.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugDrugPrediction/{Drug1}_interactsWith_{Drug2}";
-		rr:class p4-lucat:DrugDrugPrediction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug1}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug2}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:confidence;
-		rr:objectMap [ 
-			rml:reference "Prob" 
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/{Source}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:predictionMethod;
-		rr:objectMap [ 
-			rml:reference "Method" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:methodAbbreviation;
-		rr:objectMap [ 
-			rml:reference "MethodAbbreviation" 
-		]
-	].			
-		
+<DrugDrugPrediction_drugDrugPrediction_LUH>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug_predictions/DDI_prediction_LUH.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugDrugPrediction/{Drug1}_interactsWith_{Drug2}";
+        rr:class p4-lucat:DrugDrugPrediction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug2}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug1}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:confidence;
+        rr:objectMap [
+        rml:reference "Prob"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:methodAbbreviation;
+        rr:objectMap [
+        rml:reference "MethodAbbreviation"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/{Source}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:predictionMethod;
+        rr:objectMap [
+        rml:reference "Method"
+        ]
+    ].
+

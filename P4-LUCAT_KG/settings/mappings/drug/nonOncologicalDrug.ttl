@@ -9,44 +9,47 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Drug>
-	rml:logicalSource [ rml:source "./data/data/drug/Non-oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{DrugName}";
-		rr:class p4-lucat:NonOncologicalDrug
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:drugLabel;
-		rr:objectMap [
-			rml:reference "DrugName";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
-		]
-	].
+<Annotation_nonOncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/Non-oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://p4-lucat.eu/entity/UMLS"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/Non-oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/UMLS"
-		]
-	].
+<Drug_nonOncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/Non-oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{DrugName}";
+        rr:class p4-lucat:NonOncologicalDrug
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:drugLabel;
+        rr:objectMap [
+        rml:reference "DrugName"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_nonOncologicalDrug>;
+        ]
+    ].
+

@@ -8,29 +8,31 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugEnzymeInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/drug_enzyme_interaction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugEnzymeInteraction/{Drug_ID}_interactsWith_{Enzyme_name}";
-		rr:class p4-lucat:DrugEnzymeInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug_ID}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Enzyme/{Enzyme_name}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/KEGG"
-		]
-	].
+<DrugEnzymeInteraction_drugEnzymeInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/drug_enzyme_interaction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugEnzymeInteraction/{Drug_ID}_interactsWith_{Enzyme_name}";
+        rr:class p4-lucat:DrugEnzymeInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Enzyme/{Enzyme_name}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug_ID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/KEGG"
+        ]
+    ].
+

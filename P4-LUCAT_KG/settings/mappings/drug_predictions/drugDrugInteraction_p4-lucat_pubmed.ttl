@@ -8,35 +8,37 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugDrugPrediction>
-	rml:logicalSource [ rml:source "./data/data/drug_predictions/wp4_pubmed_drugs_drugs_interactions.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugDrugPrediction/{Drug1}_interactsWith_{Drug2}";
-		rr:class p4-lucat:DrugDrugPrediction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor1;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug1}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:interactor2;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{Drug2}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/PubMed"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:predictionMethod;
-		rr:objectMap [ 
-			rr:constant "Literature Predictions" 
-		]
-	].				
+<DrugDrugPrediction_drugDrugInteraction_p4-lucat_pubmed>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug_predictions/wp4_pubmed_drugs_drugs_interactions.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugDrugPrediction/{Drug1}_interactsWith_{Drug2}";
+        rr:class p4-lucat:DrugDrugPrediction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor2;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug2}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interactor1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{Drug1}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/PubMed"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:predictionMethod;
+        rr:objectMap [
+        rr:constant "Literature Predictions"
+        ]
+    ].
+

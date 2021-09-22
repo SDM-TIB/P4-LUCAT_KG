@@ -9,16 +9,18 @@
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<#Publication>
-	rml:logicalSource [ rml:source "./data/data/pub/publication_LC_authors.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Publication/{pmid}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasAuthor;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/{author}" 
-		]
-	].
+<Publication_p4-lucat_publication_author_LC>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/publication_LC_authors.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Publication/{pmid}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasAuthor;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{author}"
+        ]
+    ].
+

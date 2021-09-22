@@ -8,50 +8,53 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<ProcessStatus>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/status.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{English_label}";
-		rr:class p4-lucat:ProcessStatus;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
+<Annotation_ProcessStatus>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/status.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{CUI}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel_SPA;
+        rr:objectMap [
+        rml:reference "Spanish_label"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annLabel;
+        rr:objectMap [
+        rml:reference "English_label"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/status.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{CUI}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel;
-		rr:objectMap [ 
-			rml:reference "English_label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annLabel_SPA;
-		rr:objectMap [ 
-			rml:reference "Spanish_label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].
+<ProcessStatus_ProcessStatus>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/status.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{English_label}";
+        rr:class p4-lucat:ProcessStatus
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_ProcessStatus>;
+        ]
+    ].
+

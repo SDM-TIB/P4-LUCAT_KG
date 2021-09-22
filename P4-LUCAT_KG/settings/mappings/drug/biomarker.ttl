@@ -8,44 +8,47 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Biomarker>
-	rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{biomarker}";
-		rr:class p4-lucat:Biomarker
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:biomarkerLabel;
-		rr:objectMap [ 
-			rml:reference "biomarker" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].
+<Annotation_biomarker>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/Annotation/{biomarker_CUI}";
+        rr:class p4-lucat:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:annID;
+        rr:objectMap [
+        rml:reference "biomarker_CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/Annotation/{biomarker_CUI}";
-		rr:class p4-lucat:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:annID;
-		rr:objectMap [ 
-			rml:reference "biomarker_CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/UMLS"
-		]
-	].
+<Biomarker_biomarker>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{biomarker}";
+        rr:class p4-lucat:Biomarker
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:biomarkerLabel;
+        rr:objectMap [
+        rml:reference "biomarker"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_biomarker>;
+        ]
+    ].
+

@@ -8,16 +8,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<OncologicalTreatmentLine>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine_drugs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/OncologicalTreatmentLine/{patient_id}_{oncologicalTreatmentLine_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatment_has_drug;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/{drug_name}"
-		]
-	].
+<OncologicalTreatmentLine_patient_oncologicalTreatmentLine_drugs>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine_drugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/OncologicalTreatmentLine/{patient_id}_{oncologicalTreatmentLine_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatment_has_drug;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{drug_name}"
+        ]
+    ].
+

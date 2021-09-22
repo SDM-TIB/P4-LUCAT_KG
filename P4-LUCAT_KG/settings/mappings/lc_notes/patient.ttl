@@ -8,597 +8,587 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patients.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{id}";
-		rr:class p4-lucat:LCPatient
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:gender;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{gender}";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:beingIn_hospitalHealthArea;
-		rr:objectMap [
-			rml:reference "unique_area_of_public_health";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:distanceToHospital;
-		rr:objectMap [
-			rml:reference "distanceToHospital";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:radonRiskLevel;
-		rr:objectMap [
-			rml:reference "RandonRisk";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfCigarettesPerYear;
-		rr:objectMap [
-			rml:reference "smoking_CxY";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:isDead;
-		rr:objectMap [
-			rml:reference "dead";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:ageAtDeath;
-		rr:objectMap [
-			rml:reference "age_of_death";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:placeOfDeath;
-		rr:objectMap [
-			rml:reference "deadLocation";
-		]
-	];							
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:smoking;
-		rr:objectMap [
-			rml:reference "smoker";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_biomarker;
-		rr:objectMap [
-			rml:reference "Mutated_biomarker";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_bioEgfr;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{Mutated_egfr}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_bioAlk;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{Mutated_alk}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_bioRos1;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{Mutated_Ros}";
-		]
-	]; 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_chemotherapy;
-		rr:objectMap [
-			rml:reference "chemotherapy";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_tki;
-		rr:objectMap [
-			rml:reference "tki";
-		]
-	]; 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_immunotherapy;
-		rr:objectMap [
-			rml:reference "immunotherapy";
-		]
-	]; 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_antiangiogentic;
-		rr:objectMap [
-			rml:reference "antiangiogenic";
-		]
-	]; 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_radiationtherapy;
-		rr:objectMap [
-			rml:reference "radiationtherapy";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_surgery;
-		rr:objectMap [
-			rml:reference "surgery";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_brainMetastasis;
-		rr:objectMap [
-			rml:reference "brain_metastasis";
-		]
-	];
-		rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalMonths;
-		rr:objectMap [
-			rml:reference "survivalMonths";
-		]
-	];
-		rr:predicateObjectMap [
-		rr:predicate p4-lucat:patientCurrentStatus;
-		rr:objectMap [
-			rml:reference "patientStatus";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosis;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Diagnosis>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:city;
-		rr:objectMap [
-			rml:reference "city";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:startAge;
-		rr:objectMap [
-			rml:reference "startAge";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:deathDate;
-		rr:objectMap [
-			rml:reference "deathDate";
-			rr:datatype xsd:date;		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:commonCauseOfDeath;
-		rr:objectMap [
-			rml:reference "death_cause";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:commonCauseOfDeath;
-		rr:objectMap [
-			rml:reference "other_death_cause";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:firstDocumentDate;
-		rr:objectMap [
-			rml:reference "firstDocumentDate";
-			rr:datatype xsd:date;		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:lastDocumentDate;
-		rr:objectMap [
-			rml:reference "lastDocumentDate";
-			rr:datatype xsd:date;					
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:monthsInTheSystem;
-		rr:objectMap [
-			rml:reference "monthsInTheSystem";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:firstNoteDate;
-		rr:objectMap [
-			rml:reference "firstNoteDate";	
-			rr:datatype xsd:date;				
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:firstReportDate;
-		rr:objectMap [
-			rml:reference "firstReportDate";
-			rr:datatype xsd:date;					
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfNotes;
-		rr:objectMap [
-			rml:reference "numberOfNotes";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfReports;
-		rr:objectMap [
-			rml:reference "numberOfReports";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_familyHistory;
-		rr:objectMap [
-			rml:reference "af";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:isParticipatedIn_clinicalTrial;
-		rr:objectMap [
-			rml:reference "clinical_trial";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasCardioVascularRiskFactor;
-		rr:objectMap [
-			rml:reference "FRCV";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalDays;
-		rr:objectMap [
-			rml:reference "survivalDays";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:lastCancerStage;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/Stage{stage}";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:lastCancerStageCategory;
-		rr:objectMap [
-			rml:reference "categorized_stage";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:stageIVDate;
-		rr:objectMap [
-			rml:reference "stage_IV_date";	
-			rr:datatype xsd:date;				
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:ageCategoryAtDeath;
-		rr:objectMap [
-			rml:reference "categorized_age_at_death";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:ageCategoryAtDeath_over70;
-		rr:objectMap [
-			rml:reference "categorized_age_at_death_over_70";		
-		]
-	];																								
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survival;
-		rr:objectMap [
-			rml:reference "survival";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalTime_MoreOrLessThan12months;
-		rr:objectMap [
-			rml:reference "survival_12m";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfComorbidities_beforedx_jkes;
-		rr:objectMap [
-			rml:reference "numberOfComorbidities_beforedx_jkes";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:comorbidities_beforedx_jkes;
-		rr:objectMap [
-			rml:reference "comorbidities_beforedx_jkes";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfDrugs_beforeDiagnosis;
-		rr:objectMap [
-			rml:reference "numberOfdrugs_beforedx";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:categorizedNumberOfDrugs_beforeDiagnosis;
-		rr:objectMap [
-			rml:reference "categorized_numberOfdrugs_beforedx";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfToxicities;
-		rr:objectMap [
-			rml:reference "numberOftoxicities";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfToxicities_before2018;
-		rr:objectMap [
-			rml:reference "numberOftoxicities_before2018";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfToxicities_after2018;
-		rr:objectMap [
-			rml:reference "numberOftoxicities_after2018";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:categorizedNumberOfToxicities;
-		rr:objectMap [
-			rml:reference "categorized_numberOftoxicities";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:categoricalSurvivalMonths;
-		rr:objectMap [
-			rml:reference "survival_3_months";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_systemicPrognosis;
-		rr:objectMap [
-			rml:reference "has_systemic_progression";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOf_oncological_treatmentLines;
-		rr:objectMap [
-			rml:reference "num_of_onco_lines";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOf_chemotherapy_treatmentLines;
-		rr:objectMap [
-			rml:reference "num_of_qt_lines";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOf_targetedTherapy_treatmentLines;
-		rr:objectMap [
-			rml:reference "num_of_tki_lines";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOf_immunotherapy_treatmentLines;
-		rr:objectMap [
-			rml:reference "num_of_imm_lines";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOf_antiangiogenic_treatmentLines;
-		rr:objectMap [
-			rml:reference "num_of_ant_lines";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentsOrder;
-		rr:objectMap [
-			rml:reference "treatment_order";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_palliativeCare;
-		rr:objectMap [
-			rml:reference "palliative_care";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_palliativeCare_closeToDeath;
-		rr:objectMap [
-			rml:reference "palliative_care_in_1mon_to_death";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_palliativeCare_BeforeDeath;
-		rr:objectMap [
-			rml:reference "palliative_care_before_1mon_to_death";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_overTreatment;
-		rr:objectMap [
-			rml:reference "overtreated";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalDays_afterProgression;
-		rr:objectMap [
-			rml:reference "survivalDays_from_progression";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalMonths_afterProgression;
-		rr:objectMap [
-			rml:reference "survivalMonths_from_progression";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalDays_afterFirstTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalDays_from_1tto";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalMonths_afterFirstTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalMonths_from_1tto";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalDays_afterSecondTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalDays_from_2tto";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalMonths_afterSecondTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalMonths_from_2tto";		
-		]
-	];																									
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalDays_afterThirdTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalDays_from_3tto";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:survivalMonths_afterThirdTreatmentLine;
-		rr:objectMap [
-			rml:reference "survivalMonths_from_3tto";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_deathInHospital_rightAfterTreatment;
-		rr:objectMap [
-			rml:reference "dead_in_hospital_in_1mon_after_tto";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_stageIVprogression;
-		rr:objectMap [
-			rml:reference "has_stage_IV_date";					
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:manualDiagnosisDate;
-		rr:objectMap [
-			rml:reference "manualDiagnosisDate";
-			rr:datatype xsd:date;					
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:Mutated_Sensit;
-		rr:objectMap [
-			rml:reference "Mutated_Sensit";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:Mutated_Resist;
-		rr:objectMap [
-			rml:reference "Mutated_Resist";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:sensit_mutation_date;
-		rr:objectMap [
-			rml:reference "sensit_mutation_date";
-			rr:datatype xsd:date;					
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:resist_mutation_date;
-		rr:objectMap [
-			rml:reference "resist_mutation_date";
-			rr:datatype xsd:date;					
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfDays_afterDiagnosis_beforeSensitMutation;
-		rr:objectMap [
-			rml:reference "time_from_dx_to_sensit_days";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfDays_afterDiagnosis_beforeResistMutation;
-		rr:objectMap [
-			rml:reference "time_from_dx_to_resist_days";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfDays_afterSensitMutation_beforeResistMutation;
-		rr:objectMap [
-			rml:reference "time_from_sensit_to_resist_days";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfMonths_afterDiagnosis_beforeSensitMutation;
-		rr:objectMap [
-			rml:reference "time_from_dx_to_sensit_mon";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfMonth_afterDiagnosis_beforeResistMutation;
-		rr:objectMap [
-			rml:reference "time_from_dx_to_resist_mon";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:numberOfMOnths_afterSensitMutation_beforeResistMutation;
-		rr:objectMap [
-			rml:reference "time_from_sensit_to_resist_mon";		
-		]
-	].
-															
-<Diagnosis>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patients.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}";
-		rr:class p4-lucat:Diagnosis;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisCancerStage;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisCancerStageCategory;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/{categorized_stage_at_dx}";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisDate;
-		rr:objectMap [
-			rml:reference "manualDiagnosisDate";
-			rr:datatype xsd:date		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisAge;
-		rr:objectMap [ 
-			rml:reference "age_of_diagnosis";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisAgeCategory;
-		rr:objectMap [
-			rml:reference "categorized_age_at_dx";		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisAgeCategory_over70;
-		rr:objectMap [
-			rml:reference "categorized_age_at_dx_over_70";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasDiagnosisPerformanceStatus;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/entity/status{ps_at_diagnosis}";
-		]
-	].
+<Diagnosis_patient>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patients.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}";
+        rr:class p4-lucat:Diagnosis
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisCancerStageCategory;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{categorized_stage_at_dx}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisDate;
+        rr:objectMap [
+        rml:reference "manualDiagnosisDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisCancerStage;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/Stage{stageAtDiagnosis}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisAge;
+        rr:objectMap [
+        rml:reference "age_of_diagnosis"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisAgeCategory_over70;
+        rr:objectMap [
+        rml:reference "categorized_age_at_dx_over_70"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisPerformanceStatus;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/status{ps_at_diagnosis}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosisAgeCategory;
+        rr:objectMap [
+        rml:reference "categorized_age_at_dx"
+        ]
+    ].
 
+<LCPatient_patient>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patients.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{id}";
+        rr:class p4-lucat:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:isDead;
+        rr:objectMap [
+        rml:reference "dead"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:ageCategoryAtDeath_over70;
+        rr:objectMap [
+        rml:reference "categorized_age_at_death_over_70"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalDays_afterSecondTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalDays_from_2tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_antiangiogentic;
+        rr:objectMap [
+        rml:reference "antiangiogenic"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:ageCategoryAtDeath;
+        rr:objectMap [
+        rml:reference "categorized_age_at_death"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfDrugs_beforeDiagnosis;
+        rr:objectMap [
+        rml:reference "numberOfdrugs_beforedx"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:monthsInTheSystem;
+        rr:objectMap [
+        rml:reference "monthsInTheSystem"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalMonths_afterProgression;
+        rr:objectMap [
+        rml:reference "survivalMonths_from_progression"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:patientCurrentStatus;
+        rr:objectMap [
+        rml:reference "patientStatus"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_bioAlk;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Mutated_alk}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOf_oncological_treatmentLines;
+        rr:objectMap [
+        rml:reference "num_of_onco_lines"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survival;
+        rr:objectMap [
+        rml:reference "survival"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:Mutated_Sensit;
+        rr:objectMap [
+        rml:reference "Mutated_Sensit"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCardioVascularRiskFactor;
+        rr:objectMap [
+        rml:reference "FRCV"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_palliativeCare_closeToDeath;
+        rr:objectMap [
+        rml:reference "palliative_care_in_1mon_to_death"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:resist_mutation_date;
+        rr:objectMap [
+        rml:reference "resist_mutation_date"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_immunotherapy;
+        rr:objectMap [
+        rml:reference "immunotherapy"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:firstDocumentDate;
+        rr:objectMap [
+        rml:reference "firstDocumentDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:beingIn_hospitalHealthArea;
+        rr:objectMap [
+        rml:reference "unique_area_of_public_health"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalTime_MoreOrLessThan12months;
+        rr:objectMap [
+        rml:reference "survival_12m"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalMonths;
+        rr:objectMap [
+        rml:reference "survivalMonths"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:lastCancerStageCategory;
+        rr:objectMap [
+        rml:reference "categorized_stage"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfDays_afterSensitMutation_beforeResistMutation;
+        rr:objectMap [
+        rml:reference "time_from_sensit_to_resist_days"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:startAge;
+        rr:objectMap [
+        rml:reference "startAge"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalDays_afterThirdTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalDays_from_3tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:Mutated_Resist;
+        rr:objectMap [
+        rml:reference "Mutated_Resist"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:distanceToHospital;
+        rr:objectMap [
+        rml:reference "distanceToHospital"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfDays_afterDiagnosis_beforeSensitMutation;
+        rr:objectMap [
+        rml:reference "time_from_dx_to_sensit_days"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfToxicities_before2018;
+        rr:objectMap [
+        rml:reference "numberOftoxicities_before2018"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:categoricalSurvivalMonths;
+        rr:objectMap [
+        rml:reference "survival_3_months"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:categorizedNumberOfToxicities;
+        rr:objectMap [
+        rml:reference "categorized_numberOftoxicities"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_systemicPrognosis;
+        rr:objectMap [
+        rml:reference "has_systemic_progression"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOf_targetedTherapy_treatmentLines;
+        rr:objectMap [
+        rml:reference "num_of_tki_lines"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:comorbidities_beforedx_jkes;
+        rr:objectMap [
+        rml:reference "comorbidities_beforedx_jkes"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalDays_afterProgression;
+        rr:objectMap [
+        rml:reference "survivalDays_from_progression"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_surgery;
+        rr:objectMap [
+        rml:reference "surgery"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_bioRos1;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Mutated_Ros}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:lastDocumentDate;
+        rr:objectMap [
+        rml:reference "lastDocumentDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalDays;
+        rr:objectMap [
+        rml:reference "survivalDays"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:commonCauseOfDeath;
+        rr:objectMap [
+        rml:reference "other_death_cause"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_deathInHospital_rightAfterTreatment;
+        rr:objectMap [
+        rml:reference "dead_in_hospital_in_1mon_after_tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalMonths_afterThirdTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalMonths_from_3tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfMonth_afterDiagnosis_beforeResistMutation;
+        rr:objectMap [
+        rml:reference "time_from_dx_to_resist_mon"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_biomarker;
+        rr:objectMap [
+        rml:reference "Mutated_biomarker"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:sensit_mutation_date;
+        rr:objectMap [
+        rml:reference "sensit_mutation_date"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_chemotherapy;
+        rr:objectMap [
+        rml:reference "chemotherapy"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:stageIVDate;
+        rr:objectMap [
+        rml:reference "stage_IV_date"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:commonCauseOfDeath;
+        rr:objectMap [
+        rml:reference "death_cause"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfReports;
+        rr:objectMap [
+        rml:reference "numberOfReports"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfCigarettesPerYear;
+        rr:objectMap [
+        rml:reference "smoking_CxY"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:deathDate;
+        rr:objectMap [
+        rml:reference "deathDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_brainMetastasis;
+        rr:objectMap [
+        rml:reference "brain_metastasis"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfComorbidities_beforedx_jkes;
+        rr:objectMap [
+        rml:reference "numberOfComorbidities_beforedx_jkes"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:categorizedNumberOfDrugs_beforeDiagnosis;
+        rr:objectMap [
+        rml:reference "categorized_numberOfdrugs_beforedx"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:radonRiskLevel;
+        rr:objectMap [
+        rml:reference "RandonRisk"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_radiationtherapy;
+        rr:objectMap [
+        rml:reference "radiationtherapy"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalDays_afterFirstTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalDays_from_1tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfToxicities;
+        rr:objectMap [
+        rml:reference "numberOftoxicities"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:ageAtDeath;
+        rr:objectMap [
+        rml:reference "age_of_death"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_tki;
+        rr:objectMap [
+        rml:reference "tki"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_palliativeCare;
+        rr:objectMap [
+        rml:reference "palliative_care"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_bioEgfr;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{Mutated_egfr}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalMonths_afterFirstTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalMonths_from_1tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfMOnths_afterSensitMutation_beforeResistMutation;
+        rr:objectMap [
+        rml:reference "time_from_sensit_to_resist_mon"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:manualDiagnosisDate;
+        rr:objectMap [
+        rml:reference "manualDiagnosisDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:placeOfDeath;
+        rr:objectMap [
+        rml:reference "deadLocation"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfDays_afterDiagnosis_beforeResistMutation;
+        rr:objectMap [
+        rml:reference "time_from_dx_to_resist_days"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOf_antiangiogenic_treatmentLines;
+        rr:objectMap [
+        rml:reference "num_of_ant_lines"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfMonths_afterDiagnosis_beforeSensitMutation;
+        rr:objectMap [
+        rml:reference "time_from_dx_to_sensit_mon"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:smoking;
+        rr:objectMap [
+        rml:reference "smoker"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDiagnosis;
+        rr:objectMap [
+        rr:parentTriplesMap <Diagnosis_patient>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_palliativeCare_BeforeDeath;
+        rr:objectMap [
+        rml:reference "palliative_care_before_1mon_to_death"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentsOrder;
+        rr:objectMap [
+        rml:reference "treatment_order"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:firstNoteDate;
+        rr:objectMap [
+        rml:reference "firstNoteDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_overTreatment;
+        rr:objectMap [
+        rml:reference "overtreated"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:isParticipatedIn_clinicalTrial;
+        rr:objectMap [
+        rml:reference "clinical_trial"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOf_chemotherapy_treatmentLines;
+        rr:objectMap [
+        rml:reference "num_of_qt_lines"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOf_immunotherapy_treatmentLines;
+        rr:objectMap [
+        rml:reference "num_of_imm_lines"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_stageIVprogression;
+        rr:objectMap [
+        rml:reference "has_stage_IV_date"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfToxicities_after2018;
+        rr:objectMap [
+        rml:reference "numberOftoxicities_after2018"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:numberOfNotes;
+        rr:objectMap [
+        rml:reference "numberOfNotes"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:survivalMonths_afterSecondTreatmentLine;
+        rr:objectMap [
+        rml:reference "survivalMonths_from_2tto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:firstReportDate;
+        rr:objectMap [
+        rml:reference "firstReportDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:city;
+        rr:objectMap [
+        rml:reference "city"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:gender;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{gender}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:lastCancerStage;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/Stage{stage}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_familyHistory;
+        rr:objectMap [
+        rml:reference "af"
+        ]
+    ].
 
-	

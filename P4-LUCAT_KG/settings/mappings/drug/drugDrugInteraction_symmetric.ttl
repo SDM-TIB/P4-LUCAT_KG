@@ -8,51 +8,53 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<SymmetricDDI>
-	rml:logicalSource [ rml:source "./data/data/drug/Symmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/SymmetricDrugDrugInteraction/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
-		rr:class p4-lucat:SymmetricDrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdfs:subClassOf;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugDrugInteraction>
-		];
-	].	
+<SymmetricDDI_drugDrugInteraction_symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/Symmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/SymmetricDrugDrugInteraction/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
+        rr:class p4-lucat:SymmetricDrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugDrugInteraction_drugDrugInteraction_symmetric>;
+        ]
+    ].
 
-<DrugDrugInteraction>
-	rml:logicalSource [ rml:source "./data/data/drug/Symmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
-		rr:class p4-lucat:DrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:precipitant_drug;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{PrecipitantDrugID}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:object_drug;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/Drug/{ObjectDrugID}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:effect;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:provenance;
-		rr:objectMap [
-			rr:template "http://p4-lucat.eu/SourceName/DrugBank"
-		]
-	].
+<DrugDrugInteraction_drugDrugInteraction_symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/drug/Symmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
+        rr:class p4-lucat:DrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:object_drug;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{ObjectDrugID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:effect;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:precipitant_drug;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/Drug/{PrecipitantDrugID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:provenance;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/DrugBank"
+        ]
+    ].
 

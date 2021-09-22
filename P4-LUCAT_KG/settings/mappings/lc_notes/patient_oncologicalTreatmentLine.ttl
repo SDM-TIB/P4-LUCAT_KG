@@ -8,149 +8,148 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasOncologicalTreatmentLine;
-		rr:objectMap [ 
-			rr:parentTriplesMap <OncologicalTreatmentLine>
-		]
-	].
-<OncologicalTreatmentLine>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/OncologicalTreatmentLine/{patient_id}_{id}";
-		rr:class p4-lucat:OncologicalTreatmentLine;
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentType;
-		rr:objectMap [
-			rml:reference "type";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentLineNumber;
-		rr:objectMap [
-			rml:reference "lineNumber";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentInitDate;
-		rr:objectMap [
-			rml:reference "initDate";
-			rr:datatype xsd:date;			
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentFinishDate;
-		rr:objectMap [
-			rml:reference "finishDate";
-			rr:datatype xsd:date;
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:treatmentDurationMonths;
-		rr:objectMap [
-			rml:reference "durationMonths";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_toxicity;
-		rr:objectMap [
-			rml:reference "toxicities";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_generalToxicity;
-		rr:objectMap [
-			rml:reference "toxGeneral";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_gastrointestinalToxicity;
-		rr:objectMap [
-			rml:reference "toxGastro";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_endocrinaToxicity;
-		rr:objectMap [
-			rml:reference "toxEndo";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_cutaneaToxicity;
-		rr:objectMap [
-			rml:reference "toxCut";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_pneumologicalToxicity;
-		rr:objectMap [
-			rml:reference "toxPneu";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_analyticalToxicity;
-		rr:objectMap [
-			rml:reference "toxAnaly";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_neurologicalToxicity;
-		rr:objectMap [
-			rml:reference "toxNeuro";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_astheniaToxicity;
-		rr:objectMap [
-			rml:reference "toxAst";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_allergyToxicity;
-		rr:objectMap [
-			rml:reference "toxAlerg";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_liverToxicity;
-		rr:objectMap [
-			rml:reference "toxAnalyHep";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_kidneyToxicity;
-		rr:objectMap [
-			rml:reference "toxRen";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_otolaryngologyToxicity;
-		rr:objectMap [
-			rml:reference "toxOto";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_cardiologicalToxicity;
-		rr:objectMap [
-			rml:reference "toxCard";
-		]
-	];								
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:existenceOf_brainMetastasis_inOncologicalTreatmentLine;
-		rr:objectMap [
-			rml:reference "brainMetastasis";
-		]
-	].													
+<OncologicalTreatmentLine_patient_oncologicalTreatmentLine>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/OncologicalTreatmentLine/{patient_id}_{id}";
+        rr:class p4-lucat:OncologicalTreatmentLine
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_cardiologicalToxicity;
+        rr:objectMap [
+        rml:reference "toxCard"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentDurationMonths;
+        rr:objectMap [
+        rml:reference "durationMonths"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_allergyToxicity;
+        rr:objectMap [
+        rml:reference "toxAlerg"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_analyticalToxicity;
+        rr:objectMap [
+        rml:reference "toxAnaly"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_neurologicalToxicity;
+        rr:objectMap [
+        rml:reference "toxNeuro"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentFinishDate;
+        rr:objectMap [
+        rml:reference "finishDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_pneumologicalToxicity;
+        rr:objectMap [
+        rml:reference "toxPneu"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_otolaryngologyToxicity;
+        rr:objectMap [
+        rml:reference "toxOto"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentType;
+        rr:objectMap [
+        rml:reference "type"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_kidneyToxicity;
+        rr:objectMap [
+        rml:reference "toxRen"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentLineNumber;
+        rr:objectMap [
+        rml:reference "lineNumber"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_gastrointestinalToxicity;
+        rr:objectMap [
+        rml:reference "toxGastro"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_liverToxicity;
+        rr:objectMap [
+        rml:reference "toxAnalyHep"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:treatmentInitDate;
+        rr:objectMap [
+        rml:reference "initDate"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_endocrinaToxicity;
+        rr:objectMap [
+        rml:reference "toxEndo"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_generalToxicity;
+        rr:objectMap [
+        rml:reference "toxGeneral"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_toxicity;
+        rr:objectMap [
+        rml:reference "toxicities"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_brainMetastasis_inOncologicalTreatmentLine;
+        rr:objectMap [
+        rml:reference "brainMetastasis"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_cutaneaToxicity;
+        rr:objectMap [
+        rml:reference "toxCut"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:existenceOf_astheniaToxicity;
+        rr:objectMap [
+        rml:reference "toxAst"
+        ]
+    ].
 
+<LCPatient_patient_oncologicalTreatmentLine>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOncologicalTreatmentLine;
+        rr:objectMap [
+        rr:parentTriplesMap <OncologicalTreatmentLine_patient_oncologicalTreatmentLine>;
+        ]
+    ].
 
-	

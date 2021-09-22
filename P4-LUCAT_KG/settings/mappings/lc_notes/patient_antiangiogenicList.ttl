@@ -8,16 +8,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "./data/data/lc_notes/patient_antiangiogenicList.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasAntiangiogenic;
-		rr:objectMap [ 
-			rr:template "http://p4-lucat.eu/entity/{drugName}"
-		]
-	].
+<LCPatient_patient_antiangiogenicList>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_antiangiogenicList.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasAntiangiogenic;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{drugName}"
+        ]
+    ].
+
