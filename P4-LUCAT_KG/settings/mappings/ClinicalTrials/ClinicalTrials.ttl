@@ -215,6 +215,36 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasEGFR;
+        rr:objectMap [ 
+            rr:parentTriplesMap <EGFR_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasALK;
+        rr:objectMap [ 
+            rr:parentTriplesMap <ALK_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasROS;
+        rr:objectMap [ 
+            rr:parentTriplesMap <ROS_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:designPrimaryPurpose;
         rr:objectMap [
         rml:reference "DesignPrimaryPurpose"
@@ -287,6 +317,36 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{surgery}";
         rr:class p4-lucat:Surgery
+    ].
+
+<EGFR_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/egfr.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{egfr}";
+        rr:class p4-lucat:EGFR
+    ].
+
+<ALK_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/alk.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{alk}";
+        rr:class p4-lucat:ALK
+    ].
+
+<ROS_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/ros.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ros}";
+        rr:class p4-lucat:ROS
     ].
 
 <PerformanceObservation_ClinicalTrials>
