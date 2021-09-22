@@ -35,16 +35,6 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasKeyword;
-        rr:objectMap [
-        	rr:parentTriplesMap <KeywordAnnotationBioFALCON_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Keyword";
-            rr:parent "ID_Keyword";
-        ]
-        ]
-    ];
-    rr:predicateObjectMap [
         rr:predicate p4-lucat:maxAge;
         rr:objectMap [
         rml:reference "MaximumAge"
@@ -70,36 +60,6 @@
         rr:predicate p4-lucat:clinicalTrialId;
         rr:objectMap [
         rml:reference "NCTId"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCondition;
-        rr:objectMap [
-        	rr:parentTriplesMap <ConditionAnnotationSciSpacy_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Condition";
-            rr:parent "ID_Condition";
-        ]
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIntervention;
-        rr:objectMap [
-        	rr:parentTriplesMap <InterventionAnnotationBioFALCON_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Intervention";
-            rr:parent "ID_Intervention";
-        ]
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIntervention;
-        rr:objectMap [
-        	rr:parentTriplesMap <InterventionAnnotationSciSpacy_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Intervention";
-            rr:parent "ID_Intervention";
-        ]
         ]
     ];
     rr:predicateObjectMap [
@@ -134,16 +94,6 @@
         rr:predicate p4-lucat:clinicalTrialTitle;
         rr:objectMap [
         rml:reference "BriefTitle"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasKeyword;
-        rr:objectMap [
-        	rr:parentTriplesMap <KeywordAnnotationSciSpacy_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Keyword";
-            rr:parent "ID_Keyword";
-        ]
         ]
     ];
     rr:predicateObjectMap [
@@ -192,16 +142,6 @@
         rr:predicate p4-lucat:briefSummary;
         rr:objectMap [
         rml:reference "BriefSummary"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCondition;
-        rr:objectMap [
-        	rr:parentTriplesMap <ConditionAnnotationBioFALCON_ClinicalTrials>;
-        rr:joinCondition [
-            rr:child "ID_Condition";
-            rr:parent "ID_Condition";
-        ]
         ]
     ];
     rr:predicateObjectMap [
@@ -285,6 +225,26 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
         rr:class p4-lucat:Keyword
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasKeyword;
+        rr:objectMap [
+        	rr:parentTriplesMap <KeywordAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Keyword";
+            rr:parent "ID_Keyword";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasKeyword;
+        rr:objectMap [
+        	rr:parentTriplesMap <KeywordAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Keyword";
+            rr:parent "ID_Keyword";
+        ]
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
@@ -379,6 +339,26 @@
         rr:class p4-lucat:Intervention
     ];
     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIntervention;
+        rr:objectMap [
+        	rr:parentTriplesMap <InterventionAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Intervention";
+            rr:parent "ID_Intervention";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIntervention;
+        rr:objectMap [
+        	rr:parentTriplesMap <InterventionAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Intervention";
+            rr:parent "ID_Intervention";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate rdfs:label;
         rr:objectMap [
         rml:reference "InterventionName"
@@ -447,6 +427,26 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
         rr:class p4-lucat:Condition
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCondition;
+        rr:objectMap [
+        	rr:parentTriplesMap <ConditionAnnotationBioFALCON_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Condition";
+            rr:parent "ID_Condition";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCondition;
+        rr:objectMap [
+        	rr:parentTriplesMap <ConditionAnnotationSciSpacy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "ID_Condition";
+            rr:parent "ID_Condition";
+        ]
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
