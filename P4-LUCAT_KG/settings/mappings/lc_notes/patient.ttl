@@ -90,7 +90,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasAntiangiogentic;
         rr:objectMap [
-        rml:reference "antiangiogenic"
+        rr:template  "http://p4-lucat.eu/entity/{antiangiogenic}"
         ]
     ];
     rr:predicateObjectMap [
@@ -168,7 +168,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasImmunotherapy;
         rr:objectMap [
-        rml:reference "immunotherapy"
+        rr:template  "http://p4-lucat.eu/entity/{immunotherapy}"
         ]
     ];
     rr:predicateObjectMap [
@@ -282,7 +282,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasSurgery;
         rr:objectMap [
-        rml:reference "surgery"
+        rr:template  "http://p4-lucat.eu/entity/{surgery}"
         ]
     ];
     rr:predicateObjectMap [
@@ -342,7 +342,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasChemotherapy;
         rr:objectMap [
-        rml:reference "chemotherapy"
+        rr:template  "http://p4-lucat.eu/entity/{chemotherapy}"
         ]
     ];
     rr:predicateObjectMap [
@@ -402,7 +402,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRadiotherapy;
         rr:objectMap [
-        rml:reference "radiationtherapy"
+        rr:template  "http://p4-lucat.eu/entity/{radiationtherapy}"
         ]
     ];
     rr:predicateObjectMap [
@@ -426,7 +426,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTki;
         rr:objectMap [
-        rml:reference "tki"
+        rr:template  "http://p4-lucat.eu/entity/{tki}"
         ]
     ];
     rr:predicateObjectMap [
