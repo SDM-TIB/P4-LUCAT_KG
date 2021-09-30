@@ -191,6 +191,52 @@
         ]
     ].
 
+<ClinicalTrial_ClinicalTrialIntervention>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/InterventionAnnotation/ClinicalTrialIntervention.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIntervention;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/Intervention/{InterID}"
+        ]
+        ].
+
+<ClinicalTrial_ClinicalTrialConditions>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/ConditionAnnotation/ClinicalTrialConditions.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCondition;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/Condition/{CondID}"
+        ]
+        ].
+
+
+<ClinicalTrial_ClinicalTrialKeywords>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/KeywordAnnotation/ClinicalTrialKeywords.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasKeyword;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/Keyword/{KeyID}"
+        ]
+        ].
+
 <InterventionAnnotationBioFALCON_ClinicalTrials>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/clinical_trials/InterventionAnnotation/Intervention_Annotations_BioFALCON.csv";
@@ -227,7 +273,7 @@
         rr:class p4-lucat:Keyword
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasKeyword;
+        rr:predicate p4-lucat:hasKeywordAnn;
         rr:objectMap [
         	rr:parentTriplesMap <KeywordAnnotationBioFALCON_ClinicalTrials>;
         rr:joinCondition [
@@ -237,7 +283,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasKeyword;
+        rr:predicate p4-lucat:hasKeywordAnn;
         rr:objectMap [
         	rr:parentTriplesMap <KeywordAnnotationSciSpacy_ClinicalTrials>;
         rr:joinCondition [
@@ -329,6 +375,7 @@
         rr:class p4-lucat:Radiotherapy
     ].
 
+
 <Intervention_ClinicalTrials>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/clinical_trials/intervention.csv";
@@ -339,7 +386,7 @@
         rr:class p4-lucat:Intervention
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIntervention;
+        rr:predicate p4-lucat:hasInterventionAnn;
         rr:objectMap [
         	rr:parentTriplesMap <InterventionAnnotationBioFALCON_ClinicalTrials>;
         rr:joinCondition [
@@ -349,7 +396,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIntervention;
+        rr:predicate p4-lucat:hasInterventionAnn;
         rr:objectMap [
         	rr:parentTriplesMap <InterventionAnnotationSciSpacy_ClinicalTrials>;
         rr:joinCondition [
@@ -429,7 +476,7 @@
         rr:class p4-lucat:Condition
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCondition;
+        rr:predicate p4-lucat:hasConditionAnn;
         rr:objectMap [
         	rr:parentTriplesMap <ConditionAnnotationBioFALCON_ClinicalTrials>;
         rr:joinCondition [
@@ -439,7 +486,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCondition;
+        rr:predicate p4-lucat:hasConditionAnn;
         rr:objectMap [
         	rr:parentTriplesMap <ConditionAnnotationSciSpacy_ClinicalTrials>;
         rr:joinCondition [
