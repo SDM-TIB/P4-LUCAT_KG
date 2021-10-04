@@ -5,6 +5,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+
 <ClinicalTrial_ClinicalTrials>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial.csv";
