@@ -243,13 +243,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{CUI}";
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:annInterventionLabel;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:NLPtool;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
         ]
     ].
 
@@ -305,13 +311,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{CUI}";
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:annKeywordLabel;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:NLPtool;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
         ]
     ].
 
@@ -418,7 +430,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{CUI}";
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
@@ -432,23 +444,14 @@
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Score}"
         ]
-    ].
-
-<NLPTool_ClinicalTrials>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/clinical_trials/NLPTool.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/NLPTool/{ID_NLPTool}";
-        rr:class p4-lucat:NLPTool
     ];
     rr:predicateObjectMap [
-        rr:predicate prov:sourceName;
+        rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rml:reference "Name"
+        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
         ]
     ].
+
 
 <ConditionAnnotationBioFALCON_ClinicalTrials>
     a rr:TriplesMap;
@@ -456,13 +459,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{CUI}";
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:annConditionLabel;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:NLPtool;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
         ]
     ].
 
@@ -508,7 +517,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{CUI}";
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
@@ -521,6 +530,12 @@
         rr:predicate rdfs:label;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Label}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:NLPtool;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
         ]
     ].
 
@@ -550,7 +565,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{ID_NLPTool}_{CUI}";
+        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{CUI}";
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
@@ -563,6 +578,12 @@
         rr:predicate p4-lucat:annConditionScore;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Score}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:NLPtool;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
         ]
     ].
 
