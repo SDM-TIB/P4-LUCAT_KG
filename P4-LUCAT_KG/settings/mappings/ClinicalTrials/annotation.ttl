@@ -20,7 +20,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-        rml:reference "Wikidata_type"
+        rr:template "{Wikidata_type}";
         ]
     ];
     rr:predicateObjectMap [
@@ -47,7 +47,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-        rml:reference "DBpedia_type"
+        rr:template "{DBpedia_type}";
         ]
     ].
 
