@@ -8,6 +8,22 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
+<ScopeOfService_ScopeOfService>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/scope.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{English_label}";
+        rr:class p4-lucat:ScopeOfService
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_ScopeOfService>;
+        ]
+    ].
+
 <Annotation_ScopeOfService>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/lc_notes/scope.csv";
@@ -42,19 +58,4 @@
         ]
     ].
 
-<ScopeOfService_ScopeOfService>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/lc_notes/scope.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{English_label}";
-        rr:class p4-lucat:ScopeOfService
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
-        rr:objectMap [
-        rr:parentTriplesMap <Annotation_ScopeOfService>;
-        ]
-    ].
 
