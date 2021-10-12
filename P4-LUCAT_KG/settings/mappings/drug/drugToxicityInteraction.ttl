@@ -15,6 +15,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/Phenotype/{toxicity_Label}";
+        rr:class p4-lucat:Phenotype
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
@@ -30,6 +31,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/Drug/{drug_id}";
+        rr:class p4-lucat:Drug
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:drug_isRelatedTo_dse;

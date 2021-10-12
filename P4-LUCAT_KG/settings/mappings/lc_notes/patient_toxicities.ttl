@@ -37,6 +37,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasToxicityObservation;
@@ -44,4 +45,5 @@
         rr:parentTriplesMap <ToxicityObservation_patient_toxicities>;
         ]
     ].
+
 

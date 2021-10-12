@@ -15,11 +15,26 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasImmunotherapy;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{drugName}"
+        rr:parentTriplesMap <Drug_patient_ImmunotherapyList>;
         ]
     ].
 
+<Drug_patient_ImmunotherapyList>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_immunotherapyList.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{drugName}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/Drug"
+        ]
+    ].

@@ -15,11 +15,26 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasComorbidity;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{disorderName}"
+        rr:parentTriplesMap <Comorbidity_patient_comorbidities>;
         ]
     ].
 
+<Comorbidity_patient_comorbidities>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_Comorbidities.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{disorderName}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/Disorder"
+        ]
+    ].

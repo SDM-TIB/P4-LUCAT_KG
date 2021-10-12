@@ -15,11 +15,27 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/LCPatient/{patient_id}";
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOncologicalSurgery;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{concept}"
+        rr:parentTriplesMap <Drug_patient_tkiList>;
+        ]
+    ].
+
+<Surgery_patient_oncologicalSurgeries>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/lc_notes/patient_oncologicalSurgeries.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{concept}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/vocab/OncologicalSurgery"
         ]
     ].
 
