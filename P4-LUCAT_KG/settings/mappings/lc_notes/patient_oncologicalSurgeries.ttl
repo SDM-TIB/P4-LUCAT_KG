@@ -20,7 +20,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOncologicalSurgery;
         rr:objectMap [
-        rr:parentTriplesMap <Drug_patient_tkiList>;
+        rr:parentTriplesMap <Surgery_patient_oncologicalSurgeries>;
         ]
     ].
 
