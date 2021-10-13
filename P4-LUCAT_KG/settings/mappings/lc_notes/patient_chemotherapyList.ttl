@@ -20,7 +20,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasChemotherapy;
         rr:objectMap [
-        rr:parentTriplesMap <Drug_patient_tkiList>;
+        rr:parentTriplesMap <Drug_patient_chemotherapyList>;
         ]
     ].
 
