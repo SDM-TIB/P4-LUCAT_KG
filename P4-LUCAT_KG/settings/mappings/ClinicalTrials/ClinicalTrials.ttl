@@ -247,7 +247,7 @@
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -446,7 +446,7 @@
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -481,7 +481,7 @@
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -545,7 +545,7 @@
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -599,7 +599,7 @@
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
