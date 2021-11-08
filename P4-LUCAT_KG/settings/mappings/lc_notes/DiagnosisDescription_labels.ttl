@@ -18,7 +18,7 @@
         rr:class p4-lucat:DiagnosisDescription
     ];
     rr:predicateObjectMap [
-        rr:predicate rdfs:label;
+        rr:predicate p4-lucat:label;
         rr:objectMap [
         rml:reference "DESC_DIAGNOST_English"
         ]
