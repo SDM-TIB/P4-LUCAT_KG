@@ -9,15 +9,15 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<Patient_Comorbidity>
+<Patient_Relapse>
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(medicalrecord_comorbidity, ' ', '') as medicalrecord, ID_comorbidity, otrascomor  FROM Patient_comorbidities""";
+      rml:query """SELECT distinct REPLACE(medicalrecord_relapse, ' ', '') as medicalrecord, relapse_position,  recaida, fecrec, tipoprog, terapiar FROM Cancer_relapse""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_comorbidity}";
-        rr:class p4-lucat:Patient_Comorbidity
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
+        rr:class p4-lucat:Patient_Relapse
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
@@ -26,15 +26,34 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIDComorbidity;
+    rr:predicate p4-lucat:hasRelapsePosition;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{ID_comorbidity}"
+      rr:template "http://p4-lucat.eu/entity/{relapse_position}"
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherComorbidity;
+        rr:predicate p4-lucat:hasTypeRelapse;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otrascomor}
+        rr:template "http://p4-lucat.eu/entity/{recaida}
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDateRelapse;
+        rr:objectMap [
+        rml:reference "fecrec";
+        rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTypeProgression;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{tipoprog}
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTypeTherapy;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{terapiar}
         ]
     ].
 

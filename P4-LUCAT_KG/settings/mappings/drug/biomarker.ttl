@@ -7,48 +7,33 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@base <http://p4-lucat.eu/vocab/> .
 
 <Annotation_biomarker>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{biomarker_CUI}";
-        rr:class p4-lucat:Annotation
+    rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT distinct ID_marker, marmolre, marmolre_CUI  FROM Molecular_markers""";
     ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:annID;
-        rr:objectMap [
-        rml:reference "biomarker_CUI"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:provenance;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
-        ]
-    ].
-
-<Biomarker_biomarker>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/biomarkers.csv";
-                rml:referenceFormulation ql:CSV
-                ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{biomarker}";
+        rr:template "http://p4-lucat.eu/entity/{ID_marker}_Biomarker";
         rr:class p4-lucat:Biomarker
     ];
     rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasCUI;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{marmolre_CUI}"
+    ]
+  ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:biomarkerLabel;
         rr:objectMap [
-        rml:reference "biomarker"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
-        rr:objectMap [
-        rr:parentTriplesMap <Annotation_biomarker>;
+        rr:template "http://p4-lucat.eu/entity/{marmolre}
         ]
     ].
 
+ <RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .   

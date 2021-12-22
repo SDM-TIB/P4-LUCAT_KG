@@ -9,165 +9,63 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Wikidata_annotation>
-    a rr:TriplesMap;
+
+<CUIs_dbpedia_wikidata_annotation_dictionary_label_cui>
     rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
-                rml:referenceFormulation ql:CSV
-                ];
+                        rml:referenceFormulation ql:CSV 
+                        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{CUI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            rr:parentTriplesMap <wikidata_annotation_dictionary_label_cui>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ 
+            rr:parentTriplesMap <dbpedia_annotation_dictionary_label_cui>
+        ]
+    ].
+
+<wikidata_annotation_dictionary_label_cui>
+    rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
+                        rml:referenceFormulation ql:CSV 
+                        ];
     rr:subjectMap [
         rr:template "{Wikidata}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
-        rr:objectMap [
-        rr:template "{Wikidata_type}";
+        rr:objectMap [ 
+            rml:reference "Wikidata_type" 
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/Wikidata"
+            rr:constant "http://p4-lucat.eu/entity/Wikidata"
         ]
     ].
 
-<DBpedia_annotation>
-    a rr:TriplesMap;
+<dbpedia_annotation_dictionary_label_cui>
     rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
-                rml:referenceFormulation ql:CSV
-                ];
+                        rml:referenceFormulation ql:CSV 
+                        ];
     rr:subjectMap [
         rr:template "{DBpedia}";
     ];
     rr:predicateObjectMap [
-        rr:predicate prov:has_provenance;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/DBpedia"
-        ]
-    ];
-    rr:predicateObjectMap [
         rr:predicate rdf:type;
-        rr:objectMap [
-        rr:template "{DBpedia_type}";
-        ]
-    ].
-
-<Annotation_label_annotation>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Label}";
-        rr:class p4-lucat:Annotation_label
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
-        rr:objectMap [
-        rr:parentTriplesMap <Annotation_annotation>;
-        ]
-    ].
-
-<CUI_SemanticType_annotation>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/annotation/CUI_type.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{cui_id}";
-        rr:class p4-lucat:CUI_SemanticType
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:semanticTypeID;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{type_id}"
-        ]
-    ].
-
-<SemanticType_annotation>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/annotation/Semantic_types.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Id}";
-        rr:class p4-lucat:SemanticType
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:semanticTypeDefition;
-        rr:objectMap [
-        rml:reference "definition"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:semanticGroupID;
-        rr:objectMap [
-        	rr:parentTriplesMap <SemanticGroup_annotation>;
-        rr:joinCondition [
-            rr:child "SemanticTypeId";
-            rr:parent "Id";
-        ]
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:semanticTypeLabel;
-        rr:objectMap [
-        rml:reference "Label"
-        ]
-    ].
-
-<SemanticGroup_annotation>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/annotation/semgroups.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Id}";
-        rr:class p4-lucat:SemanticGroup
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:semanticGroupLabel;
-        rr:objectMap [
-        rml:reference "Label"
-        ]
-    ].
-
-<Annotation_annotation>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/annotation/UMLS_combined.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{CUI}";
-        rr:class p4-lucat:Annotation
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-        rr:parentTriplesMap <DBpedia_annotation>;
+        rr:objectMap [ 
+            rml:reference "DBpedia_type" 
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/UMLS"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-        rr:parentTriplesMap <Wikidata_annotation>;
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:annID;
-        rr:objectMap [
-        rml:reference "CUI"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:annLabel;
-        rr:objectMap [
-        rml:reference "Label"
+            rr:constant "http://p4-lucat.eu/entity/DBpedia"
         ]
     ].
-

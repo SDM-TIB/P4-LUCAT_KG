@@ -6,37 +6,33 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<Annotation_comorbidities>
-    rml:logicalSource [ 
+<Histology>
+     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT t1.ID_comorbidity,  t1.indcomor as comorLabelSP, t1.indcomor_CUI, t2.Label as  comorLabelEN FROM `Comorbidities` as t1, UMLS_nov21.oneLabel as t2 where t1.indcomor_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT t1.histologia as histologiaLabelSP, t1.histologia_CUI, t2.Label as histologyLabelEN FROM `Diagnosis` as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_comorbidity}_Comorbidity";
-        rr:class p4-lucat:Comorbidity
+        rr:template "http://p4-lucat.eu/entity/{histologia_CUI}";
+        rr:class p4-lucat:Histology
     ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:comorbidityLabel_SPA;
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:histologiaLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelSP}
+        rr:template "http://p4-lucat.eu/entity/{histologiaLabelSP}
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUI;
-    rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{indcomor_CUI}"
-    ]
-  ];  
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:comorbidityLabel_EN;
+        rr:predicate p4-lucat:histologiaLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelEN}
+        rr:template "http://p4-lucat.eu/entity/{histologyLabelEN}
         ]
     ].
+
 
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";

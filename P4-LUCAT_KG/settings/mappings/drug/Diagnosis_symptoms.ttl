@@ -9,32 +9,33 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<Annotation_comorbidities>
-    rml:logicalSource [ 
+<Diagnosis_Symptom>
+   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT t1.ID_comorbidity,  t1.indcomor as comorLabelSP, t1.indcomor_CUI, t2.Label as  comorLabelEN FROM `Comorbidities` as t1, UMLS_nov21.oneLabel as t2 where t1.indcomor_CUI=t2.CUI""";
+      rml:query """SELECT distinct REPLACE(medicalrecord_symptoms, ' ', '') as medicalrecord, ID_symptoms, fecsintoma FROM Diagnosis_symptoms""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_comorbidity}_Comorbidity";
-        rr:class p4-lucat:Comorbidity
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_symptoms}";
+        rr:class p4-lucat:Diagnosis_Symptom
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:comorbidityLabel_SPA;
+    rr:predicate p4-lucat:hasID_LCPatient;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
+    ]
+  ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasIDSymptom;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelSP}
+        rr:template "http://p4-lucat.eu/entity/{ID_symptoms}
         ]
     ];
-    rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUI;
-    rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{indcomor_CUI}"
-    ]
-  ];  
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:comorbidityLabel_EN;
+      rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDateDiagnosis;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelEN}
+        rml:reference "fecsintoma";
+        rr:datatype xsd:date
         ]
     ].
 
