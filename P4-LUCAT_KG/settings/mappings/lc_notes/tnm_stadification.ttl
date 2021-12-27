@@ -1,0 +1,65 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@base <http://p4-lucat.eu/vocab/> .
+
+
+<tnm_stadification>
+    rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT distinct ID_tnm, t, t_CUI, n, n_CUI, m, m_CUI FROM tnm_stadification""";
+    ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ID_tnm}_tnm";
+        rr:class p4-lucat:tnm_stadification
+    ];
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasTumor_tnm;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{t}"
+    ]
+  ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTumorCUI;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{t_CUI}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasNode_tnm;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{n}
+        ]
+    ];
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasNodeCUI;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{n_CUI}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasMetastases_tnm;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{m}
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasMetastasesCUI;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{m_CUI}
+        ]
+    ].
+
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .

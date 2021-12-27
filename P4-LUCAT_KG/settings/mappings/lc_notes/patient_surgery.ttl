@@ -1,0 +1,151 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@base <http://p4-lucat.eu/vocab/> .
+
+
+<Patient_Surgery>
+    rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_surgery, ' ', '') as medicalrecord,
+ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir, t1.clasecir_CUI, t2.Label as clasecirLabelEN, t1.tipocir, t1.gradocir, t1.gradocir_CUI, t1.ID_tnm_surgery, t1.respuestac, t1.respat, t1.morperi, t1.procedimiento_1, t1.otroproc_1, t1.procedimiento_2, t1.otroproc_2, t1.procedimiento_3, t1.otroproc_3 FROM `Patient_surgery` as t1, UMLS_nov21.oneLabel as t2 where t1.clasecir_CUI=t2.CUI""";
+    ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{surgery_position}_{ID_tnm_surgery}";
+        rr:class p4-lucat:Patient_Surgery
+    ];
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasID_LCPatient;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
+    ]
+  ]; 
+      rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasSurgeryPosition;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{surgery_position}_Surgery"
+    ]
+  ]; 
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasTNMSurgery;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{ID_tnm_surgery}_tnm_Surgery"
+    ]
+  ]; 
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDateSurgery;
+        rr:objectMap [
+        rml:reference "feccir";
+        rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:clasecirLabel_SPA;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{clasecirLabelSP}"
+    ]
+  ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOtherClasecir;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{otraclasecir}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUI_clasecir;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{clasecir_CUI}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:clasecirLabel_ENG;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{clasecirLabelEN}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTypecir;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{tipocir}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasGradecir;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{gradocir}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUI_Gradecir;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{gradocir_CUI}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasRespuestac;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{respuestac}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasRespat;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{respat}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasMorperi;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{morperi}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProcedimiento_1;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{procedimiento_1}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOtherproc_1;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{otroproc_1}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProcedimiento_2;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{procedimiento_2}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOtherproc_2;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{otroproc_2}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProcedimiento_3;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{procedimiento_3}
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOtherproc_3;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{otroproc_3}
+        ]
+    ].
+
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
