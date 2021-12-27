@@ -9,43 +9,34 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-
-<LCPatient_Patient>
-    rml:logicalSource [ 
+<Patient_Previous_Cancer>
+   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT  distinct REPLACE(medicalrecord, ' ', '') as medicalrecord, fecnac,sexo, raza, otraraza  FROM Patient""";
+      rml:query """SELECT distinct REPLACE(medicalrecord_prevcancer, ' ', '') as medicalrecord, ID_cancer_patient, other_organ FROM Patient_previous_cancer""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_Patient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_cancer_patient}";
+        rr:class p4-lucat:Patient_Previous_Cancer
     ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateBirth;
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rml:reference "fecnac";
-        rr:datatype xsd:date
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasGender;
+    rr:predicate p4-lucat:hasIDCancerPatient;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{sexo}"
+      rr:template "http://p4-lucat.eu/entity/{ID_cancer_patient}"
     ]
-  ];  
+  ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRace;
+        rr:predicate p4-lucat:hasOtherOrgan;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{raza}
-        ]
-    ];  
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherRace;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otraraza}
+        rr:template "http://p4-lucat.eu/entity/{other_organ}
         ]
     ].
-
 
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";

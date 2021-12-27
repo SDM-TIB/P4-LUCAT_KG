@@ -9,43 +9,34 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-
-<LCPatient_Patient>
+<Metastasis_Location>
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT  distinct REPLACE(medicalrecord, ' ', '') as medicalrecord, fecnac,sexo, raza, otraraza  FROM Patient""";
+      rml:query """SELECT distinct t1.ID_metastasis_location, t1.location as locationSP, t1.location_CUI, t2.Label as locationEN  FROM Metastasis_location as t1,  UMLS_nov21.oneLabel as t2 where t1.location_CUI=t2.CUI""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_Patient
+        rr:template "http://p4-lucat.eu/entity/{ID_metastasis_location}_Metastasis_Location";
+        rr:class p4-lucat:Metastasis_Location
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateBirth;
+        rr:predicate p4-lucat:metastasisLocationLabel_SPA;
         rr:objectMap [
-        rml:reference "fecnac";
-        rr:datatype xsd:date
+        rr:template "http://p4-lucat.eu/entity/{locationSP}
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasGender;
+    rr:predicate p4-lucat:hasCUI;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{sexo}"
+      rr:template "http://p4-lucat.eu/entity/{location_CUI}"
     ]
   ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRace;
+        rr:predicate p4-lucat:metastasisLocationLabel_EN;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{raza}
-        ]
-    ];  
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherRace;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otraraza}
+        rr:template "http://p4-lucat.eu/entity/{locationEN}
         ]
     ].
-
 
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";

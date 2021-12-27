@@ -14,7 +14,7 @@
      rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT t1.histologia as histologiaLabelSP, t1.histologia_CUI, t2.Label as histologyLabelEN FROM `Diagnosis` as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT t1.histologia as histologiaLabelSP, t1.histologia_CUI, t2.Label as histologyLabelEN FROM Diagnosis as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{histologia_CUI}";
