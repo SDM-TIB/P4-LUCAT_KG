@@ -13,7 +13,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_diagnosis, ' ', '') as medicalrecord, t1.histologia_CUI, t1.estadioini, t1.otroestadio, t1. estadioini_CUI, t1.fecdiagnostico, t1.marmol, t1.version, t1.otraversion, t1.tamprim, t1.tamanioprim, t1.indmetas, t1.numlocmetas, t1.peso, t1.ID_tnm_diagnosis FROM `Diagnosis` as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_diagnosis, ' ', '') as medicalrecord, t1.histologia as histologiaLabelSP, t1.histologia_CUI, t1.estadioini, t1.otroestadio, t1. estadioini_CUI, t1.fecdiagnostico, t1.marmol, t1.version, t1.otraversion, t1.tamprim, t1.tamanioprim, t1.indmetas, t1.numlocmetas, t1.peso, t1.ID_tnm_diagnosis, REPLACE(t2.Label, ' ',  '_' ) as histologyLabelEN FROM `Diagnosis` as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_tnm_diagnosis};
@@ -32,7 +32,7 @@
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{histologia_CUI}
         ]
