@@ -13,7 +13,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct t1.ID_metastasis_location, t1.location as locationSP, t1.location_CUI, t2.Label as locationEN  FROM Metastasis_location as t1,  UMLS_nov21.oneLabel as t2 where t1.location_CUI=t2.CUI""";
+      rml:query """SELECT distinct t1.ID_metastasis_location, t1.location as locationSP, t1.location_CUI, REPLACE(t2.Label, ' ',  '_' ) as locationEN  FROM Metastasis_location as t1,  UMLS_nov21.oneLabel as t2 where t1.location_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_metastasis_location}_Metastasis_Location";
@@ -26,7 +26,7 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUI;
+    rr:predicate p4-lucat:hasCUIAnnotation;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{location_CUI}"
     ]
