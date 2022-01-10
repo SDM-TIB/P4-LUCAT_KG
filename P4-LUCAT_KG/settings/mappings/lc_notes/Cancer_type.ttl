@@ -13,7 +13,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT t1.ID_cancer, t1.organ as organLabelSP, t2.CUI, t2.Label as  organLabelEN  FROM Cancer_type as t1, UMLS_nov21.oneLabel as t2 where t1.cancer_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT t1.ID_cancer, t1.organ as organLabelSP, t1.Organ_translated, t2.CUI, t2.Label as  organLabelEN  FROM Cancer_type as t1, UMLS_nov21.oneLabel as t2 where t1.cancer_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_cancer}_CancerType";
@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:organLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{organLabelSP}
+        rml:reference "organLabelSP"
         ]
     ];
     rr:predicateObjectMap [
@@ -32,9 +32,15 @@
     ]
   ];
     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCancerType;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{Organ_translated}
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:organLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{organLabelEN}
+        rml:reference "organLabelEN"
         ]
     ].
 
