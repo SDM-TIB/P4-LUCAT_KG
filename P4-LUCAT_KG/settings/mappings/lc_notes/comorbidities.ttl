@@ -13,7 +13,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT t1.ID_comorbidity,  t1.indcomor as comorLabelSP, t1.indcomor_CUI, t2.Label as  comorLabelEN FROM `Comorbidities` as t1, UMLS_nov21.oneLabel as t2 where t1.indcomor_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT t1.ID_comorbidity, t1.indcomor as comorLabelSP, t1.indcomor_CUI,  REPLACE(t2.Label, ' ',  '_' ) as comorLabelEN FROM `Comorbidities` as t1, UMLS_nov21.oneLabel as t2 where t1.indcomor_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_comorbidity}_Comorbidity";
