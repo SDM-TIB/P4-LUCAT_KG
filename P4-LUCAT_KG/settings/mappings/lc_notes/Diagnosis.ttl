@@ -44,67 +44,67 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasOtherStage;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otroestadio}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{estadioini_CUI}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasDiagnosisDate;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{fecdiagnostico}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasBiomarker;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmol}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasVersion;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{version}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasOtherVersion;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otraversion}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasTamprim;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tamprim}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasTamanioprim;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tamanioprim}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasIndmetas;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indmetas}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasNumlocmetas;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{numlocmetas}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI;
+        rr:predicate p4-lucat:hasPeso;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{peso}
         ]
