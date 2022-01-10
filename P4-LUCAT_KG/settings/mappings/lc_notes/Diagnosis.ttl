@@ -62,7 +62,7 @@
         rr:datatype xsd:date
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasBiomarker;
+        rr:predicate p4-lucat:hasMarmol;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmol}
         ]
