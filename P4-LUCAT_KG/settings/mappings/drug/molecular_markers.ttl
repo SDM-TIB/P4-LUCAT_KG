@@ -26,7 +26,7 @@
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:molecularMarkersLabel;
+        rr:predicate p4-lucat:biomarkerLabel;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmolre}
         ]
