@@ -21,7 +21,7 @@
         rr:class p4-lucat:LCPatient_Patient
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateBirth;
+        rr:predicate p4-lucat:hasBirthDate;
         rr:objectMap [
         rml:reference "fecnac";
         rr:datatype xsd:date
