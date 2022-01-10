@@ -58,8 +58,8 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDiagnosisDate;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{fecdiagnostico}
-        ]
+        rml:reference "fecdiagnostico";
+        rr:datatype xsd:date
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasBiomarker;
