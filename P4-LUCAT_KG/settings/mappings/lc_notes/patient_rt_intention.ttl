@@ -14,7 +14,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_RT, ' ', '') as medicalrecord, t1.rt_position, t1.fecinirt, t1.fecfinrt, t1.intencion as intencionLabelSP, t1.intencion_CUI, t2.Label as  intencionLabelEN,  t1.tiport, t1.otrort, t1.respuestart, t1.indtoxrt, t1.dosis, t1.fraccion FROM Patient_RT as t1, UMLS_nov21.oneLabel as t2 where t1.intencion_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_RT, ' ', '') as medicalrecord, t1.rt_position, t1.fecinirt, t1.fecfinrt, t1.intencion as intencionLabelSP, t1.intencion_CUI, REPLACE(t2.Label, ' ',  '_' ) as  intencionLabelEN,  t1.tiport, t1.otrort, t1.respuestart, t1.indtoxrt, t1.dosis, t1.fraccion FROM `Patient_RT` as t1, UMLS_nov21.oneLabel as t2 where t1.intencion_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{rt_position}";
@@ -33,14 +33,14 @@
     ]
   ]; 
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateStart;
+        rr:predicate p4-lucat:hasStartDate;
         rr:objectMap [
         rml:reference "fecinirt";
         rr:datatype xsd:date
         ]
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateEnd;
+        rr:predicate p4-lucat:hasEndDate;
         rr:objectMap [
         rml:reference "fecfinrt";
         rr:datatype xsd:date
@@ -53,7 +53,7 @@
     ]
   ];   
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI_Intention;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{intencion_CUI}
         ]
