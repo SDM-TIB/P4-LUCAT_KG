@@ -9,7 +9,7 @@
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<Phenotype_toxicities_type>
+<Treatment_Toxicity>
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -17,7 +17,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_toxicity}_Toxicity";
-        rr:class p4-lucat:Phenotype_toxicities
+        rr:class p4-lucat:Treatment_Toxicity
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:toxicityLabel_SPA;
