@@ -38,7 +38,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateRelapse;
+        rr:predicate p4-lucat:hasRelapseDate;
         rr:objectMap [
         rml:reference "fecrec";
         rr:datatype xsd:date
