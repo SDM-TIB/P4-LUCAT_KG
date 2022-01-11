@@ -20,7 +20,7 @@
         rr:class p4-lucat:Patient_Status
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateStatus;
+        rr:predicate p4-lucat:hasStatusDate;
         rr:objectMap [
         rml:reference "fecult";
         rr:datatype xsd:date
