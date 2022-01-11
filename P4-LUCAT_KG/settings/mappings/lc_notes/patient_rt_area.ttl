@@ -33,14 +33,14 @@
     ]
   ]; 
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateStart;
+        rr:predicate p4-lucat:hasStartDate;
         rr:objectMap [
         rml:reference "fecinirt";
         rr:datatype xsd:date
         ]
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDateEnd;
+        rr:predicate p4-lucat:hasEndDate;
         rr:objectMap [
         rml:reference "fecfinrt";
         rr:datatype xsd:date
