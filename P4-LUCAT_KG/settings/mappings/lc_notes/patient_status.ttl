@@ -26,6 +26,13 @@
         rr:datatype xsd:date
         ]
     ];
+   rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasFecfallecidoDate;
+        rr:objectMap [
+        rml:reference "fecfallecido";
+        rr:datatype xsd:date
+        ]
+    ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasIndfallecido;
     rr:objectMap [
