@@ -57,7 +57,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIcausanocan;
+    rr:predicate p4-lucat:hasCUIAnnotation;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{causanocan_CUI}"
     ]
