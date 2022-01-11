@@ -21,7 +21,7 @@
         rr:class p4-lucat:Surgery_Information
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasSurgery;
+    rr:predicate p4-lucat:hasCirtor;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{cirtor}"
     ]
