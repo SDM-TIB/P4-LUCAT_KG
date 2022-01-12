@@ -65,7 +65,7 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasClase;
+        rr:predicate p4-lucat:hasClass;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{clase}
         ]
