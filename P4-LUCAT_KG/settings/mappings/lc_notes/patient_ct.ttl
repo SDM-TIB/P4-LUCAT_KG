@@ -101,25 +101,26 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFarmacoman;
+        rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{farmacoman}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCiclosman;
+        rr:predicate p4-lucat:hasNumberCycleTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{ciclosman}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFecfinqtman;
+        rr:predicate p4-lucat:hasEndDate;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{fecfinqtman}
+        rml:reference "fecfinqtman";
+        rr:datatype xsd:date
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRespuestatrat;
+        rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{respuestatrat}
         ]
