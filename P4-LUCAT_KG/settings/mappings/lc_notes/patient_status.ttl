@@ -20,45 +20,39 @@
         rr:class p4-lucat:Patient_Status
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasStatusDate;
+        rr:predicate p4-lucat:hasLastConsultationDate;
         rr:objectMap [
         rml:reference "fecult";
         rr:datatype xsd:date
         ]
     ];
    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFecfallecidoDate;
+        rr:predicate p4-lucat:hasDeathDate;
         rr:objectMap [
         rml:reference "fecfallecido";
         rr:datatype xsd:date
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIndfallecido;
+    rr:predicate p4-lucat:hasPatientStatus;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{indfallecido}"
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFecfallecido;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{fecfallecido}
-        ]
-    ];
-    rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCausafalle;
+    rr:predicate p4-lucat:hasDeathCause;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{causafalle}"
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCausanocan;
+    rr:predicate p4-lucat:hasNonCancerDeathCause;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{causanocan}"
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasOthercausanocan;
+    rr:predicate p4-lucat:hasOtherNonCancerDeathCause;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{otracausanocan}"
     ]
@@ -70,7 +64,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasNumrecaidas;
+    rr:predicate p4-lucat:hasNumberCancerRelapses;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{numrecaidas}"
     ]
