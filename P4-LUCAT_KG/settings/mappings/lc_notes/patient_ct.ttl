@@ -126,7 +126,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIndtoxtra;
+        rr:predicate p4-lucat:hasCTTreatmentToxicity;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indtoxtra}
         ]
