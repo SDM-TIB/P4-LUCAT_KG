@@ -65,25 +65,25 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTreatmentArea;
+        rr:predicate p4-lucat:hasRTTreatmentType;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tiport}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherArea;
+        rr:predicate p4-lucat:hasOtherRTTreatmentType;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otrort}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRespueStart;
+        rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{respuestart}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIndtoxrt;
+        rr:predicate p4-lucat:hasRTTreatmentToxicity;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indtoxrt}
         ]
