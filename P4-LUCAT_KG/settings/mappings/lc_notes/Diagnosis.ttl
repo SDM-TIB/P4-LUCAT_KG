@@ -26,7 +26,7 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIDDiagnosis;
+    rr:predicate p4-lucat:hasIDTNMDiagnosis;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ID_tnm_diagnosis}"
     ]
@@ -62,7 +62,7 @@
         rr:datatype xsd:date
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasMarmol;
+        rr:predicate p4-lucat:hasStudiedBiomarker;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmol}
         ]
@@ -80,31 +80,31 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTamprim;
+        rr:predicate p4-lucat:hasTumorSize;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tamprim}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTamanioprim;
+        rr:predicate p4-lucat:hasSpecifyTumorSize;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tamanioprim}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIndmetas;
+        rr:predicate p4-lucat:hasFirstMetastasisDiagnosis;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indmetas}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasNumlocmetas;
+        rr:predicate p4-lucat:hasNumberMetastaticLocation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{numlocmetas}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasPeso;
+        rr:predicate p4-lucat:hasPatientWeight;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{peso}
         ]
