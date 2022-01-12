@@ -21,19 +21,19 @@
         rr:class p4-lucat:Personal_Medical_History
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIndcancerprev;
+    rr:predicate p4-lucat:hasPreviousCancers;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{indcancerprev}"
     ]
   ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIndanteneu;
+        rr:predicate p4-lucat:hasPreviousPneumoniaTuberculosis;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indanteneu}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasPerdidapeso;
+        rr:predicate p4-lucat:hasWeightLoss;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{perdidapeso}
         ]
