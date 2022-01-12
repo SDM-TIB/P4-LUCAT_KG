@@ -51,7 +51,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapy;
+        rr:predicate p4-lucat:hasTypeTherapyProgressionRelapse;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{terapiar}
         ]
