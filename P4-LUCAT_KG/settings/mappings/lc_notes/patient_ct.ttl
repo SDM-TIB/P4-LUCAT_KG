@@ -71,7 +71,7 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCiclostto;
+        rr:predicate p4-lucat:hasNmberCycleCTTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{ciclostto}
         ]
@@ -95,7 +95,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTratamante;
+        rr:predicate p4-lucat:hasCTTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tratamante}
         ]
