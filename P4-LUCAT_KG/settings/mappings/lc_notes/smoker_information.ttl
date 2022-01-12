@@ -33,13 +33,13 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasPaqanio;
+    rr:predicate p4-lucat:hasNumberPackagesCigarette;
     rr:objectMap [
       rml:reference "paqanio"
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasNumaniofum;
+    rr:predicate p4-lucat:hasNumberYearSmoker;
     rr:objectMap [
       rml:reference "numaniofum"
     ]
