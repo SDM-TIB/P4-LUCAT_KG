@@ -20,19 +20,19 @@
         rr:class p4-lucat:FamilyHealthHistory
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasIndante;
+        rr:predicate p4-lucat:hasFamilyCancer;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indante}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasNumfampul;
+        rr:predicate p4-lucat:hasNumberLCRelatives;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{numfampul}
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasNumfamotro;
+    rr:predicate p4-lucat:hasNumberOtherCancerRelatives;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{numfamotro}"
     ]
