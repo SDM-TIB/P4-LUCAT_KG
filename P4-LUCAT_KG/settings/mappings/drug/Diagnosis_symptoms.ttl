@@ -32,7 +32,7 @@
         ]
     ];
       rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDiagnosisDate;
+        rr:predicate p4-lucat:hasFirstConsultationSymptomDate;
         rr:objectMap [
         rml:reference "fecsintoma";
         rr:datatype xsd:date
