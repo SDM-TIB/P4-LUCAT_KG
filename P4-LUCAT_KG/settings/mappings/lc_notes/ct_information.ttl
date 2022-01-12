@@ -21,37 +21,37 @@
         rr:class p4-lucat:CT_Information
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasTherapiator;
+    rr:predicate p4-lucat:hasReceivedTherapy;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{terapiator}"
     ]
   ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasTtosreceived;
+    rr:predicate p4-lucat:hasReceivedTreatment;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ttosrecibidos}"
     ]
   ];
       rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIntentionter;
+    rr:predicate p4-lucat:hasTreatmentIntention;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{intencionter}"
     ]
   ];
       rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIndtrataoligo;
+    rr:predicate p4-lucat:hasTreatmentOligometastatic;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{indtrataoligo}"
     ]
   ];
       rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasTrataoligo;
+    rr:predicate p4-lucat:hasTypeTreatmentOligometastatic;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{trataoligo}"
     ]
   ];
       rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasOtherTrataoligo;
+    rr:predicate p4-lucat:hasOtherTypeTreatmentOligometastatic;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{otrotrataoligo}"
     ]
