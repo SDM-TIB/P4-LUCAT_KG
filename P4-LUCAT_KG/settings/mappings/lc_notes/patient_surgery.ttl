@@ -47,13 +47,13 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:clasecirLabel_SPA;
+    rr:predicate p4-lucat:SurgeryClassLabel_SPA;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{clasecirLabelSP}"
     ]
-  ];  
+  ];   
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherClasecir;
+        rr:predicate p4-lucat:hasOtherSurgeryClass;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otraclasecir}
         ]
@@ -65,79 +65,79 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:clasecirLabel_ENG;
+        rr:predicate p4-lucat:SurgeryClassLabel_ENG;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{clasecirLabelEN}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypecir;
+        rr:predicate p4-lucat:hasTypeSurgery;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tipocir}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasGradecir;
+        rr:predicate p4-lucat:hasDegreeResection;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{gradocir}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUI_Gradecir;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{gradocir_CUI}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRespuestac;
+        rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{respuestac}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRespat;
+        rr:predicate p4-lucat:hasPathologicalResponse;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{respat}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasMorperi;
+        rr:predicate p4-lucat:hasPerioperativeMortality;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{morperi}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasProcedimiento_1;
+        rr:predicate p4-lucat:hasSurgeryProcedureID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{procedimiento_1}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherproc_1;
+        rr:predicate p4-lucat:hasOtherSurgeryProcedure;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otroproc_1}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasProcedimiento_2;
+        rr:predicate p4-lucat:hasSurgeryProcedureID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{procedimiento_2}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherproc_2;
+        rr:predicate p4-lucat:hasOtherSurgeryProcedure;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otroproc_2}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasProcedimiento_3;
+        rr:predicate p4-lucat:hasSurgeryProcedureID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{procedimiento_3}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherproc_3;
+        rr:predicate p4-lucat:hasOtherSurgeryProcedure;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otroproc_3}
         ]
