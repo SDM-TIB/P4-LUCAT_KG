@@ -73,7 +73,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasNmberCycleCTTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ciclostto}
+          rml:reference "ciclostto"
         ]
     ];
     rr:predicateObjectMap [
@@ -109,7 +109,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasNumberCycleTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ciclosman}
+           rml:reference "ciclosman"
         ]
     ];
     rr:predicateObjectMap [
