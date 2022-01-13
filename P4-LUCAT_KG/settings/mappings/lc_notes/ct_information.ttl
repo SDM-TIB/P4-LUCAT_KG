@@ -27,9 +27,9 @@
     ]
   ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasReceivedTreatment;
+    rr:predicate p4-lucat:hasNumberChemotherapy;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{ttosrecibidos}"
+      rml:reference "ttosrecibidos"
     ]
   ];
       rr:predicateObjectMap [
