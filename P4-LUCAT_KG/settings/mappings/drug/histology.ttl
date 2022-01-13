@@ -23,13 +23,13 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{histologiaLabelSP}
+        rml:reference "histologiaLabelSP"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{histologyLabelEN}
+        rml:reference "histologyLabelEN"
         ]
     ].
 
