@@ -34,7 +34,7 @@
       rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{other_location}
+        rml:reference "other_location"
         ]
     ].
 
