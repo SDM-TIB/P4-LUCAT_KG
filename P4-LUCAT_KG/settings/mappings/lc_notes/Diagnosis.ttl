@@ -82,13 +82,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTumorSize;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tamprim}
+           rml:reference "tamprim"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasSpecifyTumorSize;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tamanioprim}
+           rml:reference "tamanioprim"
         ]
     ];
     rr:predicateObjectMap [
@@ -100,13 +100,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasNumberMetastaticLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{numlocmetas}
+          rml:reference "numlocmetas"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasPatientWeight;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{peso}
+          rml:reference "peso"
         ]
     ];
     rr:predicateObjectMap [
