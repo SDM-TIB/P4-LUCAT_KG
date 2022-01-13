@@ -47,7 +47,7 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:therapyLabel_SPA;
+    rr:predicate p4-lucat:chemoTreatmentLabel_SPA;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{therapySP}"
     ]
@@ -132,7 +132,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:therapyLabel_ENG;
+        rr:predicate p4-lucat:chemoTreatmentLabel_ENG;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{chemothrapyLabelEN}
         ]
