@@ -70,13 +70,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasVersionAJCCTNM;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{version}
+          rml:reference "version";
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherVersionAJCCTNM;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otraversion}
+           rml:reference "otraversion";
         ]
     ];
     rr:predicateObjectMap [
