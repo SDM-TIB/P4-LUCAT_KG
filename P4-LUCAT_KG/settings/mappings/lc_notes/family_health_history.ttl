@@ -28,13 +28,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasNumberLCRelatives;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{numfampul}
+           rml:reference "numfampul"
         ]
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasNumberOtherCancerRelatives;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{numfamotro}"
+       rml:reference "numfamotro"
     ]
   ].
 
