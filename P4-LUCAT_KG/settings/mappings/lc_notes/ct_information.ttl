@@ -10,7 +10,7 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 
-<CT_Information>
+<Chemotherapy_Information>
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -18,7 +18,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:CT_Information
+        rr:class p4-lucat:Chemotherapy
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasReceivedTherapy;
