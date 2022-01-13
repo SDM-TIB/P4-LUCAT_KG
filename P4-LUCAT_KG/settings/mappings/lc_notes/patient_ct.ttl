@@ -10,7 +10,7 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 
-<Patient_CT>
+<LCPatient_CT>
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -18,7 +18,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ct_position}";
-        rr:class p4-lucat:Patient_CT
+        rr:class p4-lucat:LCPatient_CT
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasID_LCPatient;
