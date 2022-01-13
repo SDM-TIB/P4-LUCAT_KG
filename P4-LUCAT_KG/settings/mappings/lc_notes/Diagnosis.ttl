@@ -32,7 +32,7 @@
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationHistology;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{histologia_CUI}
         ]
@@ -50,7 +50,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationCancerStage;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{estadioini_CUI}
         ]
@@ -68,13 +68,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasVersion;
+        rr:predicate p4-lucat:hasVersionAJCCTNM;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{version}
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherVersion;
+        rr:predicate p4-lucat:hasOtherVersionAJCCTNM;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otraversion}
         ]
@@ -112,13 +112,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{histologiaLabelSP}
+           rml:reference "histologiaLabelSP"
         ]
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{histologyLabelEN}
+           rml:reference "histologyLabelEN"
         ]
     ].
 
