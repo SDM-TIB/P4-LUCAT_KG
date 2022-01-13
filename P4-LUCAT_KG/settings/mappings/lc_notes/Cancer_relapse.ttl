@@ -13,7 +13,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(medicalrecord_relapse, ' ', '') as medicalrecord, relapse_position,  recaida, fecrec, tipoprog, terapiar FROM Cancer_relapse""";
+      rml:query """SELECT distinct REPLACE(medicalrecord_relapse, ' ', '') as medicalrecord, relapse_position, REPLACE(recaida, ' ',  '_' ) as typeRelapse, fecrec, tipoprog, terapiar FROM Cancer_relapse""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
