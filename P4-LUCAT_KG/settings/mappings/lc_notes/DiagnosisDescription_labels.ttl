@@ -18,13 +18,13 @@
         rr:class p4-lucat:DiagnosisDescription
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:label;
+        rr:predicate p4-lucat:diagnosisDescLabel_ENG;
         rr:objectMap [
         rml:reference "DESC_DIAGNOST_English"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:label_SPA;
+        rr:predicate p4-lucat:diagnosisDescLabel_SPA;
         rr:objectMap [
         rml:reference "DESC_DIAGNOST_Spanish"
         ]
