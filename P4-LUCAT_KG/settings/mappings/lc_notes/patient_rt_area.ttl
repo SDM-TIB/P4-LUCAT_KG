@@ -91,13 +91,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDosage;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{dosis}
+            rml:reference "dosis"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasFraction;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{fraccion}
+           rml:reference "fraccion"
         ]
     ].
 
