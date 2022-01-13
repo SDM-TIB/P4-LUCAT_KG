@@ -27,7 +27,7 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCTPosition;
+    rr:predicate p4-lucat:hasChemoTreatmentPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ct_position}"
     ]
@@ -59,13 +59,13 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationChemoTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{therapy_CUI}
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasClass;
+        rr:predicate p4-lucat:hasClassChemoTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{clase}
         ]
@@ -95,7 +95,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCTTreatment;
+        rr:predicate p4-lucat:hasChemoTreatment;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tratamante}
         ]
