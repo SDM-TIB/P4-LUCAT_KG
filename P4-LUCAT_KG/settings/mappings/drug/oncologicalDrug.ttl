@@ -18,16 +18,16 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_drug}_CTDrug";
-        rr:class p4-lucat:CT_Drug
+        rr:class p4-lucat:oncologicalDrug
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:ctdrugLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{drugLabelSP}
+        rml:reference "drugLabelSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationoncologicalDrug;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ct_drug_CUI}"
     ]
@@ -35,7 +35,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:ctdrugLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{drugLabelEN}
+        rml:reference "drugLabelEN"
         ]
     ].
 
