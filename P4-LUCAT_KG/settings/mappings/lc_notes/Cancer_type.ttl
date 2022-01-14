@@ -26,15 +26,15 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationCancerTypeOrgan;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{CUI}"
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCancerType;
+        rr:predicate p4-lucat:hasCancerTypeOrgan;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{Organ_translated}
+        rr:template "http://p4-lucat.eu/entity/{Organ_translated}"
         ]
     ];
     rr:predicateObjectMap [
