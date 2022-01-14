@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasMolecularMarkers;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
         ]
     ].
 
