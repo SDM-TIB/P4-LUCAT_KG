@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTypeRelapse;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{recaida}
+        rr:template "http://p4-lucat.eu/entity/{recaida}"
         ]
     ];
     rr:predicateObjectMap [
@@ -47,13 +47,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTypeProgression;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tipoprog}
+        rr:template "http://p4-lucat.eu/entity/{tipoprog}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTypeTherapyProgressionRelapse;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{terapiar}
+        rr:template "http://p4-lucat.eu/entity/{terapiar}"
         ]
     ].
 
