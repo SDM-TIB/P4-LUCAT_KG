@@ -20,13 +20,13 @@
         rr:class p4-lucat:Molecular_Markers
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationMolecularMarkers;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{marmolre_CUI}"
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasBiomarker;
+        rr:predicate p4-lucat:hasMolecularMarkers;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmolre}
         ]
