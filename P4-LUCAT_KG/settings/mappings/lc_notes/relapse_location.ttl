@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
@@ -34,13 +34,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDRelapseLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_relapse_location}
+        rr:template "http://p4-lucat.eu/entity/{ID_relapse_location}"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherLocation;
+        rr:predicate p4-lucat:hasOtherRelapseLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{other_location}
+        rr:template "http://p4-lucat.eu/entity/{other_location}"
         ]
     ].
 
