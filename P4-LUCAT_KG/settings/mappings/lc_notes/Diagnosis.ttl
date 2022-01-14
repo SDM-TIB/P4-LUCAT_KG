@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
@@ -34,25 +34,25 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCUIAnnotationHistology;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{histologia_CUI}
+        rr:template "http://p4-lucat.eu/entity/{histologia_CUI}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasStage;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{estadioini}
+        rr:template "http://p4-lucat.eu/entity/{estadioini}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherStage;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otroestadio}
+        rr:template "http://p4-lucat.eu/entity/{otroestadio}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCUIAnnotationCancerStage;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{estadioini_CUI}
+        rr:template "http://p4-lucat.eu/entity/{estadioini_CUI}"
         ]
     ];
     rr:predicateObjectMap [
@@ -64,7 +64,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasStudiedBiomarker;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmol}
+        rr:template "http://p4-lucat.eu/entity/{marmol}"
         ]
     ];
     rr:predicateObjectMap [
