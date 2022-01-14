@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherComorbidity;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otrascomor}
+        rr:template "http://p4-lucat.eu/entity/{otrascomor}"
         ]
     ].
 
