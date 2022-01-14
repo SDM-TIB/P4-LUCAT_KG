@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:familyLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{familiarTranslation}
+        rml:reference "familiarTranslation"
         ]
     ];
     rr:predicateObjectMap [
