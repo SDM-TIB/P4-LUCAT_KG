@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDMarker;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_marker}_Molecular_Markers
+        rr:template "http://p4-lucat.eu/entity/{ID_marker}_Molecular_Markers"
         ]
     ];
       rr:predicateObjectMap [
