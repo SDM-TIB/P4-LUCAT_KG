@@ -22,11 +22,11 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:responseLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{responseLabelSP}
+        rml:reference "responseLabelSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationTreatmentResponse;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{CUI}"
     ]
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:responseLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{responseLabelEN}
+        rml:reference "responseLabelEN"
         ]
     ].
 
