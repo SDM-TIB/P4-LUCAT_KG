@@ -22,11 +22,11 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:comorbidityLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelSP}
+        rml:reference "comorLabelSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationComorbidity;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{indcomor_CUI}"
     ]
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:comorbidityLabel_EN;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{comorLabelEN}
+        rml:reference "comorLabelEN"
         ]
     ].
 
