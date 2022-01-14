@@ -27,7 +27,7 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasRTPosition;
+    rr:predicate p4-lucat:hasRadioTreatmentPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{rt_position}"
     ]
