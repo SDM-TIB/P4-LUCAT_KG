@@ -34,7 +34,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherPrevious_Treatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otrottopre}
+        rml:reference "otrottopre"
         ]
     ].
 
