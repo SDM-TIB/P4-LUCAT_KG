@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_Previous_Treatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_previous_treatment}_Previous_Treatment
+        rr:template "http://p4-lucat.eu/entity/{ID_previous_treatment}_Previous_Treatment"
         ]
     ];
      rr:predicateObjectMap [
