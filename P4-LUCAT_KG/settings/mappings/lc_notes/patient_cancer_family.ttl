@@ -22,7 +22,7 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
@@ -34,19 +34,19 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasFamilialPosition;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{familiar_position}
+        rr:template "http://p4-lucat.eu/entity/{familiar_position}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasFamilialCancerID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_cancer_familiar}
+        rr:template "http://p4-lucat.eu/entity/{ID_cancer_familiar}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherOrgan;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{other_organ}
+        rr:template "http://p4-lucat.eu/entity/{other_organ}"
         ]
     ].
 
