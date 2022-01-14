@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDMetastaticLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_metastatic_location}
+        rr:template "http://p4-lucat.eu/entity/{ID_metastatic_location}"
         ]
     ];
       rr:predicateObjectMap [
