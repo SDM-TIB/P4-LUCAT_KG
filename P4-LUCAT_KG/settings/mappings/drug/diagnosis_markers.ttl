@@ -34,19 +34,19 @@
       rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherMolecularMarkers;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otromarmol}
+        rml:reference "otromarmol"
         ]
     ];
       rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherResultMolecularMarkers;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{other_result}
+        rml:reference "other_result"
         ]
     ];
       rr:predicateObjectMap [
         rr:predicate p4-lucat:hasPositivePDL1;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{positividad_pdl1}
+        rml:reference "positividad_pdl1"
         ]
     ].
 
