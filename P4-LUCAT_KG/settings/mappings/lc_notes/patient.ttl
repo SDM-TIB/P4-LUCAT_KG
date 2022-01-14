@@ -18,7 +18,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_Patient
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasBirthDate;
@@ -36,13 +36,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRace;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{raza}
+        rr:template "http://p4-lucat.eu/entity/{raza}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherRace;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otraraza}
+        rr:template "http://p4-lucat.eu/entity/{otraraza}"
         ]
     ].
 
