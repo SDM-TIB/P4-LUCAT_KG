@@ -22,11 +22,11 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:symptomLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{symptomLabelSP}
+        rml:reference "symptomLabelSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationSymptom;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{CUI}"
     ]
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:symptomLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{symptomLabelEN}
+        rml:reference "symptomLabelEN"
         ]
     ].
 
