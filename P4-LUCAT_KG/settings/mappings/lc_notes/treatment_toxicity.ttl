@@ -22,11 +22,11 @@
      rr:predicateObjectMap [
         rr:predicate p4-lucat:toxicityLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{toxicityLabelSP}
+        rml:reference "toxicityLabelSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationTreatmentToxicity;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{toxicity_CUI}"
     ]
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:toxicityLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{toxicityLabelEN}
+        rml:reference "toxicityLabelEN"
         ]
     ].
 
