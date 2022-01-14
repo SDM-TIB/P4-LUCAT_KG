@@ -49,43 +49,43 @@
     rr:predicateObjectMap [
     rr:predicate p4-lucat:areaLabel_SPA;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{areaLabelSP}"
+      rml:reference "areaLabelSP"
     ]
   ];   
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationRTArea;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{area_CUI}
+        rr:template "http://p4-lucat.eu/entity/{area_CUI}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:areaLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{areaLabelEN}
+        rml:reference "areaLabelEN"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRTTreatmentType;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tiport}
+        rr:template "http://p4-lucat.eu/entity/{tiport}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherRTTreatmentType;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otrort}
+        rr:template "http://p4-lucat.eu/entity/{otrort}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{respuestart}
+        rr:template "http://p4-lucat.eu/entity/{respuestart}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRTTreatmentToxicity;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{indtoxrt}
+        rr:template "http://p4-lucat.eu/entity/{indtoxrt}"
         ]
     ];  
     rr:predicateObjectMap [
