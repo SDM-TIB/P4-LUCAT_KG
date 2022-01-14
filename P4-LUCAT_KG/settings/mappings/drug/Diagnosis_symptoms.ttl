@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDSymptom;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_symptoms}
+        rr:template "http://p4-lucat.eu/entity/{ID_symptoms}"
         ]
     ];
       rr:predicateObjectMap [
