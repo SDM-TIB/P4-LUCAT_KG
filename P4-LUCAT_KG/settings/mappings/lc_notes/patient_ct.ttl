@@ -49,25 +49,25 @@
     rr:predicateObjectMap [
     rr:predicate p4-lucat:chemoTreatmentLabel_SPA;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{therapySP}"
+      rml:reference "therapySP"
     ]
   ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherTherapy;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{other_therapy}
+        rr:template "http://p4-lucat.eu/entity/{other_therapy}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCUIAnnotationChemoTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{therapy_CUI}
+        rr:template "http://p4-lucat.eu/entity/{therapy_CUI}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasClassChemoTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{clase}
+        rr:template "http://p4-lucat.eu/entity/{clase}"
         ]
     ];  
     rr:predicateObjectMap [
@@ -79,31 +79,31 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_1}
+        rr:template "http://p4-lucat.eu/entity/{esquema_1}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_2}
+        rr:template "http://p4-lucat.eu/entity/{esquema_2}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_3}
+        rr:template "http://p4-lucat.eu/entity/{esquema_3}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasChemoTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tratamante}
+        rr:template "http://p4-lucat.eu/entity/{tratamante}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{farmacoman}
+        rr:template "http://p4-lucat.eu/entity/{farmacoman}"
         ]
     ];
     rr:predicateObjectMap [
@@ -122,19 +122,19 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{respuestatrat}
+        rr:template "http://p4-lucat.eu/entity/{respuestatrat}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCTTreatmentToxicity;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{indtoxtra}
+        rr:template "http://p4-lucat.eu/entity/{indtoxtra}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:chemoTreatmentLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{chemothrapyLabelEN}
+        rml:reference "chemothrapyLabelEN"
         ]
     ].
 
