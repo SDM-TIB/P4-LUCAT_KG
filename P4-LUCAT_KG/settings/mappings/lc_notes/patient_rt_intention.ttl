@@ -27,7 +27,7 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasRTPosition;
+    rr:predicate p4-lucat:hasRadioTreatmentPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{rt_position}"
     ]
@@ -49,43 +49,43 @@
     rr:predicateObjectMap [
     rr:predicate p4-lucat:intentionLabel_SPA;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{intencionLabelSP}"
+      rml:reference "intencionLabelSP"
     ]
   ];   
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationRTIntention;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{intencion_CUI}
+        rr:template "http://p4-lucat.eu/entity/{intencion_CUI}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:intentionLabel_ENG;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{intencionLabelEN}
+        rml:reference "intencionLabelEN"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRTTreatmentType;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tiport}
+        rr:template "http://p4-lucat.eu/entity/{tiport}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherRTTreatmentType;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{otrort}
+        rr:template "http://p4-lucat.eu/entity/{otrort}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{respuestart}
+        rr:template "http://p4-lucat.eu/entity/{respuestart}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasRTTreatmentToxicity;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{indtoxrt}
+        rr:template "http://p4-lucat.eu/entity/{indtoxrt}"
         ]
     ];  
     rr:predicateObjectMap [
