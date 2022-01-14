@@ -32,7 +32,7 @@
         ]
     ];
       rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasOtherLocation;
+        rr:predicate p4-lucat:hasOtherDiagnosisLocation;
         rr:objectMap [
         rml:reference "other_location"
         ]
