@@ -41,7 +41,7 @@
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasOtherToxicity;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{other_toxicity}"
+      rml:reference "other_toxicity"
     ]
   ].
 
