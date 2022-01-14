@@ -29,13 +29,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasPreviousPneumoniaTuberculosis;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{indanteneu}
+        rr:template "http://p4-lucat.eu/entity/{indanteneu}"
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasWeightLoss;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{perdidapeso}
+        rr:template "http://p4-lucat.eu/entity/{perdidapeso}"
         ]
     ].
 
