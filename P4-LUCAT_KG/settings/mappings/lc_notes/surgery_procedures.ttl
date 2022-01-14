@@ -23,13 +23,13 @@
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasSurgeryProcedureLabel_SPA;
     rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{surgery_procedureLabelSP}"
+      rml:reference "surgery_procedureLabelSP"
     ]
   ];
   rr:predicateObjectMap [
     rr:predicate p4-lucat:hasSurgeryProcedureLabel_ENG;
     rr:objectMap [
-       rr:template "http://p4-lucat.eu/entity/{surgery_procedureLabelEN}"
+       rml:reference  "surgery_procedureLabelEN"
     ]
   ].
 
