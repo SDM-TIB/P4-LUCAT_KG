@@ -22,11 +22,11 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:metastasisLocationLabel_SPA;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{locationSP}
+        rml:reference "locationSP"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUIAnnotation;
+    rr:predicate p4-lucat:hasCUIAnnotationMetastasisLocation;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{location_CUI}"
     ]
@@ -34,7 +34,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:metastasisLocationLabel_EN;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{locationEN}
+        rml:reference "locationEN"
         ]
     ].
 
