@@ -16,20 +16,20 @@
       rr:sqlVersion rr:SQL2008;
       rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_diagnosis, ' ', '') as medicalrecord, t1.histologia as histologiaLabelSP, t1.histologia_CUI, t1.estadioini, t1.otroestadio, t1. estadioini_CUI, t1.fecdiagnostico, t1.marmol, t1.version, t1.otraversion, t1.tamprim, t1.tamanioprim, t1.indmetas, t1.numlocmetas, t1.peso, t1.ID_tnm_diagnosis, REPLACE(t2.Label, ' ',  '_' ) as histologyLabelEN FROM `Diagnosis` as t1, UMLS_nov21.oneLabel as t2 where t1.histologia_CUI=t2.CUI""";
     ];
-    rr:subjectMap [
+   rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_tnm_diagnosis}";
         rr:class p4-lucat:Diagnosis_Patient
     ];
-     rr:predicateObjectMap [
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasIDTNMDiagnosis;
-    rr:objectMap [
-      rr:template "http://p4-lucat.eu/entity/{ID_tnm_diagnosis}"
+        rr:predicate p4-lucat:hasIDTNMDiagnosis;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{ID_tnm_diagnosis}"
     ]
   ];
     rr:predicateObjectMap [
@@ -71,25 +71,25 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasVersionAJCCTNM;
         rr:objectMap [
-          rml:reference "version";
+        rml:reference "version";
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOtherVersionAJCCTNM;
         rr:objectMap [
-           rml:reference "otraversion";
+        rml:reference "otraversion";
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTumorSize;
         rr:objectMap [
-           rml:reference "tamprim"
+        rml:reference "tamprim"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasSpecifyTumorSize;
         rr:objectMap [
-           rml:reference "tamanioprim"
+        rml:reference "tamanioprim"
         ]
     ];
     rr:predicateObjectMap [
@@ -101,25 +101,25 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasNumberMetastaticLocation;
         rr:objectMap [
-          rml:reference "numlocmetas"
+        rml:reference "numlocmetas"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasPatientWeight;
         rr:objectMap [
-          rml:reference "peso"
+        rml:reference "peso"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_SPA;
         rr:objectMap [
-           rml:reference "histologiaLabelSP"
+        rml:reference "histologiaLabelSP"
         ]
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:histologiaLabel_ENG;
         rr:objectMap [
-           rml:reference "histologyLabelEN"
+        rml:reference "histologyLabelEN"
         ]
     ].
 
