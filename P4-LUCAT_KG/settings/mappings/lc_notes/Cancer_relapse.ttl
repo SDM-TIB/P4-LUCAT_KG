@@ -14,7 +14,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(medicalrecord_relapse, ' ', '') as medicalrecord, relapse_position, REPLACE(recaida, ' ',  '_' ) as typeRelapse, fecrec, tipoprog, terapiar FROM Cancer_relapse""";
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
@@ -35,7 +35,13 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTypeRelapse;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{recaida}"
+        rr:template "http://p4-lucat.eu/entity/{recaida_translated}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotationRelapse;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{recaida_CUI}"
         ]
     ];
     rr:predicateObjectMap [
@@ -48,7 +54,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTypeProgression;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{tipoprog}"
+        rml:reference "tipoprog"
         ]
     ];
     rr:predicateObjectMap [
