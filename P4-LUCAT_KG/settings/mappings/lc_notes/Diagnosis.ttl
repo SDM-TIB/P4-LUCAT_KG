@@ -61,6 +61,7 @@
         rr:objectMap [
         rml:reference "fecdiagnostico";
         rr:datatype xsd:date
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasStudiedBiomarker;
