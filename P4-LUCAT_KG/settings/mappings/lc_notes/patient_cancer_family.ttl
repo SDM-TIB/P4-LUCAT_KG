@@ -81,3 +81,8 @@
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
   d2rq:password "" .
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 911ee0925de74f459048e3132d31f70226f53ed2
