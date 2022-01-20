@@ -19,7 +19,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:biomarker_has_indication;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{drugID}"
+        rr:template  "http://p4-lucat.eu/entity/{drugID}"
         ]
     ].
 
