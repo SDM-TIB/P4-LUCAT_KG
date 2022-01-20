@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}";
+        rr:template "http://p4-lucat.eu/entity/{Adverse_Event}_{Impact}";
         rr:class p4-lucat:AdverseEvent
     ];
     rr:predicateObjectMap [
@@ -36,7 +36,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{CUI_AdverseEvent}";
+        rr:template "http://p4-lucat.eu/entity/{CUI_AdverseEvent}";
         rr:class p4-lucat:Annotation
     ];
     rr:predicateObjectMap [
