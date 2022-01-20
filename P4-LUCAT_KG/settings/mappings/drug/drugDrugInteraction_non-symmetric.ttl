@@ -14,19 +14,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
+        rr:template "http://p4-lucat.eu/entity/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
         rr:class p4-lucat:DrugDrugInteraction
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:object_drug;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{ObjectDrugID}"
+        rr:template  "http://p4-lucat.eu/entity/{ObjectDrugID}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:effect;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/AdverseEvent/{Adverse_Event}_{Impact}"
+        rr:template  "http://p4-lucat.eu/entity/{Adverse_Event}_{Impact}"
         ]
     ];
     rr:predicateObjectMap [
@@ -38,7 +38,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:precipitant_drug;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{PrecipitantDrugID}"
+        rr:template  "http://p4-lucat.eu/entity/{PrecipitantDrugID}"
         ]
     ].
 
