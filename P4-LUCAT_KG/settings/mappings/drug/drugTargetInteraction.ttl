@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
+        rr:template "http://p4-lucat.eu/entity/{Drug}_interactsWith_{Protein ID}";
         rr:class p4-lucat:DrugTargetInteraction
     ];
     rr:predicateObjectMap [
@@ -32,7 +32,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:interactor1;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{Drug}"
+        rr:template  "http://p4-lucat.eu/entity/{Drug}"
         ]
     ].
 
@@ -42,7 +42,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Target/{Protein ID}";
+        rr:template "http://p4-lucat.eu/entity/{Protein ID}";
         rr:class p4-lucat:Target
     ];
     rr:predicateObjectMap [
@@ -70,7 +70,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Protein/{Protein ID}";
+        rr:template "http://p4-lucat.eu/entity/{Protein ID}";
         rr:class p4-lucat:Protein
     ];
     rr:predicateObjectMap [
@@ -82,7 +82,7 @@
     rr:predicateObjectMap [
         rr:predicate owl:sameAs;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Protein/{Protein ID}"
+        rr:template  "http://p4-lucat.eu/entity/{Protein ID}"
         ]
     ];
     rr:predicateObjectMap [
