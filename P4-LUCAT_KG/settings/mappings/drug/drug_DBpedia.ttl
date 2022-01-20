@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Drug/{DrugBankID}";
+        rr:template "http://p4-lucat.eu/entity/{DrugBankID}";
         rr:class p4-lucat:Drug
     ];
     rr:predicateObjectMap [
@@ -38,7 +38,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:externalLink;
         rr:objectMap [
-        rr:template  "https://www.drugbank.ca/drugs/{DrugBankID}"
+        rr:template  "https://www.drugbank.ca/entity/{DrugBankID}"
         ]
     ];
     rr:predicateObjectMap [
