@@ -14,19 +14,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
+        rr:template "http://p4-lucat.eu/entity/{Drug1}_interactsWith_{Drug2}";
         rr:class p4-lucat:DrugDrugInteraction
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:affects;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{Drug1}"
+        rr:template  "http://p4-lucat.eu/entity/{Drug1}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:isAffected;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{Drug2}"
+        rr:template  "http://p4-lucat.eu/entity/{Drug2}"
         ]
     ];
     rr:predicateObjectMap [
