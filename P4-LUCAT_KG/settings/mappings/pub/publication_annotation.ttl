@@ -52,7 +52,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/HAS_ANNOTATION/{subject}_{predicate}_{object}";
+        rr:template "http://p4-lucat.eu/entity/{subject}_{predicate}_{object}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
