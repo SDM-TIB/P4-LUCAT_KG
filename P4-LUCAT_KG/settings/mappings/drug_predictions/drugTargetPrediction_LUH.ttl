@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugTargetPrediction/{Drug}_interactsWith_{Target}";
+        rr:template "http://p4-lucat.eu/entity/{Drug}_interactsWith_{Target}";
         rr:class p4-lucat:DrugTargetPrediction
     ];
     rr:predicateObjectMap [
@@ -38,7 +38,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:interactor1;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{Drug}"
+        rr:template  "http://p4-lucat.eu/entity/{Drug}"
         ]
     ];
     rr:predicateObjectMap [
