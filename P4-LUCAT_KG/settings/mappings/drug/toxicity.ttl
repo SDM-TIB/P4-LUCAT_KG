@@ -54,7 +54,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{cui3}";
+        rr:template "http://p4-lucat.eu/entity/{cui3}";
         rr:class p4-lucat:Annotation
     ];
     rr:predicateObjectMap [
@@ -76,7 +76,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{cui1}";
+        rr:template "http://p4-lucat.eu/entity/{cui1}";
         rr:class p4-lucat:Annotation
     ];
     rr:predicateObjectMap [
@@ -98,7 +98,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Annotation/{cui2}";
+        rr:template "http://p4-lucat.eu/entity/{cui2}";
         rr:class p4-lucat:Annotation
     ];
     rr:predicateObjectMap [
