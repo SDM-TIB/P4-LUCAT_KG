@@ -15,19 +15,19 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/HAS_TOPIC/{subject}_HAS_TOPIC_{object}";
+        rr:template "http://p4-lucat.eu/entity/{subject}_HAS_TOPIC_{object}";
         rr:class p4-lucat:HAS_TOPIC
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:annotates;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Publication/{subject}"
+        rr:template  "http://p4-lucat.eu/entity/{subject}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasAnnotation;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Annotation/{object}"
+        rr:template  "http://p4-lucat.eu/entity/{object}"
         ]
     ];
     rr:predicateObjectMap [
@@ -39,7 +39,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasTopicRelation_isRelatedTo_Disease;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        rr:template  "http://p4-lucat.eu/entity/LungCancer"
         ]
     ].
 
