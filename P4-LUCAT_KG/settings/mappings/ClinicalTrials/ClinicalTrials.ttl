@@ -11,7 +11,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
         rr:class p4-lucat:ClinicalTrial
     ];
     rr:predicateObjectMap [
@@ -197,12 +197,12 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIntervention;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/Intervention/{InterID}"
+        rr:template "http://p4-lucat.eu/entity/{InterID}"
         ]
         ].
 
@@ -212,12 +212,12 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCondition;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/Condition/{CondID}"
+        rr:template "http://p4-lucat.eu/entity/{CondID}"
         ]
         ].
 
@@ -228,12 +228,12 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/ClinicalTrial/{NCTId}";
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasKeyword;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/Keyword/{KeyID}"
+        rr:template "http://p4-lucat.eu/entity/{KeyID}"
         ]
         ].
 
@@ -281,7 +281,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Keyword/{ID_Keyword}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Keyword}";
         rr:class p4-lucat:Keyword
     ];
     rr:predicateObjectMap [
@@ -317,7 +317,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{CUI}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Keyword}_{CUI}";
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
@@ -406,7 +406,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Intervention/{ID_Intervention}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Intervention}";
         rr:class p4-lucat:Intervention
     ];
     rr:predicateObjectMap [
@@ -442,7 +442,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Intervention-Annotation/{ID_Intervention}_{CUI}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Intervention}_{CUI}";
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
@@ -477,7 +477,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{CUI}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Condition}_{CUI}";
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
@@ -505,7 +505,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Condition/{ID_Condition}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Condition}";
         rr:class p4-lucat:Condition
     ];
     rr:predicateObjectMap [
@@ -541,7 +541,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Keyword-Annotation/{ID_Keyword}_{CUI}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Keyword}_{CUI}";
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
@@ -595,7 +595,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Condition-Annotation/{ID_Condition}_{CUI}";
+        rr:template "http://p4-lucat.eu/entity/{ID_Condition}_{CUI}";
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
