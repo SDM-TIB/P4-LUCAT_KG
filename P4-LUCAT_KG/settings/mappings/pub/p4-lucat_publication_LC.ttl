@@ -15,7 +15,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Publication/{pmid}";
+        rr:template "http://p4-lucat.eu/entity/{pmid}";
         rr:class p4-lucat:Publication
     ];
     rr:predicateObjectMap [
@@ -69,7 +69,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:publication_isRelatedTo_Disease;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        rr:template  "http://p4-lucat.eu/entity/LungCancer"
         ]
     ];
     rr:predicateObjectMap [
