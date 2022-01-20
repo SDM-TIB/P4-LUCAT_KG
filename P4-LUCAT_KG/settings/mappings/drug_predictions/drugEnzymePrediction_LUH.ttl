@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugEnzymePrediction/{Drug}_interactsWith_{Enzyme}";
+        rr:template "http://p4-lucat.eu/entity/{Drug}_interactsWith_{Enzyme}";
         rr:class p4-lucat:DrugEnzymePrediction
     ];
     rr:predicateObjectMap [
