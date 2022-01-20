@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugSideEffectInteraction/{DrugID}_{name}";
+        rr:template "http://p4-lucat.eu/entity/{DrugID}_{name}";
         rr:class p4-lucat:DrugSideEffectInteraction
     ];
     rr:predicateObjectMap [
@@ -36,7 +36,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Drug/{DrugID}";
+        rr:template "http://p4-lucat.eu/entity/{DrugID}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:drug_isRelatedTo_dse;
@@ -51,7 +51,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Phenotype/{name}";
+        rr:template "http://p4-lucat.eu/entity/{name}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
