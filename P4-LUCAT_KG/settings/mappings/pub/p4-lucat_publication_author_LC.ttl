@@ -16,6 +16,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{pmid}";
+        rr:class p4-lucat:Publication_Author
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:authorName;
