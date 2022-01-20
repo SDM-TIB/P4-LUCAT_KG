@@ -18,9 +18,9 @@
         rr:template "http://p4-lucat.eu/entity/{pmid}";
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasAuthor;
+        rr:predicate p4-lucat:authorName;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{author}"
+        rml:reference  "author"
         ]
     ].
 
