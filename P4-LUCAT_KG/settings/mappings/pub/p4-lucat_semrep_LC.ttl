@@ -15,24 +15,24 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/{Relationship_Types}/{First_id}_{Relationship_Types}_{Second_id}";
+        rr:template "http://p4-lucat.eu/entity/{First_id}_{Relationship_Types}_{Second_id}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:relation_isRelatedTo_annotation;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Annotation/{Second_id}"
+        rr:template  "http://p4-lucat.eu/entity/{Second_id}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:relation_isRelatedTo_Disease;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Disorder/LungCancer"
+        rr:template  "http://p4-lucat.eu/entity/LungCancer"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:relation_isRelatedTo_annotation;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Annotation/{First_id}"
+        rr:template  "http://p4-lucat.eu/entity/{First_id}"
         ]
     ];
     rr:predicateObjectMap [
