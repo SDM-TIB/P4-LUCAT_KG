@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Phenotype/{toxicity_Label}";
+        rr:template "http://p4-lucat.eu/entity/{toxicity_Label}";
         rr:class p4-lucat:Phenotype
     ];
     rr:predicateObjectMap [
@@ -30,7 +30,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/Drug/{drug_id}";
+        rr:template "http://p4-lucat.eu/entity/{drug_id}";
         rr:class p4-lucat:Drug
     ];
     rr:predicateObjectMap [
@@ -46,7 +46,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/DrugSideEffectInteraction/{drug_id}_{toxicity_Label}";
+        rr:template "http://p4-lucat.eu/entity/{drug_id}_{toxicity_Label}";
         rr:class p4-lucat:DrugSideEffectInteraction
     ];
     rr:predicateObjectMap [
