@@ -14,7 +14,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/OncologicalTreatmentLine/{patient_id}_{oncologicalTreatmentLine_id}";
+        rr:template "http://p4-lucat.eu/entity/{patient_id}_{oncologicalTreatmentLine_id}";
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:treatment_has_drug;
