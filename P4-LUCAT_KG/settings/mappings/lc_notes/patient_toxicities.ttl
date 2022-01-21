@@ -36,7 +36,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{patient_id}_LCPatient";
+        rr:template "http://p4-lucat.eu/entity/{patient_id}_PatientToxicity";
         rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
