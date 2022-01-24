@@ -70,7 +70,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationEnzyme;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_enzyme>;
         ]
