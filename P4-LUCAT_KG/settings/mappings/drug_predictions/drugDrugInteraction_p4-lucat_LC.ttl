@@ -18,9 +18,9 @@
         rr:class p4-lucat:DrugDrugPrediction
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2;
+        rr:predicate p4-lucat:interactor2_Drug;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/Drug/{Drug2}"
+        rr:template  "http://p4-lucat.eu/entity/{Drug2}"
         ]
     ];
     rr:predicateObjectMap [
@@ -44,7 +44,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:provenance;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/PubMed"
+        rr:template  "http://p4-lucat.eu/entity/PubMed"
         ]
     ];
     rr:predicateObjectMap [
