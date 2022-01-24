@@ -43,9 +43,9 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:provenance;
+        rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        rr:constant "http://clarify2020.eu/entity/UMLS"
         ]
     ].
 
