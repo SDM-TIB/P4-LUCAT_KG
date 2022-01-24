@@ -44,7 +44,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:provenance;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/{Source}"
+        rr:template  "http://p4-lucat.eu/entity/{Source}"
         ]
     ];
     rr:predicateObjectMap [
