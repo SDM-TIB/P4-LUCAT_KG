@@ -18,7 +18,7 @@
         rr:class p4-lucat:Phenotype
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasHPOAnnotation;
+        rr:predicate p4-lucat:hasHPOAnnotationToxicity;
         rr:objectMap [
         rr:parentTriplesMap <Annotation3_toxicity>;
         ]
@@ -42,7 +42,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasHPOAnnotation;
+        rr:predicate p4-lucat:hasHPOAnnotationToxicity;
         rr:objectMap [
         rr:parentTriplesMap <Annotation2_toxicity>;
         ]
