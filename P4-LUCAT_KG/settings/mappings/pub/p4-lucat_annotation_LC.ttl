@@ -46,7 +46,7 @@
     rr:predicateObjectMap [
         rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:constant "http://clarify2020.eu/entity/UMLS"
+        rr:constant "http://p4-lucat.eu/entity/UMLS"
         ]
     ].
 
