@@ -40,7 +40,7 @@
         rr:class p4-lucat:Disorder
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationDisorder;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_indication_CUI>;
         ]
