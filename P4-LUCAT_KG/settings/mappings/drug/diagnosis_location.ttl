@@ -17,7 +17,7 @@
       rml:query """SELECT  distinct REPLACE(medicalrecord_metastasis, ' ', '') as medicalrecord, ID_metastasis_location, other_location FROM Diagnosis_location""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_metastatic_location}";
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_metastasis_location}";
         rr:class p4-lucat:Diagnosis_Location
     ];
     rr:predicateObjectMap [
@@ -29,7 +29,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDMetastaticLocation;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{ID_metastatic_location}"
+        rr:template "http://p4-lucat.eu/entity/{ID_metastasis_location}"
         ]
     ];
       rr:predicateObjectMap [
