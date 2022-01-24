@@ -18,13 +18,13 @@
         rr:class p4-lucat:DrugDrugPrediction
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2;
+        rr:predicate p4-lucat:interactor2_Drug;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Drug2}"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor1;
+        rr:predicate p4-lucat:interactor1_Drug;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Drug1}"
         ]
