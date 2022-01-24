@@ -36,7 +36,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationToxicity;
         rr:objectMap [
         rr:parentTriplesMap <Annotation1_toxicity>;
         ]
