@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <DrugEnzymePrediction_drugEnzymePrediction_LUH>
@@ -24,13 +25,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor1;
+        rr:predicate p4-lucat:interactor1_Drug;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/Drug/{Drug}"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2;
+        rr:predicate p4-lucat:interactor2_Enzyme;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Enzyme}"
         ]
@@ -42,9 +43,9 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:provenance;
+        rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/KEGG"
+        rr:constant  "http://p4-lucat.eu/entity/KEGG"
         ]
     ].
 
