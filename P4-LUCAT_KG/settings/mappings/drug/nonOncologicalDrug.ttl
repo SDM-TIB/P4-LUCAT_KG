@@ -27,7 +27,7 @@
     rr:predicateObjectMap [
         rr:predicate prov:has_provenance;
         rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/UMLS"
+        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
         ]
     ].
 
