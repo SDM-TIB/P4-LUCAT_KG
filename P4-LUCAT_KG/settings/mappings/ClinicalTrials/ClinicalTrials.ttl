@@ -261,7 +261,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
+        rr:template  "http://p4-lucat.eu/entity/BioFALCON"
         ]
     ].
 
@@ -335,7 +335,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
+        rr:template  "http://p4-lucat.eu/entity/BioFALCON"
         ]
     ].
 
@@ -466,7 +466,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
+        rr:template  "http://p4-lucat.eu/entity/SciSpacy"
         ]
     ].
 
@@ -495,7 +495,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/BioFALCON"
+        rr:template  "http://p4-lucat.eu/entity/BioFALCON"
         ]
     ].
 
@@ -565,7 +565,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
+        rr:template  "http://p4-lucat.eu/entity/SciSpacy"
         ]
     ].
 
@@ -619,7 +619,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:NLPtool;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/SciSpacy"
+        rr:template  "http://p4-lucat.eu/entity/SciSpacy"
         ]
     ].
 
