@@ -76,7 +76,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotationTarget;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_target>;
         ]
