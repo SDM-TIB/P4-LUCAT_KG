@@ -48,7 +48,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor1;
+        rr:predicate p4-lucat:interactor1_Drug;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Drug1}"
         ]
