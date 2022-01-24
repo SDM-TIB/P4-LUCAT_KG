@@ -24,7 +24,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2;
+        rr:predicate p4-lucat:interactor2Indication;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{indication_name}"
         ]
