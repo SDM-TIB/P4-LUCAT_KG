@@ -112,13 +112,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:histologiaLabel_SPA;
+        rr:predicate p4-lucat:histologyLabel_SPA;
         rr:objectMap [
         rml:reference "histologiaLabelSP"
         ]
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:histologiaLabel_ENG;
+        rr:predicate p4-lucat:histologyLabel_ENG;
         rr:objectMap [
         rml:reference "histologyLabelEN"
         ]
