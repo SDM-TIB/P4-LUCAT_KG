@@ -18,7 +18,7 @@
         rr:class p4-lucat:DrugTargetInteraction
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2;
+        rr:predicate p4-lucat:interactor2_Protein;
         rr:objectMap [
         rr:parentTriplesMap <Target_drugTargetInteraction>;
         ]
