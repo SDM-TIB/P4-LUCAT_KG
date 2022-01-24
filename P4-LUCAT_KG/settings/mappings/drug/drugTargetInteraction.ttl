@@ -26,7 +26,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:provenance;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/DrugBank"
+        rr:template  "http://p4-lucat.eu/entity/DrugBank"
         ]
     ];
     rr:predicateObjectMap [
