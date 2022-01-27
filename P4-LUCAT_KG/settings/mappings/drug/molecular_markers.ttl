@@ -14,7 +14,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct ID_marker, marmolre, marmolre_CUI  FROM Molecular_markers""";
+      rml:query """SELECT distinct ID_marker, marmolre, marmolre_CUI, result FROM `Molecular_markers`""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_marker}_Molecular_Markers";
@@ -30,6 +30,12 @@
         rr:predicate p4-lucat:hasMolecularMarkers;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmolre}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasMolecularMarkersResult;
+        rr:objectMap [
+        rml:reference "result"
         ]
     ].
 
