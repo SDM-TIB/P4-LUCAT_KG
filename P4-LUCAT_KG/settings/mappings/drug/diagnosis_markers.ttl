@@ -14,7 +14,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t1.ID_marker, t1.otromarmol,t1.other_result, t1.positividad_pdl1, t2.marmolre FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker""";
+      rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t1.ID_marker, t1.otromarmol,t1.other_result, t1.positividad_pdl1, t2.marmolre, t2.result FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
@@ -48,6 +48,12 @@
         rr:predicate p4-lucat:hasMolecularMarkers;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{marmolre}"
+        ]
+    ];
+      rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasMolecularMarkersResult;
+        rr:objectMap [
+        rml:reference "result"
         ]
     ].
 
