@@ -84,6 +84,12 @@
         rml:reference "citedByLink"
         ]
     ];
+   rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDOI;
+        rr:objectMap [
+        rml:reference "DOI"
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:year;
         rr:objectMap [
