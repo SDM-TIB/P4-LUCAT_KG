@@ -23,7 +23,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -64,7 +64,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -104,7 +104,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -144,7 +144,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -184,7 +184,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -224,7 +224,7 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
@@ -243,7 +243,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 	rr:predicateObjectMap [
@@ -263,7 +263,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
@@ -299,7 +299,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
@@ -334,7 +334,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
@@ -369,7 +369,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
@@ -404,7 +404,7 @@ rr:predicateObjectMap [
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-		rr:class p4-lucat:Molecular_Markers;
+		rr:class p4-lucat:LCPatient;
 	];
 
 rr:predicateObjectMap [
