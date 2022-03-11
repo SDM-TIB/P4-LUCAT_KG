@@ -17,8 +17,14 @@
       rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t1.ID_marker, t1.otromarmol,t1.other_result, t1.positividad_pdl1, t2.marmolre, t2.result FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
         rr:class p4-lucat:Diagnosis_Markers
+    ];
+   rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasID_LCPatient;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDMarker;
