@@ -22,7 +22,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ALK' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -42,7 +42,7 @@
 	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ALK' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -63,7 +63,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -83,7 +83,7 @@
 	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -103,7 +103,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'EGFR' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -123,7 +123,7 @@
 	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'EGFR' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -143,7 +143,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'PDL1' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -163,7 +163,7 @@
 	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'PDL1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -183,7 +183,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ROS1' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -203,7 +203,7 @@
 	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ROS1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -223,7 +223,7 @@
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'MET' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -242,7 +242,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'MET' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -262,7 +262,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'KRAS' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -281,7 +281,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'KRAS' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -298,7 +298,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2MUT' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -316,7 +316,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2MUT' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -333,7 +333,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'BRAF' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -351,7 +351,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'BRAF' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -368,7 +368,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'RET' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -386,7 +386,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'RET' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
@@ -403,7 +403,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'FGFR1' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:LCPatient;
 	];
 
@@ -421,7 +421,7 @@ rr:predicateObjectMap [
     	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'FGFR1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 	];
 
 	rr:predicateObjectMap [
