@@ -1,0 +1,442 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@base <http://p4-lucat.eu/vocab/> .
+
+
+
+########################################################################
+############## LC patients  with ALK ####################
+########################################################################
+<LCPatient_ALK>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ALK' AND bioStatus = '1'""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/ALK"
+		]
+	].
+
+#################### Negative ALK #######################
+
+<LCPatient_Negative_ALK>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ALK' AND bioStatus = '0'""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/vocab/ALKNegativePatient"
+		]
+	].
+
+
+########################################################################
+##############  LC patients  with HER2 ####################
+########################################################################
+<LCPatient_HER2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2' AND bioStatus = '1'""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/HER2"
+		]
+	].
+
+#################### Negative HER2 #######################
+
+<LCPatient_Negative_HER2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2' AND bioStatus = '0'""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/vocab/HER2NegativePatient"
+		]
+	].
+
+########################################################################
+##############  LC patients  with EGFR ####################
+########################################################################
+<LCPatient_EGFR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'EGFR' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/EGFR"
+		]
+	].
+
+#################### Negative EGFR #######################
+
+<LCPatient_Negative_EGFR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'EGFR' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/vocab/EGFRNegativePatient"
+		]
+	].
+
+########################################################################
+##############  LC patients  with PDL1 ####################
+########################################################################
+<LCPatient_PDL1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'PDL1' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/PDL1"
+		]
+	].
+
+#################### Negative PDL1 #######################
+
+<LCPatient_Negative_PDL1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'PDL1' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/vocab/PDL1NegativePatient"
+		]
+	].
+
+########################################################################
+##############  LC patients  with ROS1 ####################
+########################################################################
+<LCPatient_ROS1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ROS1' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/ROS1"
+		]
+	].
+
+#################### Negative ROS1 #######################
+
+<LCPatient_Negative_ROS1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ROS1' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/vocab/ROS1NegativePatient"
+		]
+	].
+
+########################################################################
+##############  LC patients  with MET ####################
+########################################################################
+<LCPatient_MET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'MET' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/MET"
+		]
+	]. 
+
+#################### Negative MET #######################
+<LCPatient_Negative_MET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'MET' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/METNegativePatient"
+		]
+	].
+##########################################################################################
+##############  LC patients with only Negative KRAS, HER2MUT, BRAF, RET, FGFR1 ##########
+##########################################################################################
+<LCPatient_Negative_KRAS>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'KRAS' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/KRASNegativePatient"
+		]
+	].
+
+	<LCPatient_Negative_HER2MUT>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2MUT' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/HER2MUTNegativePatient"
+		]
+	].
+
+	<LCPatient_Negative_BRAF>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'BRAF' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/BRAFNegativePatient"
+		]
+	].
+
+	<LCPatient_Negative_RET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'RET' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/RETNegativePatient"
+		]
+	].
+
+	<LCPatient_Negative_FGFR1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'FGFR1' AND bioStatus = '0' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:class p4-lucat:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasMolecularMarkers;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{marmolre}"
+    ]
+  ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/FGFR1NegativePatient"
+		]
+	].
+
+#################################
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
