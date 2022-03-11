@@ -19,19 +19,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ALK' AND bioStatus = '1'""";
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ALK' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 		rr:class p4-lucat:Molecular_Markers;
 	];
 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -45,18 +39,12 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ALK' AND bioStatus = '0'""";
+	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ALK' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
 
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -72,19 +60,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2' AND bioStatus = '1'""";
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -98,17 +80,12 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2' AND bioStatus = '0'""";
+	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -123,18 +100,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'EGFR' AND bioStatus = '1' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'EGFR' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -148,17 +120,12 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'EGFR' AND bioStatus = '1' """;
+	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'EGFR' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -173,18 +140,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'PDL1' AND bioStatus = '1' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'PDL1' AND bioStatus = '1'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -198,17 +160,12 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'PDL1' AND bioStatus = '0' """;
+	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'PDL1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -223,18 +180,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ROS1' AND bioStatus = '1' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ROS1' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -248,17 +200,12 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-	    rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'ROS1' AND bioStatus = '1' """;
+	    rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'ROS1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -273,18 +220,13 @@
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'MET' AND bioStatus = '1' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'MET' AND bioStatus = '1' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasBio;
 		rr:objectMap [
@@ -297,18 +239,13 @@ rr:predicateObjectMap [
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'MET' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'MET' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -316,24 +253,37 @@ rr:predicateObjectMap [
 		]
 	].
 ##########################################################################################
-##############  LC patients with only Negative KRAS, HER2MUT, BRAF, RET, FGFR1 ##########
+##############  LC patients with  KRAS ##########
 ##########################################################################################
+<LCPatient_KRAS>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'KRAS' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/KRAS"
+		]
+	]. 
+
+
 <LCPatient_Negative_KRAS>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'KRAS' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'KRAS' AND bioStatus = '0'""";
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -341,22 +291,34 @@ rr:predicateObjectMap [
 		]
 	].
 
+<LCPatient_HER2MUT>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2MUT' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/HER2MUT"
+		]
+	]. 
+
 	<LCPatient_Negative_HER2MUT>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'HER2MUT' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'HER2MUT' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -364,22 +326,34 @@ rr:predicateObjectMap [
 		]
 	].
 
+<LCPatient_BRAF>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'BRAF' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/BRAF"
+		]
+	]. 
+
 	<LCPatient_Negative_BRAF>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'BRAF' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'BRAF' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -387,22 +361,34 @@ rr:predicateObjectMap [
 		]
 	].
 
+<LCPatient_RET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'RET' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/RET"
+		]
+	]. 
+
 	<LCPatient_Negative_RET>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'RET' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'RET' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -410,28 +396,41 @@ rr:predicateObjectMap [
 		]
 	].
 
+<LCPatient_FGFR1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'FGFR1' AND bioStatus = '1' """;
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
+		rr:class p4-lucat:Molecular_Markers;
+	];
+
+rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasBio;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/FGFR1"
+		]
+	]. 
+
 	<LCPatient_Negative_FGFR1>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DISTINCT ID_marker, marmolre FROM `Molecular_markers` WHERE  marmolre = 'FGFR1' AND bioStatus = '0' """;
+    	rml:query """SELECT  distinct REPLACE(t1.medicalrecord_marker, ' ', '') as medicalrecord, t2.ID_marker, t2.marmolre, t2.bioStatus FROM Diagnosis_markers as t1, Molecular_markers as t2 where t1.ID_marker=t2.ID_marker AND  marmolre = 'FGFR1' AND bioStatus = '0' """;
 		];
 	rr:subjectMap [
-		rr:template "http://p4-lucat.eu/entity/{ID_marker}";
-		rr:class p4-lucat:LCPatient;
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
 	];
-	rr:predicateObjectMap [
-		rr:predicate p4-lucat:hasMolecularMarkers;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{marmolre}"
-    ]
-  ];
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
 			rr:constant "http://p4-lucat.eu/entity/FGFR1NegativePatient"
 		]
 	].
+
 
 #################################
 
