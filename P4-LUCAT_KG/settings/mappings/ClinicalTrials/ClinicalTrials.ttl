@@ -47,7 +47,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasStudiedSatges;
+        rr:predicate p4-lucat:hasStage;
         rr:objectMap [
         	rr:parentTriplesMap <Stages_ClinicalTrials>;
         rr:joinCondition [
