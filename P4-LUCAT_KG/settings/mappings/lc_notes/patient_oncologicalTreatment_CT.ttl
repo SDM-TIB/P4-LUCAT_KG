@@ -11,11 +11,11 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 
-<LCPatient_OncologicalTreatment>
+<LCPatient_OncologicalTreatment_CT>
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_CT, ' ', '') as medicalrecord, oncological_treatment FROM `Patient_CT`""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_CT, ' ', '') as medicalrecord, oncological_treatment_CT FROM `Patient_CT`""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
@@ -24,7 +24,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{oncological_treatment}"
+        rr:template "http://p4-lucat.eu/entity/{oncological_treatment_CT}"
         ]
     ].
 
