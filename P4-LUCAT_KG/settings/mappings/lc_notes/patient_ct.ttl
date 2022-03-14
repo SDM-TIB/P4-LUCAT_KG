@@ -15,7 +15,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_CT, ' ', '') as medicalrecord, t1.ct_position, t1.fecinitto,t1.fecfintto, t1.tipoterapia as therapySP, t1.otroter, t1.tipoterapia_CUI as therapy_CUI, t1.clase, t1.ciclostto, t1.esquema_1, t1.esquema_2, t1.esquema_3, t1.tratamante, t1.farmacoman, t1.ciclosman ,t1.fecfinqtman, t1.respuestatrat, t1.indtoxtra, REPLACE(t2.Label, ' ',  '_' ) as chemothrapyLabelEN FROM `Patient_CT` as t1, UMLS_nov21.oneLabel as t2 where t1.tipoterapia_CUI=t2.CUI""";
+      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_CT, ' ', '') as medicalrecord, t1.ct_position, t1.fecinitto,t1.fecfintto, t1.tipoterapia as therapySP, t1.otroter, t1.tipoterapia_CUI as therapy_CUI, t1.clase, t1.ciclostto, t1.esquema_1, t1.esquema_2, t1.esquema_3, t1.tratamante, t1.farmacoman, t1.ciclosman ,t1.fecfinqtman, t1.respuestatrat, t1.indtoxtra, t1.oncological_treatment, REPLACE(t2.Label, ' ',  '_' ) as chemothrapyLabelEN FROM `Patient_CT` as t1, UMLS_nov21.oneLabel as t2 where t1.tipoterapia_CUI=t2.CUI""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ct_position}";
@@ -130,6 +130,12 @@
         rr:predicate p4-lucat:hasCTTreatmentToxicity;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{indtoxtra}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasOncologicalTreatment;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{oncological_treatment}"
         ]
     ];
     rr:predicateObjectMap [
