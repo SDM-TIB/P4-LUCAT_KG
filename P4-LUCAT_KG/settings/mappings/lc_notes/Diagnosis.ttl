@@ -35,7 +35,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasStage;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{estadioini}"
+        rr:template "http://p4-lucat.eu/entity/Stage{estadioini}"
         ]
     ];
     rr:predicateObjectMap [
