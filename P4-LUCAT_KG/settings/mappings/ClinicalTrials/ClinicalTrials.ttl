@@ -15,7 +15,7 @@
         rr:class p4-lucat:ClinicalTrial
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTki;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <TKI_ClinicalTrials>;
         rr:joinCondition [
@@ -25,7 +25,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRadiotherapy;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Radiotherapy_ClinicalTrials>;
         rr:joinCondition [
@@ -75,7 +75,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasChemotherapy;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Chemotherapy_ClinicalTrials>;
         rr:joinCondition [
@@ -103,7 +103,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasAntiangiogenic;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Antiangiogenic_ClinicalTrials>;
         rr:joinCondition [
@@ -113,7 +113,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasImmunotherapy;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Immunotherapy_ClinicalTrials>;
         rr:joinCondition [
@@ -145,7 +145,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasSurgery;
+        rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Surgery_ClinicalTrials>;
         rr:joinCondition [
@@ -155,7 +155,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasEgfr;
+        rr:predicate p4-lucat:hasBio;
         rr:objectMap [ 
             rr:parentTriplesMap <EGFR_ClinicalTrials>;
         rr:joinCondition [
@@ -165,7 +165,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasAlk;
+        rr:predicate p4-lucat:hasBio;
         rr:objectMap [ 
             rr:parentTriplesMap <ALK_ClinicalTrials>;
         rr:joinCondition [
@@ -175,7 +175,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRos1;
+        rr:predicate p4-lucat:hasBio;
         rr:objectMap [ 
             rr:parentTriplesMap <ROS_ClinicalTrials>;
         rr:joinCondition [
