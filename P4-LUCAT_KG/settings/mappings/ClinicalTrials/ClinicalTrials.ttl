@@ -4,6 +4,7 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <ClinicalTrial_ClinicalTrials>
     a rr:TriplesMap;
@@ -25,9 +26,29 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <TKI_Negative_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Radiotherapy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Radiotherapy_Negative_ClinicalTrials>;
         rr:joinCondition [
             rr:child "NCTId";
             rr:parent "NCTId";
@@ -85,6 +106,16 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Chemotherapy_Negative_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:designAllocation;
         rr:objectMap [
         rml:reference "DesignAllocation"
@@ -113,9 +144,29 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Antiangiogenic_Negative_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasOncologicalTreatment;
         rr:objectMap [
         	rr:parentTriplesMap <Immunotherapy_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Immunotherapy_Negative_ClinicalTrials>;
         rr:joinCondition [
             rr:child "NCTId";
             rr:parent "NCTId";
@@ -155,9 +206,29 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Surgery_Negative_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasBio;
         rr:objectMap [ 
             rr:parentTriplesMap <EGFR_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <EGFR_Negative_ClinicalTrials>;
         rr:joinCondition [
             rr:child "NCTId";
             rr:parent "NCTId";
@@ -175,9 +246,29 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <ALK_Negative_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasBio;
         rr:objectMap [ 
             rr:parentTriplesMap <ROS_ClinicalTrials>;
+        rr:joinCondition [
+            rr:child "NCTId";
+            rr:parent "NCTId";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rr:parentTriplesMap <ROS_Negative_ClinicalTrials>;
         rr:joinCondition [
             rr:child "NCTId";
             rr:parent "NCTId";
@@ -274,6 +365,15 @@
         rr:template "http://p4-lucat.eu/entity/{tki}";
         rr:class p4-lucat:Tki
     ].
+<TKI_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/tki.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{notki}";
+        rr:class p4-lucat:Tki
+    ].
 
 <Keyword_ClinicalTrials>
     a rr:TriplesMap;
@@ -348,6 +448,15 @@
         rr:template "http://p4-lucat.eu/entity/{surgery}";
         rr:class p4-lucat:Surgery
     ].
+<Surgery_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/surgery.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{nosurgery}";
+        rr:class p4-lucat:Surgery
+    ].
 
 <EGFR_ClinicalTrials>
     a rr:TriplesMap;
@@ -358,7 +467,15 @@
         rr:template "http://p4-lucat.eu/entity/{egfr}";
         rr:class p4-lucat:Egfr
     ].
-
+<EGFR_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/egfr.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noegfr}";
+        rr:class p4-lucat:Egfr
+    ].
 <ALK_ClinicalTrials>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/clinical_trials/alk.csv";
@@ -366,6 +483,16 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{alk}";
+        rr:class p4-lucat:Alk
+    ].
+
+<ALK_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/alk.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noalk}";
         rr:class p4-lucat:Alk
     ].
 
@@ -378,7 +505,15 @@
         rr:template "http://p4-lucat.eu/entity/{ros}";
         rr:class p4-lucat:Ros1
     ].
-
+<ROS_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/ros.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noros}";
+        rr:class p4-lucat:Ros1
+    ].
 <PerformanceObservation_ClinicalTrials>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/clinical_trials/performanceStatus.csv";
@@ -398,7 +533,15 @@
         rr:template "http://p4-lucat.eu/entity/{radiotherapy}";
         rr:class p4-lucat:Radiotherapy
     ].
-
+<Radiotherapy_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/radiotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noradiotherapy}";
+        rr:class p4-lucat:Radiotherapy
+    ].
 
 <Intervention_ClinicalTrials>
     a rr:TriplesMap;
@@ -578,6 +721,15 @@
         rr:template "http://p4-lucat.eu/entity/{chemotherapy}";
         rr:class p4-lucat:Chemotherapy
     ].
+<Chemotherapy_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/chemotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{nochemotherapy}";
+        rr:class p4-lucat:Chemotherapy
+    ].
 
 <Antiangiogenic_ClinicalTrials>
     a rr:TriplesMap;
@@ -586,6 +738,15 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
+        rr:class p4-lucat:Antiangiogenic
+    ].
+<Antiangiogenic_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/antiangiogenic.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noantiangiogenic}";
         rr:class p4-lucat:Antiangiogenic
     ].
 
@@ -642,4 +803,12 @@
         rr:template "http://p4-lucat.eu/entity/{immunotherapy}";
         rr:class p4-lucat:Immunotherapy
     ].
-
+<Immunotherapy_Negative_ClinicalTrials>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/clinical_trials/immunotherapy.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{noimmunotherapy}";
+        rr:class p4-lucat:Immunotherapy
+    ].
