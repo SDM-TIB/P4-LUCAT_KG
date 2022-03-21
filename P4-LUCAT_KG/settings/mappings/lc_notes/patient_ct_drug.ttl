@@ -11,56 +11,36 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 
-<LCPatient_CT_Drug1>
+<LCPatient_CT_DrugName>
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_CT,' ','') as medicalrecord, t1.esquema_1 , t2.ct_drug as drugName1 FROM `Patient_CT` as t1 , `CT_drugs` as t2 WHERE t1.esquema_1 = t2.ID_drug""";
+      rml:query """SELECT distinct REPLACE(medicalrecord_CT,' ', '') as medicalrecord, drugName1, drugName2, drugName3 FROM `Patient_CT_drug` """;
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_CT
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasDrugLabel;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{drugName1}"
     ]
-  ].
-
-<LCPatient_CT_Drug2>
-    rml:logicalSource [ 
-      rml:source <RDB_source>;
-      rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_CT,' ','') as medicalrecord, t1.esquema_2 , t2.ct_drug as drugName2 FROM `Patient_CT` as t1 , `CT_drugs` as t2 WHERE t1.esquema_2 = t2.ID_drug""";
-    ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_CT
-    ];
+  ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasDrugLabel;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{drugName2}"
     ]
-  ].
-
-<LCPatient_CT_Drug3>
-    rml:logicalSource [ 
-      rml:source <RDB_source>;
-      rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(t1.medicalrecord_CT,' ','') as medicalrecord, t1.esquema_3 , t2.ct_drug as drugName3 FROM `Patient_CT` as t1 , `CT_drugs` as t2 WHERE t1.esquema_3 = t2.ID_drug""";
-    ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:LCPatient_CT
-    ];
+  ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasDrugLabel;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{drugName3}"
     ]
   ].
+
+
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
