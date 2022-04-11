@@ -46,9 +46,9 @@
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/vocab/ALKNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoALK"
 		]
 	].
 
@@ -87,9 +87,9 @@
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/vocab/HER2NegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoHER2"
 		]
 	].
 
@@ -127,9 +127,9 @@
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/vocab/EGFRNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoEGFR"
 		]
 	].
 
@@ -167,9 +167,9 @@
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/vocab/PDL1NegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoPDL1"
 		]
 	].
 
@@ -207,9 +207,9 @@
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/vocab/ROS1NegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoROS1"
 		]
 	].
 
@@ -247,9 +247,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/METNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoMET"
 		]
 	].
 ##########################################################################################
@@ -285,9 +285,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/KRASNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoKRAS"
 		]
 	].
 
@@ -320,9 +320,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/HER2MUTNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoHER2MUT"
 		]
 	].
 
@@ -355,9 +355,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/BRAFNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoBRAF"
 		]
 	].
 
@@ -390,9 +390,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/RETNegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoRET"
 		]
 	].
 
@@ -425,9 +425,9 @@ rr:predicateObjectMap [
 	];
 
 	rr:predicateObjectMap [
-		rr:predicate rdf:type;
+		rr:predicate p4-lucat:hasNoBio;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/FGFR1NegativePatient"
+			rr:constant "http://p4-lucat.eu/entity/NoFGFR1"
 		]
 	].
 

@@ -1,0 +1,141 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@base <http://p4-lucat.eu/vocab/> .
+
+
+
+########################################################################
+############## LC patients  with Chemotherapy ####################
+########################################################################
+<LCPatient_Chemotherapy>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT REPLACE(medicalrecord_CT, ' ', '') as medicalrecord, oncological_treatment_CT FROM `Patient_CT`""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+		rr:class p4-lucat:LCPatient;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasOncologicalTreatment;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{oncological_treatment_CT}"
+		]
+	].
+
+#################### Negative Chemotherapy #######################
+
+<LCPatient_Negative_Chemotherapy>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT t1.medicalrecord FROM `Patient` as t1 where t1.medicalrecord not in ( select t2.medicalrecord_CT from `Patient_CT` as t2)""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasNoOncologicalTreatment;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/NoChemotherapy"
+		]
+	].
+
+
+########################################################################
+############## LC patients  with Radiotherapy ####################
+########################################################################
+<LCPatient_Radiotherapy>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT REPLACE(medicalrecord_RT, ' ', '') as medicalrecord, oncological_treatment_RT FROM `Patient_RT`""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+		rr:class p4-lucat:LCPatient;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasOncologicalTreatment;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{oncological_treatment_RT}"
+		]
+	].
+
+#################### Negative Radiotherapy  #######################
+
+<LCPatient_Negative_Radiotherapy>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT t1.medicalrecord FROM `Patient` as t1 where t1.medicalrecord not in ( select t2.medicalrecord_RT from `Patient_RT` as t2)""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasNoOncologicalTreatment;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/NoRadiotherapy"
+		]
+	].
+
+########################################################################
+############## LC patients  with Surgery ####################
+########################################################################
+<LCPatient_Surgery>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DISTINCT REPLACE(medicalrecord_surgery, ' ', '') as medicalrecord, oncological_treatment_SUR FROM `Patient_surgery`""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+		rr:class p4-lucat:LCPatient;
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasOncologicalTreatment;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{oncological_treatment_SUR}"
+		]
+	].
+
+#################### Negative Surgery   #######################
+
+<LCPatient_Negative_Surgery>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT DISTINCT t1.medicalrecord FROM `Patient` as t1 where t1.medicalrecord not in ( select t2.medicalrecord_surgery from `Patient_surgery` as t2)""";
+		];
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasNoOncologicalTreatment;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/NoSurgery"
+		]
+	].
+#################################
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .

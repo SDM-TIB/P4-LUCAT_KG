@@ -26,7 +26,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <TKI_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -46,7 +46,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <Radiotherapy_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -106,7 +106,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <Chemotherapy_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -144,7 +144,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <Antiangiogenic_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -164,7 +164,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <Immunotherapy_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -206,7 +206,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoOncologicalTreatment;
         rr:objectMap [ 
             rr:parentTriplesMap <Surgery_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -226,7 +226,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoBio;
         rr:objectMap [ 
             rr:parentTriplesMap <EGFR_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -246,7 +246,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoBio;
         rr:objectMap [ 
             rr:parentTriplesMap <ALK_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -266,7 +266,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate p4-lucat:hasNoBio;
         rr:objectMap [ 
             rr:parentTriplesMap <ROS_Negative_ClinicalTrials>;
         rr:joinCondition [
@@ -790,7 +790,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/Stage{value}";
+        rr:template "http://p4-lucat.eu/entity/{value}";
         rr:class p4-lucat:Stages
     ].
 
