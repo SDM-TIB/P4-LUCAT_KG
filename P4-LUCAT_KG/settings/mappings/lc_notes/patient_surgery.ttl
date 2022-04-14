@@ -92,7 +92,7 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{respuestac}"
+        rr:template "http://p4-lucat.eu/entity/{respuestac}_Response"
         ]
     ];  
     rr:predicateObjectMap [
