@@ -80,7 +80,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasResponseID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{respuestart}"
+        rr:template "http://p4-lucat.eu/entity/{respuestart}_Response"
         ]
     ];  
     rr:predicateObjectMap [
