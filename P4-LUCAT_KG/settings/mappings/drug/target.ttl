@@ -47,7 +47,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
+        rr:predicate p4-lucat:uniprotID;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Uni_ID}"
         ]
