@@ -57,7 +57,7 @@
         ]
     ];
    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFamilialCancerCUI;
+        rr:predicate p4-lucat:hasCUIAnnotationFamilialCancer;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{cancer_CUI}"
         ]
