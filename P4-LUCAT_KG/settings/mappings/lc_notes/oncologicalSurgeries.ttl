@@ -47,7 +47,7 @@
         rr:class p4-lucat:OncologicalSurgery
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationOncologicalSurgery;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_oncologicalSurgeries>;
         ]

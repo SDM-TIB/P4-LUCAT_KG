@@ -19,7 +19,7 @@
         rr:class p4-lucat:Phenotype
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationToxicity;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{cui1}";
         ]

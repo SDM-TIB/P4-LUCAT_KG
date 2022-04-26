@@ -338,7 +338,7 @@
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationInterventionBioFALCON;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -421,7 +421,7 @@
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationKeywordBioFALCON;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -589,7 +589,7 @@
         rr:class p4-lucat:Intervention-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationInterventionSciSpacy;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -624,7 +624,7 @@
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationConditionBioFALCON;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -688,7 +688,7 @@
         rr:class p4-lucat:Keyword-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationKeywordSciSpacy;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]
@@ -760,7 +760,7 @@
         rr:class p4-lucat:Condition-Annotation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationConditionSciSpacy;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{CUI}"
         ]

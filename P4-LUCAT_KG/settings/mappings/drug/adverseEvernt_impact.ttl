@@ -25,7 +25,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationAdverseEvent;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_adverseEvernt_impact>;
         ]

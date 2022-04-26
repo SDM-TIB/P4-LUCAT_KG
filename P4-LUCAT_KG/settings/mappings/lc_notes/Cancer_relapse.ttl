@@ -39,7 +39,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationRelapse;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{recaida_CUI}"
         ]

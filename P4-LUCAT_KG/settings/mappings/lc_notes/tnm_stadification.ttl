@@ -28,7 +28,7 @@
     ]
   ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationTumorTNM;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{t_CUI}"
         ]
@@ -40,7 +40,7 @@
         ]
     ];
      rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationNodeTNM;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{n_CUI}"
         ]
@@ -52,7 +52,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationMetastasesTNM;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{m_CUI}"
         ]

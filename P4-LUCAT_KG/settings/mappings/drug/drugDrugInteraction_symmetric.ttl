@@ -15,8 +15,9 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
-        rr:class p4-lucat:SymmetricDrugDrugInteraction
+        rr:template "http://p4-lucat.eu/entity/{CUI_1}_hasPharmacodynamic_{CUI_2}";
+        rr:class p4-lucat:PharmacodynamicDrugDrugInteraction,
+        p4-lucat:DrugDrugInteraction;
     ];
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
@@ -31,31 +32,54 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
+        rr:template "http://p4-lucat.eu/entity/{CUI_1}_interactsWith_{CUI_2}";
         rr:class p4-lucat:DrugDrugInteraction
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:object_drug;
+        rr:predicate p4-lucat:precipitantDrug;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{ObjectDrugID}"
+            rr:template "http://p4-lucat.eu/entity/{CUI_1}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:objectDrug;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{CUI_2}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:precipitant_hasDrugBankID;
+        rr:objectMap [ 
+            rr:template "http://p4-lucat.eu/entity/{PrecipitantDrugID}"; 
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:object_hasDrugBankID;
+        rr:objectMap [ 
+            rr:template "http://p4-lucat.eu/entity/{ObjectDrugID}"; 
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:interaction;
+        rr:objectMap [ 
+            rml:reference "Interaction";
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:effect;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{Adverse_Event}_{Impact}"
-        ]
+            rr:template "http://p4-lucat.eu/entity/{CUI_AdverseEvent}";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:precipitant_drug;
+        rr:predicate p4-lucat:impact;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{PrecipitantDrugID}"
-        ]
+            rml:reference "Impact";
+        ];
     ];
     rr:predicateObjectMap [
         rr:predicate prov:hasGeneratedBy;
         rr:objectMap [
-        rr:constant  "http://p4-lucat.eu/entity/DrugBank"
+            rr:template "http://p4-lucat.eu/SourceName/UMLS";
         ]
     ].
-

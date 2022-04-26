@@ -31,7 +31,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationNonOncologicalExternal;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:parentTriplesMap <Annotation_nonOncologicalTreatments_external>;
         ]

@@ -60,7 +60,7 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationChemoTreatment;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{therapy_CUI}"
         ]

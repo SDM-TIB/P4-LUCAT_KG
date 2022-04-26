@@ -60,7 +60,7 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationSurgeryClass;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{clasecir_CUI}"
         ]
@@ -84,7 +84,7 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotationResectionDegree;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{gradocir_CUI}"
         ]
