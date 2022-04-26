@@ -24,7 +24,7 @@
     rr:class p4-lucat:AnnotationDefinition;
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUI;
+    rr:predicate p4-lucat:hasCUIAnnotation;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{CUI}"
     ]
@@ -36,7 +36,7 @@
     ]
   ];
   rr:predicateObjectMap [
-    rr:predicate prov:has_provenance;
+    rr:predicate prov:hasGeneratedBy;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{source}"
     ]
@@ -53,7 +53,7 @@
     rr:class p4-lucat:AnnotationType;
   ];
   rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCUI;
+    rr:predicate p4-lucat:hasCUIAnnotation;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{CUI}"
     ]
