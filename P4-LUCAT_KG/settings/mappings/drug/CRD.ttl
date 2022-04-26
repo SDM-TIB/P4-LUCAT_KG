@@ -25,7 +25,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate prov:has_provenance;
+        rr:predicate prov:hasGeneratedBy;
         rr:objectMap [
         rr:constant  "http://p4-lucat.eu/entity/DrugBank/metabolized_by_the_same_CYP_enzyme"
         ]
