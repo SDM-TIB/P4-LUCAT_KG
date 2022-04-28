@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <Annotation_tkiList>
@@ -24,9 +25,9 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:provenance;
+        rr:predicate prov:hasGeneratedBy;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        rr:constant "http://p4-lucat.eu/entity/UMLS"
         ]
     ];
     rr:predicateObjectMap [
