@@ -37,9 +37,9 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:provenance;
+        rr:predicate prov:hasGeneratedBy;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/SourceName/UMLS"
+        rr:constant "http://p4-lucat.eu/entity/UMLS"
         ]
     ].
 
