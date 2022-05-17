@@ -51,5 +51,11 @@
         rr:objectMap [
         rr:parentTriplesMap <Annotation_nonOncologicalDrug>;
         ]
-    ].
+    ];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "{DBpediaURL}";
+		]
+	].
 
