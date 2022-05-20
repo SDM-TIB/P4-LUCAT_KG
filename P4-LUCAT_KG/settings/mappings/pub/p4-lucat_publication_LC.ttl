@@ -39,7 +39,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:pubmedID;
         rr:objectMap [
-        rml:reference "pmid"
+        rr:template  "http://p4-lucat.eu/entity/{pmid}"
         ]
     ];
     rr:predicateObjectMap [
@@ -81,7 +81,7 @@
    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDOI;
         rr:objectMap [
-        rml:reference "DOI"
+        rr:template  "http://p4-lucat.eu/entity/{DOI}"
         ]
     ];
     rr:predicateObjectMap [
