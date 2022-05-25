@@ -16,7 +16,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{Drug1}_interactsWith_{Drug2}";
-        rr:class p4-lucat:DrugDrugInteraction
+        rr:class p4-lucat:DrugDrugInteraction,
+			    p4-lucat:DDI-NCRD;
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:affects;
