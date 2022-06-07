@@ -14,6 +14,7 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 <AnnotationDefinitionP4-LUCAT>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -43,6 +44,7 @@
   ].
 
 <CUITypeP4-LUCAT>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -66,6 +68,7 @@
   ].
 
 <SemanticTypesP4-LUCAT>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -89,6 +92,7 @@
   ].
 
  <TypeGroupP4-LUCAT>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -113,6 +117,7 @@
    
 
 <AnnotationCUIP4-LUCAT>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
@@ -137,6 +142,7 @@
   ].
 
 <AnnotationCUIP4-LUCAT_CUI>
+  a rr:TriplesMap;
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
