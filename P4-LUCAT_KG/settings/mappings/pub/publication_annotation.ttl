@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
 <Publication_publication_annotation>
@@ -18,7 +19,7 @@
         rr:class p4-lucat:Publication
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:pubmedID;
+        rr:predicate bibo:pmid;
         rr:objectMap [
         rml:reference "subject"
         ]
@@ -61,7 +62,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasAnnotation;
+        rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{object}"
         ]
