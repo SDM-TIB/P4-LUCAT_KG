@@ -16,6 +16,7 @@
 ############## LC patients  with Chemotherapy ####################
 ########################################################################
 <LCPatient_Chemotherapy>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -36,6 +37,7 @@
 #################### Negative Chemotherapy #######################
 
 <LCPatient_Negative_Chemotherapy>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -57,6 +59,7 @@
 ############## LC patients  with Radiotherapy ####################
 ########################################################################
 <LCPatient_Radiotherapy>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -77,6 +80,7 @@
 #################### Negative Radiotherapy  #######################
 
 <LCPatient_Negative_Radiotherapy>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -97,6 +101,7 @@
 ############## LC patients  with Surgery ####################
 ########################################################################
 <LCPatient_Surgery>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -117,6 +122,7 @@
 #################### Negative Surgery   #######################
 
 <LCPatient_Negative_Surgery>
+	a rr:TriplesMap;
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
