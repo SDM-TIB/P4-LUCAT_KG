@@ -12,6 +12,7 @@
 @base <http://p4-lucat.eu/vocab/> .
 
 <Histology>
+     a rr:TriplesMap;
      rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
