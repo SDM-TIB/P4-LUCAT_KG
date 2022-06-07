@@ -12,6 +12,7 @@
 
 
 <Patient_RT_Toxicity>
+    a rr:TriplesMap;
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
