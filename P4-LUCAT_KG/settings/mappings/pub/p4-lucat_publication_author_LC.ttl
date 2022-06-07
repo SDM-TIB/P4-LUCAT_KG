@@ -6,6 +6,7 @@
 @prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix base: <http://tib.de/ontario/mapping#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
@@ -19,9 +20,9 @@
         rr:class p4-lucat:Publication_Author
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:authorName;
+        rr:predicate dct:creator;
         rr:objectMap [
-        rml:reference  "author"
+        rml:reference  "http://p4-lucat.eu/entity/{author}"
         ]
     ].
 
