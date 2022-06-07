@@ -12,6 +12,7 @@
 
 
 <Surgery_Procedure>
+    a rr:TriplesMap;
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
