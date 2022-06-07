@@ -44,6 +44,12 @@
         rml:reference "pmid"
         ]
     ];
+   rr:predicateObjectMap [
+        rr:predicate p4-lucat:pmid;
+        rr:objectMap [
+        rml:reference "http://p4-lucat.eu/entity/{pmid}"
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:journal;
         rr:objectMap [
