@@ -19,7 +19,8 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_marker}_Molecular_Markers";
-        rr:class p4-lucat:Molecular_Markers
+        rr:class p4-lucat:Molecular_Markers,
+                    p4-lucat:Biomarker;
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasCUIAnnotation;
