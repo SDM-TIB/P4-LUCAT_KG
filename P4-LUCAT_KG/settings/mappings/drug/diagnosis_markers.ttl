@@ -19,7 +19,8 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_marker}";
-        rr:class p4-lucat:Diagnosis_Markers
+        rr:class p4-lucat:Diagnosis_Markers,
+                    p4-lucat:Biomarker;
     ];
    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasID_LCPatient;
