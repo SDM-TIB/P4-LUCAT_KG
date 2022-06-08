@@ -19,7 +19,8 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ID_symptoms}";
-        rr:class p4-lucat:Diagnosis_Symptom
+        rr:class p4-lucat:Diagnosis_Symptom,
+                    p4-lucat:Symptom;
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasID_LCPatient;
