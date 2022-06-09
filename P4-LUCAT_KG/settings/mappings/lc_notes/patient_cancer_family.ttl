@@ -28,7 +28,7 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasFamilialRelationship;
+    rr:predicate p4-lucat:hasFamiliarRelationship;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{familiarTranslation}"
     ]
@@ -46,13 +46,13 @@
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFamilialPosition;
+        rr:predicate p4-lucat:hasFamiliarPosition;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{familiar_position}"
+        rml:reference "familiar_position"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFamilialCancerID;
+        rr:predicate p4-lucat:hasFamiliarCancerID;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_cancer_familiar}"
         ]
@@ -64,7 +64,7 @@
         ]
     ];
    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasFamilialCancer;
+        rr:predicate p4-lucat:hasFamiliarCancer;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{Organ_translated}"
         ]
