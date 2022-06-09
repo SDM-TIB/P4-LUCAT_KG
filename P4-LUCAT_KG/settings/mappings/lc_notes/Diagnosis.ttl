@@ -77,13 +77,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTumorSize;
+        rr:predicate p4-lucat:hasRegisteredTumorSize;
         rr:objectMap [
         rml:reference "tamprim"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasSpecifyTumorSize;
+        rr:predicate p4-lucat:hasTumorSize;
         rr:objectMap [
         rml:reference "tamanioprim"
         ]
