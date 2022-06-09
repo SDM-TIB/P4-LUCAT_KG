@@ -34,7 +34,7 @@
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeRelapse;
+        rr:predicate p4-lucat:hasRelapseProgression;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{recaida_translated}"
         ]
@@ -53,13 +53,13 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeProgression;
+        rr:predicate p4-lucat:hasTypeRelapseProgression;
         rr:objectMap [
         rml:reference "tipoprog"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapyProgressionRelapse;
+        rr:predicate p4-lucat:hasTypeTherapyRelapseProgression;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{terapiar}"
         ]
