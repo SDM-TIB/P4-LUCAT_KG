@@ -20,8 +20,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{rt_position}_{ID_toxicity_RT}";
-        rr:class p4-lucat:Patient_RT_Toxicity,
-                    p4-lucat:Treatment_Toxicity;
+        rr:class p4-lucat:TreatmentToxicity;
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasID_LCPatient;
@@ -30,19 +29,19 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasRadioTreatmentPosition;
+    rr:predicate p4-lucat:hasTreatmentPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{rt_position}"
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasID_Toxicity_RT;
+    rr:predicate p4-lucat:hasID_TreatmentToxicity;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ID_toxicity_RT}"
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasOtherRadioToxicity;
+    rr:predicate p4-lucat:hasOtherToxicity;
     rr:objectMap [
       rml:reference "other_toxicity"
     ]
