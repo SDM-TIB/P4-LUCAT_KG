@@ -19,7 +19,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ID_toxicity}_Toxicity";
-        rr:class p4-lucat:Treatment_Toxicity
+        rr:class p4-lucat:TreatmentToxicity
     ];
      rr:predicateObjectMap [
         rr:predicate p4-lucat:toxicityLabel_SPA;
