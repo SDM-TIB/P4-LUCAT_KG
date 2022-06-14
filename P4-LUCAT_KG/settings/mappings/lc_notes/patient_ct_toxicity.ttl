@@ -35,7 +35,7 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasID_Toxicity;
+    rr:predicate p4-lucat:hasID_TreatmentToxicity;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ID_toxicity_CT}"
     ]
