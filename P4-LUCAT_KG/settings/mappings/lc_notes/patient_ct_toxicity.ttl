@@ -20,8 +20,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{ct_position}_{ID_toxicity_CT}";
-        rr:class p4-lucat:Patient_CT_Toxicity,
-                    p4-lucat:Treatment_Toxicity;
+        rr:class p4-lucat:TreatmentToxicity;
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasID_LCPatient;
@@ -30,13 +29,13 @@
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasCTPosition;
+    rr:predicate p4-lucat:hasPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ct_position}"
     ]
   ]; 
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasID_Toxicity_CT;
+    rr:predicate p4-lucat:hasID_Toxicity;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{ID_toxicity_CT}"
     ]
