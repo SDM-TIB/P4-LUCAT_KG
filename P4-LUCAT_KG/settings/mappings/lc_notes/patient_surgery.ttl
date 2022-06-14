@@ -30,7 +30,7 @@ t1.surgery_position, t1.feccir, t1.clasecir as clasecirLabelSP, t1.otraclasecir,
     ]
   ]; 
       rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasSurgeryPosition;
+    rr:predicate p4-lucat:hasPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{surgery_position}_Surgery"
     ]
