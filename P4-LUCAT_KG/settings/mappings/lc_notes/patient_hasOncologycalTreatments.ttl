@@ -217,7 +217,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/Profilactica"
+			rr:constant "http://p4-lucat.eu/entity/Prophylactic"
 		]
 	].
 
@@ -236,7 +236,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/Adyuvante"
+			rr:constant "http://p4-lucat.eu/entity/Adjuvant"
 		]
 	].
 
@@ -255,7 +255,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/Neoadyuvante"
+			rr:constant "http://p4-lucat.eu/entity/Neoadjuvant"
 		]
 	].
 
@@ -293,7 +293,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasNoOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/NoProfilactica"
+			rr:constant "http://p4-lucat.eu/entity/NoProphylactic"
 		]
 	].
 
@@ -311,7 +311,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasNoOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/NoAdyuvante"
+			rr:constant "http://p4-lucat.eu/entity/NoAdjuvant"
 		]
 	].
 
@@ -329,7 +329,7 @@
 	rr:predicateObjectMap [
 		rr:predicate p4-lucat:hasNoOncologicalTreatment;
 		rr:objectMap [
-			rr:constant "http://p4-lucat.eu/entity/NoNeoadyuvante"
+			rr:constant "http://p4-lucat.eu/entity/NoNeoadjuvant"
 		]
 	].
 
