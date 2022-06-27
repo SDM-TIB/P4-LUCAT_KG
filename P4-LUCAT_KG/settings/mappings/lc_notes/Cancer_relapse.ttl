@@ -57,12 +57,6 @@
         rr:objectMap [
         rml:reference "tipoprog"
         ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapy;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{terapiar}"
-        ]
     ].
 
 <Patient_Progression>
@@ -112,12 +106,6 @@
         rr:objectMap [
         rml:reference "tipoprog"
         ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapy;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{terapiar}"
-        ]
     ].
 
 <Patient_NoProgression>
@@ -166,12 +154,6 @@
         rr:predicate p4-lucat:hasType;
         rr:objectMap [
         rml:reference "tipoprog"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapy;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{terapiar}"
         ]
     ].
 
