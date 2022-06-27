@@ -15,7 +15,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida""";
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Relapse"""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
@@ -28,13 +28,13 @@
         ]
     ];
     rr:predicateObjectMap [
-    rr:predicate p4-lucat:hasRelapsePosition;
+    rr:predicate p4-lucat:hasPosition;
     rr:objectMap [
       rr:template "http://p4-lucat.eu/entity/{relapse_position}"
     ]
   ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRelapseProgression;
+        rr:predicate p4-lucat:hasRelapse;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{recaida_translated}"
         ]
@@ -46,20 +46,130 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasRelapseDate;
+        rr:predicate p4-lucat:hasDate;
         rr:objectMap [
         rml:reference "fecrec";
         rr:datatype xsd:date
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeRelapseProgression;
+        rr:predicate p4-lucat:hasType;
         rr:objectMap [
         rml:reference "tipoprog"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTypeTherapyRelapseProgression;
+        rr:predicate p4-lucat:hasTypeTherapy;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{terapiar}"
+        ]
+    ].
+
+<Patient_Progression>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Progression"""";
+    ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
+        rr:class p4-lucat:Patient_Progression
+    ];
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasID_LCPatient;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
+        ]
+    ];
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasPosition;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{relapse_position}"
+    ]
+  ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasProgression;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{recaida_translated}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{recaida_CUI}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDate;
+        rr:objectMap [
+        rml:reference "fecrec";
+        rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasType;
+        rr:objectMap [
+        rml:reference "tipoprog"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTypeTherapy;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{terapiar}"
+        ]
+    ].
+
+<Patient_NoProgression>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="No_Progression"""";
+    ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
+        rr:class p4-lucat:Patient_Progression
+    ];
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasID_LCPatient;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient"
+        ]
+    ];
+    rr:predicateObjectMap [
+    rr:predicate p4-lucat:hasPosition;
+    rr:objectMap [
+      rr:template "http://p4-lucat.eu/entity/{relapse_position}"
+    ]
+  ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasNoProgression;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{recaida_translated}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasCUIAnnotation;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{recaida_CUI}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDate;
+        rr:objectMap [
+        rml:reference "fecrec";
+        rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasType;
+        rr:objectMap [
+        rml:reference "tipoprog"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTypeTherapy;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{terapiar}"
         ]
