@@ -18,7 +18,7 @@
         rr:class p4-lucat:TumorObservation
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasStage;
+        rr:predicate p4-lucat:hasTumorStage;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{stage}"
         ]
