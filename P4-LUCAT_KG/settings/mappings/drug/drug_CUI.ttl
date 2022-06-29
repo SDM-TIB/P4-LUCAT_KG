@@ -38,6 +38,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{DrugBankID}";
+                    rr:class p4-lucat:Drug
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCUIAnnotation;
