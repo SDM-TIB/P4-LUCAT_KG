@@ -71,11 +71,11 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:externalLink;
-        rr:objectMap [
-        rr:template  "https://www.uniprot.org/entity/{Uni_ID}"
-        ]
-    ];
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "http://purl.uniprot.org/uniprot/{Uni_ID}";
+		]
+	];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasCUIAnnotation;
         rr:objectMap [
