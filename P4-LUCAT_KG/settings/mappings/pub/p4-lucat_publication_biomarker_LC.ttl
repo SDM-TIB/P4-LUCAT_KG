@@ -16,7 +16,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{pmid}";
-        rr:class p4-lucat:Publication_biomarker
+        rr:class p4-lucat:Publication
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasBio;
