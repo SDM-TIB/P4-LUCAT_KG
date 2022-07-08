@@ -9,51 +9,58 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Phenotype_drugToxicityInteraction>
+<DrugToxicityInteraction>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
                 rml:referenceFormulation ql:CSV
                 ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{toxicity_Label}";
-        rr:class p4-lucat:Phenotype
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
-        rr:objectMap [
-        rr:parentTriplesMap <DrugSideEffectInteraction_drugToxicityInteraction>;
-        ]
-    ].
+   rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{drug_id}_hasToxicity_{toxicity_Label}";
+		rr:class p4-lucat:DrugToxicityInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasDrug;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{drug_id}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:hasPrimarySource;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/SourceName/DrugBank"
+		]
+	].	
 
-<Drug_drugToxicityInteraction>
+<Drug_DrugToxicityInteraction>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
                 rml:referenceFormulation ql:CSV
                 ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{drug_id}";
-        rr:class p4-lucat:Drug
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:drug_isRelatedTo_dse;
-        rr:objectMap [
-        rr:parentTriplesMap <DrugSideEffectInteraction_drugToxicityInteraction>;
-        ]
-    ].
 
-<DrugSideEffectInteraction_drugToxicityInteraction>
+	rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{drug_id}";
+		rr:class p4-lucat:Drug
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:drug_isRelatedTo_dse;
+		rr:objectMap [
+			rr:parentTriplesMap <DrugToxicityInteraction>
+		]
+	].
+
+<Phenotype_DrugToxicityInteraction>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/drug/drugs_toxicities_processed.csv";
                 rml:referenceFormulation ql:CSV
                 ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{drug_id}_{toxicity_Label}";
-        rr:class p4-lucat:DrugSideEffectInteraction
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prov:hasGeneratedBy;
-        rr:objectMap [
-        rr:constant  "http://p4-lucat.eu/entity/DrugBank"
-        ]
-    ].
+rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{toxicity_Label}";
+		rr:class p4-lucat:Phenotype
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:sideEffect_isRelatedTo_dse;
+		rr:objectMap [
+			rr:parentTriplesMap <DrugToxicityInteraction>
+		]
+	].
 
