@@ -9,87 +9,53 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<DrugTargetInteraction_drugTargetInteraction>
+<DrugProteinInteraction>
     a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
+    rml:logicalSource [ rml:source "./data/data/drug/DrugsAndProteins.csv";
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Drug}_interactsWith_{Protein ID}";
-        rr:class p4-lucat:DrugTargetInteraction
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor2_Protein;
-        rr:objectMap [
-        rr:parentTriplesMap <Target_drugTargetInteraction>;
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prov:hasGeneratedBy;
-        rr:objectMap [
-        rr:constant  "http://p4-lucat.eu/entity/DrugBank"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:interactor1_Drug;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{Drug}"
-        ]
-    ].
+		rr:template "http://research.tib.eu/covid-19/entity/{drugbank_id}_interactsWith_{uniprot_id}";
+		rr:class covid-19:DrugTargetInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:hasInteractingDrug;
+		rr:objectMap [ 
+			rr:template "http://research.tib.eu/covid-19/entity/{drugbank_id}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:hasInteractingCategory;
+		rr:objectMap [ 
+			rr:template "http://research.tib.eu/covid-19/entity/{category}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate covid-19:hasInteractingProtein;
+		rr:objectMap [ 
+			rr:template "http://research.tib.eu/covid-19/entity/{uniprot_id}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:hasPrimarySource;
+		rr:objectMap [
+			rr:template "http://research.tib.eu/covid-19/SourceName/DrugBank"
+		]
+	].
 
-<Target_drugTargetInteraction>
+<Protein>
     a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
+    rml:logicalSource [ rml:source "./data/data/drug/DrugsAndProteins.csv";
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Protein ID}";
-        rr:class p4-lucat:Target
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:targetLabel;
-        rr:objectMap [
-        rml:reference "Protein Name"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:targetID;
-        rr:objectMap [
-        rml:reference "Protein ID"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-        rr:parentTriplesMap <Protein_drugTargetInteraction>;
-        ]
-    ].
-
-<Protein_drugTargetInteraction>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/drugTargetInteraction.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Protein ID}";
-        rr:class p4-lucat:Protein
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:proteinID;
-        rr:objectMap [
-        rml:reference "Protein ID"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{Protein ID}"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:proteinLabel;
-        rr:objectMap [
-        rml:reference "Protein Name"
-        ]
-    ].
+		rr:template "http://research.tib.eu/covid-19/entity/{uniprot_id}";
+		rr:class covid-19:Protein
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+		rr:objectMap [ 
+			rr:template "http://purl.uniprot.org/uniprot/{uniprot_id}";
+		]
+	].
 
