@@ -24,7 +24,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Chemotherapy;
+		rr:class p4-lucat:Chemotherapy,
+			     p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -67,7 +68,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Immunotherapy;
+		rr:class p4-lucat:Immunotherapy,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -109,7 +111,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:ChemotherapyRadiotherapy;
+		rr:class p4-lucat:Chemotherapy-Radiotherapy,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -151,7 +154,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:HormonalTherapy;
+		rr:class p4-lucat:HormonalTherapy,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -192,7 +196,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Radiotherapy;
+		rr:class p4-lucat:Radiotherapy,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -214,7 +219,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Radical;
+		rr:class p4-lucat:Radical,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -233,7 +239,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Prophylactic;
+		rr:class p4-lucat:Prophylactic,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -252,7 +259,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Adjuvant;
+		rr:class p4-lucat:Adjuvant,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
@@ -367,7 +375,8 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Surgery;
+		rr:class p4-lucat:Surgery,
+			    p4-lucat:OncologicalTreatment;
 	];
 
 	rr:predicateObjectMap [
