@@ -9,77 +9,36 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
-<Annotation_enzyme>
+<Enzyme>
     a rr:TriplesMap;
     rml:logicalSource [ rml:source "./data/data/drug/enzyme.csv";
                 rml:referenceFormulation ql:CSV
                 ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{CUI}";
-        rr:class p4-lucat:Annotation
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:annID;
-        rr:objectMap [
-        rml:reference "CUI"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prov:hasGeneratedBy;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/UMLS"
-        ]
-    ].
-
-<Enzyme_enzyme>
-    a rr:TriplesMap;
-    rml:logicalSource [ rml:source "./data/data/drug/enzyme.csv";
-                rml:referenceFormulation ql:CSV
-                ];
-    rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{Enzyme_name}";
-        rr:class p4-lucat:Enzyme
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:enzymeLabel;
-        rr:objectMap [
-        rml:reference "Enzyme_name"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:uniprotID;
-        rr:objectMap [
-        rml:reference "Uni_ID"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:uniprotID;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{Uni_ID}"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:enzymeID;
-        rr:objectMap [
-        rml:reference "Enzyme_ID"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:enzyme_isRelatedTo_gene;
-        rr:objectMap [
-        rr:template  "http://p4-lucat.eu/entity/{Gene_name}"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasCUIAnnotation;
-        rr:objectMap [
-        rr:parentTriplesMap <Annotation_enzyme>;
-        ]
-    ];
-    rr:predicateObjectMap [
+   rr:subjectMap [
+		rr:template "http://p4-lucat.eu/entity/{Enzyme_name}";
+		rr:class p4-lucat:Enzyme
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasEnzymeID;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{Enzyme_ID}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasCUIAnnotation;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{CUI}";
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
 			rr:template "http://purl.uniprot.org/uniprot/{Uni_ID}";
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasSymbol;
+		rr:objectMap [
+			rr:template "http://p4-lucat.eu/entity/{Gene_name}";
+		]
 	].
-
