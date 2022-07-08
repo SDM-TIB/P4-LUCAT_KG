@@ -20,7 +20,7 @@
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Chemotherapy
+        rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
     rr:predicate p4-lucat:hasReceivedChemotherapy;
