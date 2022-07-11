@@ -19,7 +19,7 @@
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Diagnosis_Patient
+        rr:class p4-lucat:Diagnosis
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasIDTNMDiagnosis;
