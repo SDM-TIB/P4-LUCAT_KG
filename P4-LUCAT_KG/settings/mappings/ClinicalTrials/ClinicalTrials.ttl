@@ -791,7 +791,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{value}";
-        rr:class p4-lucat:Stages
+        rr:class p4-lucat:Stage
     ].
 
 <Immunotherapy_ClinicalTrials>
