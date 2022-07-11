@@ -371,8 +371,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{notki}";
-        rr:class p4-lucat:Tki
+        rr:template "http://p4-lucat.eu/entity/{notki}"
     ].
 
 <Keyword_ClinicalTrials>
@@ -454,8 +453,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{nosurgery}";
-        rr:class p4-lucat:Surgery
+        rr:template "http://p4-lucat.eu/entity/{nosurgery}"
     ].
 
 <EGFR_ClinicalTrials>
@@ -473,8 +471,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noegfr}";
-        rr:class p4-lucat:Egfr
+        rr:template "http://p4-lucat.eu/entity/{noegfr}"
     ].
 <ALK_ClinicalTrials>
     a rr:TriplesMap;
@@ -492,8 +489,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noalk}";
-        rr:class p4-lucat:Alk
+        rr:template "http://p4-lucat.eu/entity/{noalk}"
     ].
 
 <ROS_ClinicalTrials>
@@ -511,8 +507,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noros}";
-        rr:class p4-lucat:Ros1
+        rr:template "http://p4-lucat.eu/entity/{noros}"
     ].
 <PerformanceObservation_ClinicalTrials>
     a rr:TriplesMap;
@@ -539,8 +534,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noradiotherapy}";
-        rr:class p4-lucat:Radiotherapy
+        rr:template "http://p4-lucat.eu/entity/{noradiotherapy}"
     ].
 
 <Intervention_ClinicalTrials>
@@ -727,8 +721,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{nochemotherapy}";
-        rr:class p4-lucat:Chemotherapy
+        rr:template "http://p4-lucat.eu/entity/{nochemotherapy}"
     ].
 
 <Antiangiogenic_ClinicalTrials>
@@ -746,8 +739,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noantiangiogenic}";
-        rr:class p4-lucat:Antiangiogenic
+        rr:template "http://p4-lucat.eu/entity/{noantiangiogenic}"
     ].
 
 <ConditionAnnotationSciSpacy_ClinicalTrials>
@@ -809,6 +801,5 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{noimmunotherapy}";
-        rr:class p4-lucat:Immunotherapy
+        rr:template "http://p4-lucat.eu/entity/{noimmunotherapy}"
     ].
