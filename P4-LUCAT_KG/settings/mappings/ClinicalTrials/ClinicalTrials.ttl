@@ -363,7 +363,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{tki}";
-        rr:class p4-lucat:Tki
+        rr:class p4-lucat:Tki,
+			    p4-lucat:OncologicalTreatment;
     ].
 <TKI_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -445,7 +446,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{surgery}";
-        rr:class p4-lucat:Surgery
+        rr:class p4-lucat:Surgery,
+			    p4-lucat:OncologicalTreatment;
     ].
 <Surgery_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -526,7 +528,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{radiotherapy}";
-        rr:class p4-lucat:Radiotherapy
+        rr:class p4-lucat:Radiotherapy,
+			    p4-lucat:OncologicalTreatment;
     ].
 <Radiotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -713,7 +716,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{chemotherapy}";
-        rr:class p4-lucat:Chemotherapy
+        rr:class p4-lucat:Chemotherapy,
+			    p4-lucat:OncologicalTreatment;
     ].
 <Chemotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -731,7 +735,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
-        rr:class p4-lucat:Antiangiogenic
+        rr:class p4-lucat:Antiangiogenic,
+			    p4-lucat:OncologicalTreatment;
     ].
 <Antiangiogenic_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -793,7 +798,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{immunotherapy}";
-        rr:class p4-lucat:Immunotherapy
+        rr:class p4-lucat:Immunotherapy,
+			    p4-lucat:OncologicalTreatment;
     ].
 <Immunotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
