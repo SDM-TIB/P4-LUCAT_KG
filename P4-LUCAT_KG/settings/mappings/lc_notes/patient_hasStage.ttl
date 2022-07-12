@@ -30,7 +30,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA2''""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA2'""";
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
