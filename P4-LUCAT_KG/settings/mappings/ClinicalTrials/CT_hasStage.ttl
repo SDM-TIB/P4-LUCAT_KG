@@ -8,67 +8,116 @@
 
 <StageI_CT>
    a rr:TriplesMap;
-   rml:logicalSource [ rml:source "./data/data/clinical_trials/ct-stageI.csv";
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageI.csv";
                 rml:referenceFormulation ql:CSV
                 ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{NCTId}";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/I"
-        ]
+        rr:class p4-lucat:I,
+                    p4-lucat:Stage;
     ].
 
+<StageIA_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIA.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class p4-lucat:IA,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
+    ].
+
+<StageIB_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIB.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class p4-lucat:IB,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
+    ].
 
 <StageII_CT>
    a rr:TriplesMap;
-   rml:logicalSource [ rml:source "./data/data/clinical_trials/ct-stageII.csv";
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageII.csv";
                 rml:referenceFormulation ql:CSV
                 ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{NCTId}";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/II"
-        ]
+        rr:class  p4-lucat:II,
+                    p4-lucat:Stage;
     ].
 
+<StageIIA_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIIA.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class  p4-lucat:IIA,
+                    p4-lucat:II,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIB_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIIB.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class  p4-lucat:IIB,
+                    p4-lucat:II,
+                    p4-lucat:Stage;
+    ].
 
 <StageIII_CT>
    a rr:TriplesMap;
-   rml:logicalSource [ rml:source "./data/data/clinical_trials/ct-stageIII.csv";
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIII.csv";
                 rml:referenceFormulation ql:CSV
                 ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{NCTId}";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/III"
-        ]
+        rr:class   p4-lucat:III,
+                    p4-lucat:Stage;
     ].
 
+<StageIIIA_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIIIA.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class p4-lucat:IIIA,
+                    p4-lucat:III,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIIB_CT>
+   a rr:TriplesMap;
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIIIB.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{NCTId}";
+        rr:class p4-lucat:IIIB,
+                    p4-lucat:III,
+                    p4-lucat:Stage;
+    ].
 
 <StageIV_CT>
    a rr:TriplesMap;
-   rml:logicalSource [ rml:source "./data/data/clinical_trials/ct-stageIV.csv";
+   rml:logicalSource [ rml:source "./data/data/clinical_trials/clinicaltrial_stageIV.csv";
                 rml:referenceFormulation ql:CSV
                 ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{NCTId}";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/IV"
-        ]
+        rr:class p4-lucat:IV,
+                    p4-lucat:Stage;
     ].
