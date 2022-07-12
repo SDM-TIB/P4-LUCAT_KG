@@ -10,79 +10,173 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<StageI_Patient>
+<StageIA1_Patient>
    a rr:TriplesMap;
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA' OR  estadioini='IB' OR  estadioini='IA1' OR  estadioini='IA2'""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA1''""";
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/I"
-        ]
+        rr:class p4-lucat:IA1,
+                    p4-lucat:IA,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
     ].
 
-
-<StageII_Patient>
+<StageIA2_Patient>
    a rr:TriplesMap;
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIA' OR  estadioini='IIB'""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA2''""";
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/II"
-        ]
+        rr:class p4-lucat:IA2,
+                    p4-lucat:IA,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
     ].
 
-
-<StageIII_Patient>
+<StageIA_Patient>
    a rr:TriplesMap;
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIIA' OR  estadioini='IIIB' OR  estadioini='IIIC'""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IA'""";
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Stage
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/III"
-        ]
+        rr:class p4-lucat:IA,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
     ].
 
+<StageIB_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IB'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IB,
+                    p4-lucat:I,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIA_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIA'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IIA,
+                    p4-lucat:II,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIB_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIB'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IIB,
+                    p4-lucat:II,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIIA_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIIA'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IIIA,
+                    p4-lucat:III,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIIB_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIIB'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IIIB,
+                    p4-lucat:III,
+                    p4-lucat:Stage;
+    ].
+
+<StageIIIC_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IIIC'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IIIC,
+                    p4-lucat:III,
+                    p4-lucat:Stage;
+    ].
 
 <StageIV_Patient>
    a rr:TriplesMap;
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IVA' OR  estadioini='IVB'""";
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IV'""";
     ];
    rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-        rr:class p4-lucat:Stage
+        rr:class p4-lucat:IV,
+                    p4-lucat:Stage;
+    ].
+
+<StageIVA_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IVA'""";
     ];
-     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-        rr:constant "http://p4-lucat.eu/entity/IV"
-        ]
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IVA,
+                    p4-lucat:IV,
+                    p4-lucat:Stage;
+    ].
+
+<StageIVB_Patient>
+   a rr:TriplesMap;
+   rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT REPLACE(medicalrecord_diagnosis, ' ', '') as medicalrecord, estadioini FROM `Diagnosis` WHERE estadioini='IVB'""";
+    ];
+   rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:IVB,
+                    p4-lucat:IV,
+                    p4-lucat:Stage;
     ].
 
 <RDB_source> a d2rq:Database;
