@@ -22,7 +22,7 @@
         rr:class p4-lucat:Stage
     ];
      rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
+        rr:predicate rdf:type;
         rr:objectMap [
         rr:constant "http://p4-lucat.eu/entity/I"
         ]
@@ -41,7 +41,7 @@
         rr:class p4-lucat:Stage
     ];
      rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
+        rr:predicate rdf:type;
         rr:objectMap [
         rr:constant "http://p4-lucat.eu/entity/II"
         ]
@@ -60,7 +60,7 @@
         rr:class p4-lucat:Stage
     ];
      rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
+        rr:predicate rdf:type;
         rr:objectMap [
         rr:constant "http://p4-lucat.eu/entity/III"
         ]
@@ -79,7 +79,7 @@
         rr:class p4-lucat:Stage
     ];
      rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
+        rr:predicate rdf:type;
         rr:objectMap [
         rr:constant "http://p4-lucat.eu/entity/IV"
         ]
