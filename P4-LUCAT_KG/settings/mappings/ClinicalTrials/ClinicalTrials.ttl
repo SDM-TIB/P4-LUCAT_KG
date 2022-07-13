@@ -743,7 +743,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{antiangiogenic}";
         rr:class p4-lucat:Antiangiogenic,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		            p4-lucat:Treatment;
     ].
 <Antiangiogenic_Negative_ClinicalTrials>
     a rr:TriplesMap;
