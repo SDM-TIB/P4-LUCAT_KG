@@ -25,7 +25,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Chemotherapy,
-			     p4-lucat:OncologicalTreatment;
+			     p4-lucat:OncologicalTreatment,
+			     p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -69,7 +70,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Immunotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -112,7 +114,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Chemotherapy-Radiotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -155,7 +158,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:HormonalTherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -197,7 +201,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Radiotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -220,7 +225,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Radical,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -240,7 +246,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Prophylactic,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -260,7 +267,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Adjuvant,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -279,7 +287,9 @@
 		];
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
-		rr:class p4-lucat:Neoadjuvant;
+		rr:class p4-lucat:Neoadjuvant,
+			 p4-lucat:OncologicalTreatment,
+			 p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
@@ -376,7 +386,8 @@
 	rr:subjectMap [
 		rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
 		rr:class p4-lucat:Surgery,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+			    p4-lucat:Treatment;
 	];
 
 	rr:predicateObjectMap [
