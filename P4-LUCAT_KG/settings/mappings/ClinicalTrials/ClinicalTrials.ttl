@@ -364,7 +364,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{tki}";
         rr:class p4-lucat:Tki,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		            p4-lucat:Treatment;
     ].
 <TKI_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -447,7 +448,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{surgery}";
         rr:class p4-lucat:Surgery,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		            p4-lucat:Treatment;
     ].
 <Surgery_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -465,7 +467,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{egfr}";
-        rr:class p4-lucat:Egfr
+        rr:class p4-lucat:Egfr,
+		 p4-lucat:Biomarker;
     ].
 <EGFR_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -482,7 +485,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{alk}";
-        rr:class p4-lucat:Alk
+        rr:class p4-lucat:Alk,
+		 p4-lucat:Biomarker;
     ].
 
 <ALK_Negative_ClinicalTrials>
@@ -501,7 +505,8 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ros}";
-        rr:class p4-lucat:Ros1
+        rr:class p4-lucat:Ros1,
+		 p4-lucat:Biomarker;
     ].
 <ROS_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -529,7 +534,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{radiotherapy}";
         rr:class p4-lucat:Radiotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		    	    p4-lucat:Treatment;
     ].
 <Radiotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -717,7 +723,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{chemotherapy}";
         rr:class p4-lucat:Chemotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		    	    p4-lucat:Treatment;
     ].
 <Chemotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
@@ -799,7 +806,8 @@
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{immunotherapy}";
         rr:class p4-lucat:Immunotherapy,
-			    p4-lucat:OncologicalTreatment;
+			    p4-lucat:OncologicalTreatment,
+		            p4-lucat:Treatment;
     ].
 <Immunotherapy_Negative_ClinicalTrials>
     a rr:TriplesMap;
