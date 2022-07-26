@@ -15,7 +15,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT REPLACE(familiarSource, ' ', '') as familiarSource1, familiarSource, familiarTranslation, familiarDegree, familiarGenderDegree FROM FamilyRelationship""";
+      rml:query """SELECT REPLACE(familiarSource, ' ', '') as familiarSource1, REPLACE(familiarDegree, ' ', '') as familiarDegree, REPLACE(familiarGenderDegree, ' ', '') as familiarGenderDegree, familiarSource, familiarTranslation FROM FamilyRelationship""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{familiarSource1}";
