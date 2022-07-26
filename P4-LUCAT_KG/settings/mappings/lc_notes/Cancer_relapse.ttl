@@ -15,7 +15,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Relapse"""";
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, REPLACE(t1.recaida, ' ', '') as recaida_translated, REPLACE(t2.recaida_CUI, ' ', '') as recaida_CUI, t1.relapse_position, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Relapse"""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
@@ -64,7 +64,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Progression"""";
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, REPLACE(t1.recaida, ' ', '') as recaida_translated, REPLACE(t2.recaida_CUI, ' ', '') as recaida_CUI, t1.relapse_position, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="Progression"""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
@@ -113,7 +113,7 @@
    rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, t1.relapse_position,t2.recaida_translated, t2.recaida_CUI, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="No_Progression"""";
+      rml:query """SELECT distinct REPLACE(t1.medicalrecord_relapse, ' ', '') as medicalrecord, REPLACE(t1.recaida, ' ', '') as recaida_translated, REPLACE(t2.recaida_CUI, ' ', '') as recaida_CUI, t1.relapse_position, t1.fecrec, t1.tipoprog, t1.terapiar FROM Cancer_relapse as t1, Relapse as t2 WHERE t2.recaida=t1.recaida AND t1.recaida="No Progression"""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{relapse_position}";
