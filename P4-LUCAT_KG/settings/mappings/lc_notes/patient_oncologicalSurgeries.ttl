@@ -22,7 +22,14 @@
         rr:objectMap [
         rr:parentTriplesMap <Surgery_patient_oncologicalSurgeries>;
         ]
-    ].
+    ];
+
+	rr:predicateObjectMap [
+		rr:predicate p4-lucat:hasOncologicalTreatment;
+		rr:objectMap [
+			rr:constant "http://p4-lucat.eu/entity/Surgery"
+		]
+	].
 
 <Surgery_patient_oncologicalSurgeries>
     a rr:TriplesMap;
