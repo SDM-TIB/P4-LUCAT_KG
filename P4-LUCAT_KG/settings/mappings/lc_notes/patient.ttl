@@ -16,7 +16,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT  distinct REPLACE(medicalrecord, ' ', '') as medicalrecord, fecnac,sexo, raza, otraraza  FROM Patient""";
+      rml:query """SELECT  distinct REPLACE(t1.medicalrecord, ' ', '') as medicalrecord, t1.fecnac,t1.sexo, t1.raza, t1.otraraza, t2.Age  FROM Patient as t1, PatientAge as t2 where t1.medicalrecord = t2.medicalrecord""";
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
@@ -45,6 +45,13 @@
         rr:predicate p4-lucat:hasOtherRace;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{otraraza}"
+        ]
+    ];
+   rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasAge;
+        rr:objectMap [
+        rml:reference "Age";
+			rr:datatype xsd:int;
         ]
     ].
 
