@@ -14,13 +14,14 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{patient_id}_{toxicity_id}";
+        rr:template "http://p4-lucat.eu/entity/{toxicity_id}_{date}";
         rr:class p4-lucat:ToxicityObservation
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDate;
         rr:objectMap [
-        rml:reference "date"
+        rml:reference "date";
+        rr:datatype xsd:date
         ]
     ];
     rr:predicateObjectMap [
