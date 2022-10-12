@@ -97,7 +97,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasChemoTreatment;
+        rr:predicate p4-lucat:hasReceivedChemotherapy;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{tratamante}"
         ]
