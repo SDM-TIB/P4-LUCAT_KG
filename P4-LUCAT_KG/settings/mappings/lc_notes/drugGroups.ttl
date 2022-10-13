@@ -15,7 +15,7 @@
                 ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{ENG_CUI_Name}";
-        rr:class p4-lucat:DrugGroup
+        rr:class p4-lucat:Drug
     ];
     rr:predicateObjectMap [
         rr:predicate owl:sameAs;
@@ -24,7 +24,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:drugGroupLabel;
+        rr:predicate p4-lucat:drugLabel;
         rr:objectMap [
         rml:reference "ENG_CUI_Name"
         ]
