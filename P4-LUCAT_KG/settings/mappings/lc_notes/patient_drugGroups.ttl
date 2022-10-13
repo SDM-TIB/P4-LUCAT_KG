@@ -18,7 +18,7 @@
         rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasDrugGroup;
+        rr:predicate p4-lucat:hasDrug;
         rr:objectMap [
         rr:parentTriplesMap <DrugGroup_patient_drugGroups>;
         ]
@@ -35,6 +35,6 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-        rr:template  "http://p4-lucat.eu/vocab/DrugGroup"
+        rr:template  "http://p4-lucat.eu/vocab/Drug"
         ]
     ].
