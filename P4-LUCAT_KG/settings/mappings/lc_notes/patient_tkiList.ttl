@@ -18,7 +18,7 @@
         rr:class p4-lucat:LCPatient
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasTki;
+        rr:predicate p4-lucat:hasTKIDrug;
         rr:objectMap [
         rr:parentTriplesMap <Drug_patient_tkiList>;
         ]
