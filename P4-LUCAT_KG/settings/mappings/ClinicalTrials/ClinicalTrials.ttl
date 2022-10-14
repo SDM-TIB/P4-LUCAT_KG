@@ -174,7 +174,7 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:gender;
+        rr:predicate p4-lucat:hasGender;
         rr:objectMap [
         rr:template  "http://p4-lucat.eu/entity/{Gender}"
         ]
