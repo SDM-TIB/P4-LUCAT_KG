@@ -1,1 +1,197 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
 
+
+
+<Treatment_DDIs>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_response.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Treatment}_Treatment";
+        rr:class p4-lucat:ClinicalTreatment   
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDDIs_Literature;
+        rr:objectMap [
+        rr:parentTriplesMap <Treatment_DDI_Literature>;
+        rr:joinCondition [
+            rr:child "Treatment";
+            rr:parent "Treatment";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDDIs_DeductiveSystem;
+        rr:objectMap [
+        rr:parentTriplesMap <Treatment_DDI_DeductiveSystem>;
+        rr:joinCondition [
+            rr:child "Treatment";
+            rr:parent "Treatment";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasDDIs_DrugBank;
+        rr:objectMap [
+        rr:parentTriplesMap <Treatment_DDI_DrugBank>;
+        rr:joinCondition [
+            rr:child "Treatment";
+            rr:parent "Treatment";
+        ]
+        ]
+    ].
+
+
+
+<Treatment_Response>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_response.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Treatment}_Treatment_{description}";
+        rr:class p4-lucat:TreatmentResponse 
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTreatment;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{Treatment}_Treatment";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasResponse;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{description}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasNumberOfPatient;
+        rr:objectMap [
+            rml:reference "n_pat";
+            rr:datatype xsd:int;
+        ]
+    ].
+
+<Treatment_Drug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_drug.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Treatment}_Treatment";
+        rr:class p4-lucat:ClinicalTreatment    
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTreatmentDrug;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{DrugBankID}";
+        ]
+    ].
+
+
+
+<Treatment_DDI_Literature>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_ddi_literature.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{Drug1}_interactsWith_Literature_{Drug2}";
+        rr:class p4-lucat:DrugDrugInteraction,
+                p4-lucat:DDI-Literature;   
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:affects;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{Drug1}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:isAffected;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{Drug2}";
+        ]
+    ].
+
+
+<Treatment_DDI_DeductiveSystem>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_ddi_deductiveSystem.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DeductiveSystem_{objectDrug}";
+        rr:class p4-lucat:DrugDrugInteraction,
+                p4-lucat:DDI-DeductiveSystem;    
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:precipitant_hasDrugBankID;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{precipitantDrug}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:object_hasDrugBankID;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{objectDrug}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasEffect;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{Effect}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:impact;
+        rr:objectMap [
+            rml:reference "Impact";
+        ];
+    ].
+
+
+
+<Treatment_DDI_DrugBank>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/drug/treatment_ddi_drugbank.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DrugBank_{objectDrug}";
+        rr:class p4-lucat:DrugDrugInteraction,
+                p4-lucat:DDI-DrugBank;     
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:precipitant_hasDrugBankID;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{precipitantDrug}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:object_hasDrugBankID;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{objectDrug}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasEffect;
+        rr:objectMap [
+            rr:template "http://p4-lucat.eu/entity/{Effect}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:impact;
+        rr:objectMap [
+            rml:reference "Impact";
+        ];
+    ].
