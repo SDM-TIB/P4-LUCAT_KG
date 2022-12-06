@@ -130,7 +130,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DeductiveSystem_{objectDrug}";
+        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DeductiveSystem_{objectDrug}_{Effect}";
         rr:class p4-lucat:DrugDrugInteraction,
                 p4-lucat:DDI-DeductiveSystem;    
     ];
@@ -167,7 +167,7 @@
                 rml:referenceFormulation ql:CSV
                 ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DrugBank_{objectDrug}";
+        rr:template "http://p4-lucat.eu/entity/{precipitantDrug}_interactsWith_DrugBank_{objectDrug}_{Effect}";
         rr:class p4-lucat:DrugDrugInteraction,
                 p4-lucat:DDI-DrugBank;     
     ];
