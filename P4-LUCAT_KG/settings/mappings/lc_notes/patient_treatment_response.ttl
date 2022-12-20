@@ -1,0 +1,111 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p4-lucat: <http://p4-lucat.eu/vocab/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@base <http://p4-lucat.eu/vocab/> .
+
+
+
+<LCPatient_PatientResponse>
+    a rr:TriplesMap;
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT  distinct ID_PatientResponse,medicalrecord,fecinitto,ID_response,description,treatment_id,fecfintto FROM `patient_treatment_response`""";
+        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ID_PatientResponse}_PatientResponse";
+        rr:class p4-lucat:PatientResponse;
+        
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasResponsePatient;
+        rr:objectMap [
+            rr:parentTriplesMap <Response_Patient>;
+        ]
+    ];
+     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasResponseTreatment;
+        rr:objectMap [
+            rr:parentTriplesMap <Response_Treatment>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasResponseResponse;
+        rr:objectMap [
+            rr:parentTriplesMap <Response_Response>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasStartDate;
+        rr:objectMap [
+        rml:reference "fecinitto";
+        rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasEndDate;
+        rr:objectMap [
+        rml:reference "fecfintto";
+        rr:datatype xsd:date
+        ]
+    ].
+
+
+<Response_Patient>
+    a rr:TriplesMap;
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT  distinct ID_PatientResponse,medicalrecord,fecinitto,ID_response,description,treatment_id,fecfintto FROM `patient_treatment_response`""";
+        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
+        rr:class p4-lucat:LCPatient;
+        
+    ].
+
+<Response_Treatment>
+    a rr:TriplesMap;
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT  distinct ID_PatientResponse,medicalrecord,fecinitto,ID_response,description,treatment_id,fecfintto FROM `patient_treatment_response`""";
+        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{treatment_id}_Treatment";
+        rr:class p4-lucat:Chemotherapy_treatment;
+        
+    ].
+
+ <Response_Response>
+    a rr:TriplesMap;
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT  distinct ID_PatientResponse,medicalrecord,fecinitto,ID_response,description,treatment_id,fecfintto FROM `patient_treatment_response`""";
+        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{ID_response}_Response";
+        rr:class p4-lucat:TreatmentResponse;
+        
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:responseDescription;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{description}";
+        ]
+    ].
+    
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
