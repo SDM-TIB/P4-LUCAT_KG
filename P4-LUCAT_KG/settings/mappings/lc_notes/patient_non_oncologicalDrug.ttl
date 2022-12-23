@@ -12,7 +12,7 @@
 
 
 
-<LCPatient_Non_Oncological_Drugs>
+<LCPatient_Patient_Non_Oncological_Drugs>
     a rr:TriplesMap;
     rml:logicalSource [ 
         rml:source <RDB_source>;
@@ -25,15 +25,27 @@
         
     ];
     rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasNonOncologicalDrug;
+        rr:objectMap [
+        rr:parentTriplesMap <Drug_LCPatient_Non_Oncological_Drugs>;
+        ]
+    ].
+
+<Drug_LCPatient_Non_Oncological_Drugs>
+    a rr:TriplesMap;
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT DISTINCT t1.medicalrecord,t1.drug_name, t2.DrugBankID, t2.CUI_ID FROM `Non_OncologicalDrugs` as t1,  `CUI_DrugBank_Label` as t2 WHERE t1.drug_name = t2.DrugName""";
+        ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{DrugBankID}";
+        rr:class p4-lucat:NonOncologicalDrug;
+    ];
+    rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugLabel;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{drug_name}"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasNonOncologicalDrug;
-        rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{DrugBankID}"
         ]
     ];
     rr:predicateObjectMap [
