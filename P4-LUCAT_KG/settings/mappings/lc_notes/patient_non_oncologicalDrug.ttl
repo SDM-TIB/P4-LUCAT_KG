@@ -17,7 +17,7 @@
     rml:logicalSource [ 
         rml:source <RDB_source>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT  distinct medicalrecord,drug_name FROM `Non_OncologicalDrugs`""";
+        rml:query """SELECT DISTINCT t1.medicalrecord,t1.drug_name, t2.DrugBankID FROM `Non_OncologicalDrugs` as t1,  `CUI_DrugBank_Label` as t2 WHERE t1.drug_name = t2.DrugName""";
         ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
@@ -25,9 +25,15 @@
         
     ];
     rr:predicateObjectMap [
-        rr:predicate p4-lucat:hasNonOncologicalDrug;
+        rr:predicate p4-lucat:hasDrugLabel;
         rr:objectMap [
         rr:template "http://p4-lucat.eu/entity/{drug_name}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasTreatmentDrug;
+        rr:objectMap [
+        rr:template "http://p4-lucat.eu/entity/{DrugBankID}"
         ]
     ].
 
