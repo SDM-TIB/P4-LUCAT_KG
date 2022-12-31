@@ -81,19 +81,19 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_1}"
+        rr:template "http://p4-lucat.eu/entity/{esquema_1}_CTDrug"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_2}"
+        rr:template "http://p4-lucat.eu/entity/{esquema_2}_CTDrug"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{esquema_3}"
+        rr:template "http://p4-lucat.eu/entity/{esquema_3}_CTDrug"
         ]
     ];
     rr:predicateObjectMap [
