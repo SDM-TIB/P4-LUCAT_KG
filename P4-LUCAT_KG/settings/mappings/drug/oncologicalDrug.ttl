@@ -11,7 +11,7 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @base <http://p4-lucat.eu/vocab/> .
 
-<OncologicalDrug_oncologicalDrug>
+<DrugID_oncologicalDrug>
      a rr:TriplesMap;
      rml:logicalSource [ 
       rml:source <RDB_source>;
@@ -41,7 +41,17 @@
         ]
     ].
 
-
+<DrugBankID_oncologicalDrug>
+     a rr:TriplesMap;
+     rml:logicalSource [ 
+      rml:source <RDB_source>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """SELECT DISTINCT t2.DrugBankID FROM `CT_drugs` as t1,  `CUI_DrugBank_Label` as t2 WHERE t1.ct_drug = t2.DrugName""";
+    ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{DrugBankID}";
+        rr:class p4-lucat:oncologicalDrug
+    ].
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
