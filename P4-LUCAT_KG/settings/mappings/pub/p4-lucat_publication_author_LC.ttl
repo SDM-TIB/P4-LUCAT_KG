@@ -26,3 +26,19 @@
         ]
     ].
 
+<Publication_p4-lucat_author_publication_LC>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "./data/data/pub/publication_LC_authors.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://p4-lucat.eu/entity/{author}";
+        rr:class p4-lucat:Author
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p4-lucat:hasPublished;
+        rr:objectMap [
+        rr:template  "http://p4-lucat.eu/entity/{pmid}"
+        ]
+    ].
+
