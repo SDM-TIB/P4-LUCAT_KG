@@ -93,7 +93,7 @@
     rr:predicateObjectMap [
         rr:predicate p4-lucat:hasDrugID;
         rr:objectMap [
-        rr:template "http://p4-lucat.eu/entity/{farmacoman}"
+        rr:template "http://p4-lucat.eu/entity/{farmacoman}_CTDrug"
         ]
     ];
     rr:predicateObjectMap [
