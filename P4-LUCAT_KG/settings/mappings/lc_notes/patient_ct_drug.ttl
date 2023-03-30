@@ -16,7 +16,7 @@
     rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """SELECT distinct REPLACE(medicalrecord_CT,' ', '') as medicalrecord, drugName1, drugName2, drugName3 FROM `Patient_CT_drugENG` """;
+      rml:query """SELECT distinct REPLACE(medicalrecord,' ', '') as medicalrecord, drugName1, drugName2, drugName3 FROM `Patient_CT_drugENG` """;
     ];
     rr:subjectMap [
         rr:template "http://p4-lucat.eu/entity/{medicalrecord}_LCPatient";
