@@ -18,7 +18,7 @@
       rml:query """SELECT distinct TRIM(t2.medicalrecord_cancerfam) as medicalrecord, t2.familiar_position, t2.ID_cancer_familiar, t2.other_organ, t1.familiarSource, t1.familiarTranslation, TRIM(t1.familiarDegree) as familiarDegree1, TRIM(t1.familiarGenderDegree) as familiarGenderDegree1, t3.organ, t3.Organ_translated, TRIM(t3.cancer_CUI) as cancerCUI FROM `FamilyRelationship` as t1, `Patient_cancer_familiar` as t2, Cancer_type as t3 WHERE t1.familiarSource=t2.familiar and t3.ID_cancer=t2.ID_cancer_familiar""";
     ];
     rr:subjectMap [
-        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{familiarTranslation}_{cancerCUI}";
+        rr:template "http://p4-lucat.eu/entity/{medicalrecord}_{familiarTranslation}_{Organ_translated}";
         rr:class p4-lucat:Patient_Cancer_Family
     ];
      rr:predicateObjectMap [
